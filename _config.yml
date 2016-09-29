@@ -31,4 +31,4 @@ destination: _site
 
 
 gems: []
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png', 'publish.sh']
