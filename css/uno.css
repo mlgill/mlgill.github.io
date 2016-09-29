@@ -1389,7 +1389,7 @@ nav {
 			opacity: 1; }
 
 .navigation--social {
-	margin-left: 1.5em; }
+	margin-left: 0em; }
 	.navigation--social a {
 		padding: 6px 8px 6px 9px; }
 		.navigation--social a .label {
@@ -1560,6 +1560,7 @@ input[type="tel"] {
 @media all and (min-width: 1300px) {
 	.content-wrapper {
 		margin-left: 530px; } }
+		
 @media all and (max-width: 1100px) {
 	.panel-cover__logo {
 		width: 70px; }
@@ -1577,6 +1578,7 @@ input[type="tel"] {
 	.navigation--social {
 		margin-top: 5px;
 		margin-left: 0; } }
+
 @media all and (max-width: 960px) {
 	.btn-mobile-menu {
 		display: block; }
@@ -1666,6 +1668,7 @@ input[type="tel"] {
 	.navigation__item {
 		width: 100%;
 		margin: 0 0 .4em 0; } }
+
 @media all and (max-width: 340px) {
 	.panel-main__inner {
 		padding: 0 5%; }
