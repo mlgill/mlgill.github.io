@@ -1,24 +1,168 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<div class="main-post-list">
+  <title>Michelle Lynn Gill, Ph.D.</title>
+  <meta name="description" content="<p>I am a data scientist and biophysicist located in New York City. My Ph.D. is in Molecular Biophysics & Biochemistry.</br></br> When not thinking about data science, I enjoy programming in Python, all things made by Apple, running, Kansas basketball (Go Jayhawks!), and my collection of shoes.</p>">
+  <meta name="author" content="Michelle Gill">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <ol class="post-list">
-    {% for post in paginator.posts %}
-      <li>
-        <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-        <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}&hellip;</p>
-        <div class="post-list__meta"><time datetime="{{ post.date | date: "%-d %b %Y" }}" class="post-list__meta--date date">{{ post.date | date: "%-d %b %Y" }}</time> &#8226; <span class="post-meta__tags">on {% for tag in post.tags %}<a href="{{ site.baseurl }}tags/#{{ tag }}">{{ tag }}</a> {% endfor %}</span></div>
-        <hr class="post-list__divider">
-      </li>
-    {% endfor %}
-  </ol>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Michelle Lynn Gill, Ph.D.">
+  <meta name="twitter:description" content="<p>I am a data scientist and biophysicist located in New York City. My Ph.D. is in Molecular Biophysics & Biochemistry.</br></br> When not thinking about data science, I enjoy programming in Python, all things made by Apple, running, Kansas basketball (Go Jayhawks!), and my collection of shoes.</p>">
 
-  <hr class="post-list__divider ">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Michelle Lynn Gill, Ph.D.">
+  <meta property="og:description" content="<p>I am a data scientist and biophysicist located in New York City. My Ph.D. is in Molecular Biophysics & Biochemistry.</br></br> When not thinking about data science, I enjoy programming in Python, all things made by Apple, running, Kansas basketball (Go Jayhawks!), and my collection of shoes.</p>">
 
-  {% if paginator.previous_page or paginator.next_page %}
-      {% include pagination.html %}
-  {% endif %}
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-</div>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://michellelynngill.com//">
+  <link rel="alternate" type="application/rss+xml" title="Michelle Lynn Gill, Ph.D." href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+  
+<header class="panel-cover" style="background-image: url(/images/cover.png)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="Michelle Lynn Gill, Ph.D.">
+          <img src="/images/profile_bw.jpg" class="user-image" alt="">
+          <h1 class="panel-cover__title panel-title">Michelle Lynn Gill, Ph.D.</h1>
+        </a>
+
+        <h1 style="font-size:150%!important;" class="panel-cover__title panel-title">Data Scientist & Biophysicist</h1>
+
+        <hr class="panel-cover__divider">
+
+        <p class="panel-cover__description"><p>I am a data scientist and biophysicist located in New York City. My Ph.D. is in Molecular Biophysics & Biochemistry.</br></br> When not thinking about data science, I enjoy programming in Python, all things made by Apple, running, Kansas basketball (Go Jayhawks!), and my collection of shoes.</p></p>
+
+        <hr class="panel-cover__divider">
+
+        <nav class="cover-navigation cover-navigation--primary">
+
+          <ul class="navigation">
+
+            
+              <li class="navigation__item"><a href="http://themodernscientist.com" title="themodernscientist" class="">Blog</a></li>
+            
+
+            
+              <li class="navigation__item"><a href="http://resume.michellelynngill.com" title="Resume" class="">Resume</a></li>
+            
+
+            
+              <li class="navigation__item"><a href="http://cv.michellelynngill.com" title="CV" class="">CV</a></li>
+            
+            
+
+          </ul>
+        </nav>
+
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/mlgill" title="mlgill" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+          
+            
+              <!-- Twitter -->
+              <li class="navigation__item">
+                <a href="http://twitter.com/modernscientist" title="@modernscientist" target="_blank">
+                  <i class="icon icon-social-twitter"></i>
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+            
+
+
+            
+
+            
+              <!-- LinkedIn -->
+              <li class="navigation__item">
+                <a href="https://www.linkedin.com/in/michellelynngill" title="michellelynngill" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:michelle@michellelynngill.com" title="michelle@michellelynngill.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+          
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <footer class="footer">
+  <span class="footer__copyright">&copy; 2016 Michelle Gill. All rights reserved.</span>
+</footer> 
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+    
+  </body>
+</html>
