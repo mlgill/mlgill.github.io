@@ -1,11 +1,22 @@
 # Site settings
 title: 'Michelle Lynn Gill, Ph.D.'
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
-url: 'http://joshgerdes.com'
+title2: 'Data Scientist & Biophysicist'
+description: '<p>I am a data scientist and biophysicist located in New York City. My Ph.D. is in Molecular Biophysics & Biochemistry.</br></br>
+When not thinking about data science, I enjoy programming in Python, all things made by Apple, running, Kansas basketball (Go Jayhawks!), 
+and my collection of shoes.</p>'
+url: 'http://michellelynngill.com'
 baseurl: '/'
 # google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
 
+
+external:
+  blog:
+    title: 'themodernscientist'
+    url: http://themodernscientist.com
+  cv:
+    url: http://cv.michellelynngill.com
+  resume:
+    url: http://resume.michellelynngill.com
 
 author:
   name: 'Michelle Gill'
@@ -15,35 +26,9 @@ author:
   linkedin_username:  'michellelynngill'
 
 
-blog:
-  title: 'themodernscientist'
-  url: 'http://themodernscientist.com'
-
-
-cv:
-  url: 'http://cv.michellelynngill.com'
-
-
-defaults:
-  -
-    scope:
-      path: ''
-      type: 'posts'
-    values:
-        layout: 'post'
-
 # Build settings
 destination: _site
-paginate: 10
-permalink: /:year/:title/
-markdown: kramdown
-highlighter: rouge
 
-kramdown:
-  # use Github Flavored Markdown
-  input: GFM
-  # do not replace newlines by <br>s
-  hard_wrap: false
 
-gems: ['jekyll-paginate']
+gems: []
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
