@@ -13,10 +13,13 @@ external:
   blog:
     title: 'themodernscientist'
     url: http://themodernscientist.com
-  cv:
-    url: http://cv.michellelynngill.com
   resume:
     url: http://resume.michellelynngill.com
+  cv:
+    url: http://cv.michellelynngill.com
+  talks:
+    url: http://cv.michellelynngill.com/presentations.html
+
 
 author:
   name: 'Michelle Gill'
