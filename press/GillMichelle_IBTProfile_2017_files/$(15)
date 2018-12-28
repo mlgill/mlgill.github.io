@@ -1,0 +1,520 @@
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f4RpnowA-iJO5-_SBA2J1Se058Yv6dmrWZed-T3htI8U8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f4RpnowA-iJO5-_SBA2J1S-Bq1lsLWNIiI-6iMcaWEXo8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f4RpnowA-iJO5-_SBA2J1S1fDRNyVGOlMTW1j-ZPJt1k8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Playfair Display Italic'), local('PlayfairDisplay-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f4RpnowA-iJO5-_SBA2J1SedOLZ6U0R-QqZwFs1HsT4J.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fs2L9UvOaKU7Pzgq5AGQIJOsipWjdcFsOEC4oPhPhWjnFcl6Gsb0K3s0R6V8uh8cE.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fs2L9UvOaKU7Pzgq5AGQIJMrP0DGCK5Kq2VDH4oo_iTHFcl6Gsb0K3s0R6V8uh8cE.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fs2L9UvOaKU7Pzgq5AGQIJMpENqx78OL12-VdYlEYFAwhdFcl6Gsb0K3s0R6V8uh8cE.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Playfair Display Bold Italic'), local('PlayfairDisplay-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fs2L9UvOaKU7Pzgq5AGQIJH5dwbBsrKywDI29C6MP3N1lqsRu8_8F3A3Fn3Dtx78WyC.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f7SGleZyJjdG-Cyuw4gr6HWb0aAKgNL2IfyU08k8XBkJ.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f7SGleZyJjdG-Cyuw4gr6HfM_kYK-BMicoCOEpkmSoh9.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f7SGleZyJjdG-Cyuw4gr6HXAziEl7N_4HGOfqRUWjx78Sp.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2f7SGleZyJjdG-Cyuw4gr6HWI3Sj_PoU34pF8_eTwMo3J.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fZH8EJoflOn30lK4vKfGlNUf_rMeWsBMUQj_2HYNHTrC7Ty4y0m6LWXYNJ23Bmytm.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fZH8EJoflOn30lK4vKfGlNPP2jylsK-Ul97SG95g__FQ7Ty4y0m6LWXYNJ23Bmytm.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fZH8EJoflOn30lK4vKfGlNOcUYvvHT-Mte4HnI9jVBZg7Ty4y0m6LWXYNJ23Bmytm.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fuqfdkfnwinx78uqfdx2fa68x2fZH8EJoflOn30lK4vKfGlNS9PtHx780_GzVpx78VrmbWFX7D.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fR7Oi26tUOmQPu5eiyYatR8GTA1_dMHzmi6kNFRR36UJ.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fR7Oi26tUOmQPu5eiyYatR1Vz18FJQ4i3B49n7V4uDtR.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fR7Oi26tUOmQPu5eiyYatR5blyPbex78NciRP36x78tpd_V9.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fR7Oi26tUOmQPu5eiyYatR_9-go5fhS8l9AhmU41ZBlF.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fR7Oi26tUOmQPu5eiyYatR-mc5x783JheNE1E6p1QEoYQt.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fR7Oi26tUOmQPu5eiyYatRdAoIuoTFcbJDOKHJY7sI6x78.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fR7Oi26tUOmQPu5eiyYatR7Xq8oBO8I4utdOURkFXnth.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1Hx787Hd2aT4su4x78dv6Dl0IntZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1Nte2rVvIsWzWNUcj0FhEa9Z79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1TIMFFDq5eQ8hMT74Mqqx78y9Z79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1Gmd7R3820MM5MIFNeqpa49Z79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1T5_0kw28qIsRsQYSaMKQQlZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1KOg914JcP9y2Jo3K5uK-2pZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold Italic'), local('SourceSansPro-SemiBoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1KzWkuY3-9I1KJFykpx78uhpC8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1NfCNBitNosmvx78lwIgdluURZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1OtnGazwdr0YkDqi5j0y6kpZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1SbdMDAJGmRfYu1m3PmwX6FZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1QCdyi54u7voeibDtZDfpShZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1GNM0FRLikpHkeT-8pB6jGpZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1IcrcHEY3pTwCSUpkGJXA1DZ79KfukObdfhO1cSz0wr4.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fkuYAMP3vx78CgNjYMYwsVM1M5hV7QTUIUp3LkARy5RvDM8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fTIjqN6fMGDIGvljNFM7eqNCDZvDAOjv6_OyVwzF8_j3.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fTIjqN6fMGDIGvljNFM7eqJczqZnLC3yZRADjzOrgo93.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fTIjqN6fMGDIGvljNFM7eqGF5J10u__FDaneOG1WizDD.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fTIjqN6fMGDIGvljNFM7eqH2-pCVtt8x78bU5sV1P2O1ch.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fTIjqN6fMGDIGvljNFM7eqHcj0Yjbr7_CBkgLhmhCb9l.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fTIjqN6fMGDIGvljNFM7eqNf6DIytfwebXCcYMllJCRb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fTIjqN6fMGDIGvljNFM7eqOgUKizNDytQebXY13zme_D.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLLBLL3s21cfU_OZq4mtzZ928wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLRU0lCv9hS3uoAon0l7v4Rk8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLNbcY-W6wHPVpjYyx78IBekoQ8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLKHZGRlFYpMFVD-Ga-29chs8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLRECKe7nIPi2LOSXfcWDnXo8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLPdLOmFm-WJ5GcLhi_nedja8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro SemiBold'), local('SourceSansPro-SemiBold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLReKtCE-Po082sG_-4oOmqF.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLSI5r1uHqlMyDLK5mkiSNJg8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLIBVa4O4URITJLjBTjZXeDC8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLNDM9AvUNYeUntPYZHs0zAw8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLKh2dx78l-PGAFWw5BAXOZdWY8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLRrx782ZMx78NgoZcJOvNbtl-n_8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLT9x786Zc9UzNrBUp0kXw1MUQ8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLOpK3M3dj92bx78kuBdbif3tl.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLS6zCVf0vo-KCh3RTplmkFe8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLJZFhZ-SGGG5h12P0YoSCgw8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLTJyGCMWx78mz4Hl0IdOQrnaa8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLHTO21ZrP49vUf7H1JTS8Kg8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLIHlGQyx78swiP6Bg_DRup6Je8wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLPkVPJrsZi8LMlPTlfKb8T88wLAyx78YpUx78gIfozT0zjVb.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://c-6rtwjumjzx7877x24ktsyx78x2elx78yfynhx2ehtr.g00.ibtimes.com/g00/3_c-6bbb.ngynrjx78.htr_/c-6RTWJUMJZX77x24myyux3ax2fx2fktsyx78.lx78yfynh.htrx2fx78x2fx78tzwhjx78fsx78uwtx2fa66x2fytfiThkrqy4g83iMOcTGLNv-Kg5ek383ywN29ztoEVD.btkk7x3fn65h.rfwp.styMYRQ.yduj_$/$/$/$/$) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
