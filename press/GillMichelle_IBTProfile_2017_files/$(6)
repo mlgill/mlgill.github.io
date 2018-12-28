@@ -1,0 +1,64 @@
+;/*7P1RCD3H9R0M*/var I10C;var I11C;(function(I10C){ I10C.ScriptBegin || (I10C.ScriptBegin = function(){}); I10C.ScriptEnd || (I10C.ScriptEnd = function(){});I10C.PostMessage || (I10C.PostMessage = function(){ return this.postMessage.apply(this, arguments); });I10C.Location || (I10C.Location = function i10cloc(ba$e, isWrite, op){ var locat1onPresent = Object.getOwnPropertyNames(ba$e).indexOf('locat1on') !== -1; return (!isWrite) ? ( locat1onPresent ? ba$e.locat1on : (ba$e.location || ba$e.locat1on)) : (locat1onPresent ? {set href(v) {ba$e.locat1on.href = v;}, get href() {return i10cloc(ba$e,false,op);}} : {set href(v) {ba$e.location = v;}, get href() {return i10cloc(ba$e,false,op);}});});
+I11C.PreLocationContextProxy || (I11C.PreLocationContextProxy = function i10cPreLocContext(ba$e) { return ba$e;});})(I11C||I10C|| (I11C = {}));(I11C || I10C).ScriptBegin();(function(){
+  /**
+   * load external JavaScript
+   * @see http://www.nczonline.net/blog/2009/07/28/the-best-way-to-load-external-javascript/
+   */
+  function loadScript(url, callback){
+
+      var script = document.createElement("script")
+      script.type = "text/javascript";
+
+      if (script.readyState){  //IE
+          script.onreadystatechange = function(){
+              if (script.readyState == "loaded" ||
+                      script.readyState == "complete"){
+                  script.onreadystatechange = null;
+                  callback();
+              }
+          };
+      } else {  //Others
+          script.onload = function(){
+              callback();
+          };
+      }
+
+      script.src = url;
+      document.getElementsByTagName("head")[0].appendChild(script);
+  }
+
+  var jQueryLoadCallback = function() {
+    var jq191 = $.noConflict(true);
+    (function($){
+      $('#most_read_widget').html(' \
+<ul class="most-popular-list"> \
+        <li class="item item-1 clearfix"> \
+                                <div class="item-link"> \
+          <a href="http://www.ibtimes.com/512-year-old-shark-believed-be-oldest-living-vertebrate-found-north-atlantic-2628368?utm_source=internal&utm_campaign=most_read&utm_medium=most_read1">Ancient Shark Found In North Atlantic </a>        </div> \
+              </li> \
+        <li class="item item-2 clearfix"> \
+                                <div class="item-link"> \
+          <a href="http://www.ibtimes.com/penn-state-beaver-campus-shooting-leaves-2-dead-2628118?utm_source=internal&utm_campaign=most_read&utm_medium=most_read2">Penn State Beaver Campus Shooting Prompts Lockdown</a>        </div> \
+              </li> \
+        <li class="item item-3 clearfix"> \
+                                <div class="item-link"> \
+          <a href="http://www.ibtimes.com/elon-musk-says-humans-should-already-have-moon-base-2628109?utm_source=internal&utm_campaign=most_read&utm_medium=most_read3">Elon Musk Says Humans Should Already Have A Moon Base </a>        </div> \
+              </li> \
+        <li class="item item-4 clearfix"> \
+                                <div class="item-link"> \
+          <a href="http://www.ibtimes.com/queen-elizabeth-ii-doesnt-prefer-meghan-markle-kate-middleton-says-report-2628975?utm_source=internal&utm_campaign=most_read&utm_medium=most_read4">Does The Queen Prefer Meghan Over Kate?</a>        </div> \
+              </li> \
+        <li class="item item-5 clearfix"> \
+                                <div class="item-link"> \
+          <a href="http://www.ibtimes.com/what-was-kate-middletons-present-queen-elizabeth-ii-last-christmas-2629203?utm_source=internal&utm_campaign=most_read&utm_medium=most_read5">What Did Kate Middleton Give Queen Elizabeth II Last Christmas?</a>        </div> \
+              </li> \
+  </ul> \
+ \
+');
+    })(jq191);
+  }
+
+  loadScript('http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', jQueryLoadCallback);
+})();
+
+;(I11C || I10C).ScriptEnd();
