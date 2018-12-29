@@ -1172,6 +1172,10 @@
 		margin-bottom: 2em;
 	}
 
+	p.emph {
+		font-size: 1.25em;
+	}
+
 /* Form */
 
 	form label {
