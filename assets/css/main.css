@@ -16,7 +16,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
-	}
+    }
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
@@ -1066,6 +1066,25 @@
 
 	}
 
+    @media print {
+        p, p.emph {
+            page-break-inside: avoid;
+            font-size: 1.0em;
+            margin-bottom: 0em;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
+            margin-top: 1.5em;
+        }
+
+        .wrapper {
+            background-image: none;
+            background-color: white;
+        }
+    }
+    
 /* Basic */
 
 	body, input, textarea, select {
@@ -1169,11 +1188,17 @@
 	}
 
 	p, ul, ol, dl, table {
-		margin-bottom: 2em;
-	}
+		margin-bottom: 0em;
+    }
+    
+    p {
+        font-size: 1.25em;
+    }
 
 	p.emph {
-		font-size: 1.25em;
+        font-size: 1.25em;
+        font-weight: bold;
+        /* margin-bottom: 0em; */
 	}
 
 /* Form */
