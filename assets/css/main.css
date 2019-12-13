@@ -1067,21 +1067,69 @@
 	}
 
     @media print {
-        p, p.emph {
-            page-break-inside: avoid;
-            font-size: 1.0em;
-            margin-bottom: 0em;
-        }
-        
-        h2 {
-            font-size: 1.5em;
+        @page { 
+            margin-top: 1.5em; 
             margin-bottom: 1.5em;
-            margin-top: 1.5em;
+            border: 0px !important;
+            box-shadow: 0px !important;
         }
 
-        .wrapper {
+        .no-print, .no-print * {
+            display: none !important;
+        }
+
+        p, p.emph {
+            page-break-inside: avoid;
+            font-size: 1.0em !important;
+            margin-bottom: 0em;
+            margin-top: 0em;
+            margin-left: 0.0in !important;
+            text-shadow: none !important;
+            /* margin-right: 0.5in !important; */
+            /* line-height: 1.0em !important; */
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-top: 1em;
+            margin-left: 1.0in !important;
+            margin-right: 0.0in !important;
+            /* padding-top: 1em;
+            padding-left: 2em; */
+            /* 1em 2em 0em 0em; */
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 0.75em;
+            margin-top: 1.5em;
+            margin-left: 0.0in;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            /* font-weight: lighter !important; */
+            font-style: italic;
+            margin-bottom: 0.2em;
+            margin-top: 1.2em;
+        }
+
+        body {
+            line-height: 1.0em;
+        }
+
+        body, div, article, .wrapper, .wrapper.style2, .wrapper.style3, .container {
             background-image: none;
             background-color: white;
+            border-color: white !important;
+            border: 0px !important;
+            box-shadow: 0px !important;
+        }
+
+        .label, .label-outline, .label-blue {
+            border: 0.1px;
+            color: #3e3e3e !important;
+            border-color: #3e3e3e !important;
         }
     }
     
