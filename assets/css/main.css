@@ -18,6 +18,10 @@
 		vertical-align: baseline;
     }
 
+    .print-only{
+        display: none !important;
+    }
+
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
@@ -1068,14 +1072,32 @@
 
     @media print {
         @page { 
-            margin-top: 1.5em; 
+            margin-top: 2.0em; 
             margin-bottom: 1.5em;
-            border: 0px !important;
-            box-shadow: 0px !important;
         }
 
         .no-print, .no-print * {
             display: none !important;
+        }
+
+        .print-only{
+            display: block !important;
+        }
+
+        .no-break {
+            page-break-inside: avoid !important;
+        }
+
+        p, p.emph, h1, h2, h3, b, strong {
+            color: black !important;
+            text-shadow: none !important;
+        }
+
+        .label, .label-outline {
+            border: 0.1px;
+            color: black !important;
+            border-color: black !important;
+            text-shadow: none !important;
         }
 
         p, p.emph {
@@ -1083,10 +1105,8 @@
             font-size: 1.0em !important;
             margin-bottom: 0em;
             margin-top: 0em;
-            margin-left: 0.0in !important;
-            text-shadow: none !important;
-            /* margin-right: 0.5in !important; */
-            /* line-height: 1.0em !important; */
+            margin-left: 0.0em !important;
+            margin-right: 0.0em !important;
         }
         
         h1 {
@@ -1094,9 +1114,6 @@
             margin-top: 1em;
             margin-left: 1.0in !important;
             margin-right: 0.0in !important;
-            /* padding-top: 1em;
-            padding-left: 2em; */
-            /* 1em 2em 0em 0em; */
         }
 
         h2 {
@@ -1108,7 +1125,6 @@
 
         h3 {
             font-size: 1.2em;
-            /* font-weight: lighter !important; */
             font-style: italic;
             margin-bottom: 0.2em;
             margin-top: 1.2em;
@@ -1118,18 +1134,11 @@
             line-height: 1.0em;
         }
 
-        body, div, article, .wrapper, .wrapper.style2, .wrapper.style3, .container {
-            background-image: none;
-            background-color: white;
-            border-color: white !important;
-            border: 0px !important;
-            box-shadow: 0px !important;
-        }
-
-        .label, .label-outline, .label-blue {
-            border: 0.1px;
-            color: #3e3e3e !important;
-            border-color: #3e3e3e !important;
+        .wrapper, .wrapper * {
+            background-image: none !important;
+            background-color: white !important;
+            background: white !important;
+            box-shadow: none !important;
         }
     }
     
@@ -1208,7 +1217,11 @@
 
 	h2, h3, h4, h5, h6 {
 		font-weight: 700;
-	}
+    }
+    
+    h3 {
+        margin-top: 15px !important;
+    }
 
 	h1 {
 		font-weight: 300;
@@ -1247,7 +1260,11 @@
         font-size: 1.25em;
         font-weight: bold;
         /* margin-bottom: 0em; */
-	}
+    }
+    
+    p.left {
+        text-align: left;
+    }
 
 /* Form */
 
@@ -1684,12 +1701,12 @@
 	}
 
 		.wrapper.first {
-			box-shadow: none;
+            box-shadow: none;
 		}
 
 		.wrapper.style1 {
 			background-image: none;
-			background-color: #fff;
+            background-color: #fff;
 		}
 
 		.wrapper.style2 {
