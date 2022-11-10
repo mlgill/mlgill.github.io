@@ -1742,6 +1742,10 @@ ul.social li a.fa-twitter {
     background-color: #2DAAE4;
 }
 
+ul.social li a.fa-mastodon {
+    background-color: #573CCF;
+}
+
 ul.social li a.fa-facebook {
     background-color: #3C5A98;
 }
