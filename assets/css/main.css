@@ -1095,8 +1095,8 @@
 
         .label, .label-outline {
             border: 0.1px;
-            color: black !important;
-            border-color: black !important;
+            /* color: black !important; */
+            /* border-color: black !important; */
             text-shadow: none !important;
         }
 
