@@ -1,0 +1,13 @@
+* text=auto eol=lf
+
+# Treat common binary types as binary to avoid line-ending normalization
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.pdf -text
+*.ico -text
+*.woff -text
+*.woff2 -text
+*.ttf -text
+*.eot -text
