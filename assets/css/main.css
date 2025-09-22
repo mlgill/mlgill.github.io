@@ -98,6 +98,31 @@ video {
     vertical-align: baseline;
 }
 
+/* Safari-specific print tweaks to reduce whitespace while
+   still avoiding hanging section titles. Safe to remove if undesired. */
+@media print and (-webkit-min-device-pixel-ratio:0) {
+    /* Keep h2 with start of first paragraph, but relax spacing/breaking */
+    h2 {
+        break-after: avoid-page;
+        page-break-after: avoid;
+        margin-bottom: 0.25em;
+        -webkit-column-break-after: avoid;
+    }
+
+    h2 + p {
+        break-before: auto;
+        page-break-before: auto;
+        -webkit-column-break-before: avoid;
+    }
+
+    /* Allow paragraphs to use available space more flexibly */
+    p, p.emph {
+        orphans: 1;
+        widows: 1;
+        -webkit-column-break-inside: auto;
+    }
+}
+
 .print-only {
     display: none !important;
 }
@@ -1258,7 +1283,7 @@ body {
     p.emph {
         page-break-inside: avoid;
         font-size: 1.0em !important;
-        margin-bottom: 0em;
+        margin-bottom: 0.5em;
         margin-top: 0em;
         margin-left: 0.0em !important;
         margin-right: 0.0em !important;
@@ -1273,8 +1298,8 @@ body {
 
     h2 {
         font-size: 1.5em;
-        margin-bottom: 0.75em;
-        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
         margin-left: 0.0in;
     }
 
@@ -1286,7 +1311,7 @@ body {
     }
 
     body {
-        line-height: 1.0em;
+        line-height: 1.15;
     }
 
     .wrapper,
@@ -1296,6 +1321,26 @@ body {
         background: white !important;
         box-shadow: none !important;
     }
+
+    /* Avoid hanging section titles: keep h2 with the start of its first paragraph */
+    h2 { break-after: avoid; page-break-after: avoid; }
+    h2 + p { break-before: avoid; page-break-before: avoid; }
+
+    /* Allow long paragraphs to break, but avoid ugly single-line fragments */
+    p, p.emph {
+        break-inside: auto;
+        page-break-inside: auto;
+        orphans: 2;
+        widows: 2;
+    }
+
+    /* Keep list/table blocks intact when possible */
+    ul, ol, dl, table { break-inside: avoid; page-break-inside: avoid; }
+
+    /* Normalize line breaks in print: reduce excessive spacing from multiple <br/> */
+    br { display: block; margin: 0.75em 0 !important; }
+    /* Allow consecutive <br/> to create stronger separation in print */
+    /* br + br intentionally left visible */
 }
 
 /* Basic */
