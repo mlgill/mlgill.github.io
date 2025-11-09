@@ -1282,7 +1282,7 @@ body {
     p,
     p.emph {
         page-break-inside: avoid;
-        font-size: 1.0em !important;
+        font-size: 10pt !important;
         margin-bottom: 0.5em;
         margin-top: 0em;
         margin-left: 0.0em !important;
