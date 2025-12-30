@@ -1,0 +1,8 @@
+github_users:
+  - mlgill
+
+repo_description_lines_max: 2
+
+github_repos:
+  - chanzuckerberg/cz-benchmarks
+  - mlgill/wine-o.ai
