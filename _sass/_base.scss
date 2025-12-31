@@ -413,25 +413,28 @@ ul.task-list input[type="checkbox"] {
 
 .social {
   text-align: center;
+  margin-top: 1rem;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 3.25rem;
 
     a {
+      margin: 0 0.2rem;
+
       img {
-        width: 3.2rem;
-        height: 3.2rem;
-        margin-bottom: 1rem;
+        width: 2.6rem;
+        height: 2.6rem;
+        margin-bottom: 0.6rem;
       }
 
       svg {
-        width: 3.5rem;
-        height: 4rem;
-        margin-bottom: 0.5rem;
+        width: 2.8rem;
+        height: 3.25rem;
+        margin-bottom: 0.3rem;
 
         image {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 2.8rem;
+          height: 2.8rem;
         }
       }
 

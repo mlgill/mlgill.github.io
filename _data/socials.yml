@@ -8,8 +8,5 @@ mastodon_username: genomic.social/@modernscientist
 linkedin_username: michellelynngill
 # rss_icon: true  # Disabled - no feed for this website
 
-# Custom link for blog
-custom_social:
-  logo: https://modernscientist.com/favicon.png
-  title: Blog
-  url: https://modernscientist.com
+# Blog link
+blog_url: https://modernscientist.com

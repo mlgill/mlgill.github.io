@@ -6,9 +6,9 @@
 
 - [ ] **Search showing old content**: The search link in the navbar is surfacing old/stale content. Likely cause: example/template content from al-folio is being indexed (e.g., `_projects/`, `_posts/`, `_news/`, `_pages/about_einstein.md`, etc.). To fix, either delete the example content or exclude it from indexing.
 
-- [ ] **Social icons too big**: Icons at the bottom of the "about" section are too large.
+- [x] **Social icons too big**: Icons at the bottom of the "about" section are too large.
 
-- [ ] **Left-align publications**: Publications are indented; try to left-align them with their heading.
+- [x] **Left-align publications**: Publications are indented; try to left-align them with their heading.
 
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
 
