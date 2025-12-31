@@ -1,3 +1,24 @@
+- title: Education
+  type: education
+  contents:
+    - title: Ph.D., Molecular Biophysics & Biochemistry
+      institution: Yale University
+      location: New Haven, CT
+      year: 2003-2006
+      description:
+        - "Thesis: Development of <sup>205</sup>Tl NMR methods for the direct study of monovalent metal ions and ligands in nucleic acids"
+        - "Advisors: J. Patrick Loria and Scott Strobel"
+    - title: M.Phil., Molecular Biophysics & Biochemistry
+      institution: Yale University
+      location: New Haven, CT
+      year: 2001-2003
+    - title: B.S., Biochemistry
+      institution: University of Kansas
+      location: Lawrence, KS
+      year: 1997-2001
+      description:
+        - Highest Distinction and Honors (Summa Cum Laude)
+
 - title: Selected Experience
   type: experience
   contents:
@@ -57,27 +78,6 @@
       description:
         - Worked with clients in finance and pharmaceutical sectors
         - Part of winning team for 2007 Global BCG Strategy Olympics
-
-- title: Education
-  type: education
-  contents:
-    - title: Ph.D., Molecular Biophysics & Biochemistry
-      institution: Yale University
-      location: New Haven, CT
-      year: 2003-2006
-      description:
-        - "Thesis: Development of <sup>205</sup>Tl NMR methods for the direct study of monovalent metal ions and ligands in nucleic acids"
-        - "Advisors: J. Patrick Loria and Scott Strobel"
-    - title: M.Phil., Molecular Biophysics & Biochemistry
-      institution: Yale University
-      location: New Haven, CT
-      year: 2001-2003
-    - title: B.S., Biochemistry
-      institution: University of Kansas
-      location: Lawrence, KS
-      year: 1997-2001
-      description:
-        - Highest Distinction and Honors (Summa Cum Laude)
 
 - title: Selected Publications
   type: publications
