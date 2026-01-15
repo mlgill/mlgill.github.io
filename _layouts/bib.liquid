@@ -47,9 +47,7 @@
 
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
-    <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
-    <!-- Author -->
+    <!-- Author (Science format: Authors first) -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
 
@@ -147,8 +145,9 @@
         </i>
       {% endif %}
     </div>
-
-    <!-- Journal/Book title and date -->
+    <!-- Title (Science format: Title after authors) -->
+    <div class="title">{{ entry.title }}.</div>
+    <!-- Journal/Book title and date (Science format: Journal Volume, Pages (Year)) -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
     {% if entry.type == 'article' %}
@@ -159,12 +158,6 @@
       {% capture entrytype %}<em>{{ entry.school }}</em>{% endcapture %}
     {% else %}
       {% capture entrytype %}{% endcapture %}
-    {% endif %}
-    {% if entry.month %}
-      {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
-    {% endif %}
-    {% if entry.year %}
-      {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
     {% endif %}
     {% if entry.location %}
       {% capture entrytype %}{{ entrytype }}{{ ", " }}{{ entry.location }}{% endcapture %}
@@ -181,7 +174,8 @@
     {% if entrytype_text contains "In preparation" or entrytype_text contains "in preparation" %}
       {% assign is_in_preparation = true %}
     {% endif %}
-    {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" and is_in_preparation == false %}, {% endif %}{% unless is_in_preparation %}{{ entrymonth }}{{ entryyear }}{% endunless %}{% endcapture %}
+    {%- comment -%} Science format: Journal Volume, Pages (Year) {%- endcomment -%}
+    {% capture periodical %}{{ entrytype }}{% unless is_in_preparation %}{% if entry.volume %} <strong>{{ entry.volume }}</strong>{% endif %}{% if entry.pages %}, {{ entry.pages }}{% endif %}{% if entry.year %} ({{ entry.year }}){% endif %}{% endunless %}{% endcapture %}
     <div class="periodical">
       {{ periodical | strip }}
     </div>

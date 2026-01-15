@@ -2,21 +2,15 @@
 
 ## Pending Issues
 
-- [ ] **Fix author list truncation**: The `max_author_limit` config setting doesn't seem to work as expected. Need to investigate why setting it to blank/0/100 doesn't disable truncation. May require Jekyll server restart or deeper investigation of the bib.liquid template caching. **Update (2025-12-31):** Set `max_author_limit` to blank in _config.yml. Verify this works after next deployment.
-
 - [ ] **Search showing old content**: The search link in the navbar is surfacing old/stale content. Likely cause: example/template content from al-folio is being indexed (e.g., `_projects/`, `_posts/`, `_news/`, `_pages/about_einstein.md`, etc.). To fix, either delete the example content or exclude it from indexing.
 
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
-
-- [ ] **Selected Publications formatting in CV**: Selected Publications aren't correctly formatted in the CV section.
 
 - [ ] **CV to PDF conversion**: Investigate how to convert CV to PDF when building (find markdown CV example on web). Create PDF and add a PDF link to the top right of the CV page, like in the template.
 
 - [ ] **Consider adding Selected Presentations to CV**: Decide if Selected Presentations should be added to the CV.
 
 ## Blog Content Updates
-
-- [ ] **Add BioNeMo framework paper to publications**: http://arxiv.org/abs/2411.10548
 
 - [ ] **Add CZ-benchmarks coverage to press**: Add press coverage of CZ-benchmarks.
 
@@ -137,3 +131,6 @@ eval "$(rbenv init -)" && rbenv local 3.3.10 && bundle exec jekyll serve
 - [x] Style publication/presentation buttons with colors
 - [x] Create custom CV templates (experience, education, publications, awards)
 - [x] Hide year for "In preparation" publications
+- [x] Fix author list truncation
+- [x] Add BioNeMo framework paper to publications
+- [x] Selected Publications formatting in CV

@@ -3,7 +3,8 @@
     {% if content.visible == false %}{% continue %}{% endif %}
     <li class="list-group-item">
       <div class="publication-entry">
-        <span class="authors">{{ content.description | first }}</span>
+        {%- comment -%} Science format: Authors, Title. Journal (Year) {%- endcomment -%}
+        <span class="authors">{{ content.description | first }},</span>
         {% assign doi_link = nil %}
         {% if content.linkitems %}
           {% for item in content.linkitems %}
@@ -14,12 +15,11 @@
           {% endfor %}
         {% endif %}
         {% if doi_link %}
-          <span class="title"><a href="{{ doi_link }}" target="_blank">"{{ content.title }}"</a></span>
+          <span class="title"><a href="{{ doi_link }}" target="_blank">{{ content.title }}</a>.</span>
         {% else %}
-          <span class="title">"{{ content.title }}"</span>
+          <span class="title">{{ content.title }}.</span>
         {% endif %}
-        <span class="venue"><em>{{ content.institution }}</em></span>
-        {% if content.year %}<span class="year">({{ content.year }})</span>{% endif %}.
+        <span class="venue"><em>{{ content.institution }}</em></span>{% if content.year %} <span class="year">({{ content.year }})</span>{% endif %}
       </div>
     </li>
   {% endfor %}
