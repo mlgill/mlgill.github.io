@@ -12,19 +12,18 @@ nav_order: 5
 **Scientific Discovery: From the Lab Bench to the GPU**
 <br>*Andy Byrd Retirement Symposium*
 <br>Invited Keynote, April 19, 2024, Institute for Bioscience & Biotechnology Research, University of Maryland, NIST, Bethesda, MD
-<br><a href="/assets/pdf/presentations/2024_GillMichelle_Byrd_Retirement_Symposium.pdf" class="btn-presentation btn-slides">SLIDES</a> <a href="https://www.ibbr.umd.edu/groups/andy-byrd-retirement-symposium/agenda" class="btn-presentation btn-program">PROGRAM</a>
+<br><a href="https://www.ibbr.umd.edu/groups/andy-byrd-retirement-symposium/agenda" class="btn-presentation btn-program">PROGRAM</a>
 
 ## 2023
 
 **Scientific Discovery: From the Lab Bench to the GPU**
 <br>*PyData NYC*
 <br>Invited Keynote, November 2, 2023, New York, NY
-<br><a href="/assets/pdf/presentations/2023_GillMichelle_PyDataNYC.pdf" class="btn-presentation btn-slides">SLIDES</a> <a href="https://pydata.org/nyc2023/schedule/html_export/html/talk/YN7ZQG/" class="btn-presentation btn-abstract">ABSTRACT</a> <a href="https://www.youtube.com/watch?v=ATo2SzA1Pp4" class="btn-presentation btn-video">VIDEO</a>
 
 **NVIDIA BioNeMo: A framework and service for development and use of generative AI in drug discovery**
 <br>*6th RSC-BMCS / RSC-CICAG Artificial Intelligence in Chemistry Conference*
 <br>Invited Keynote, September 5, 2023, Cambridge, UK
-<br><a href="/assets/pdf/presentations/2023_GillMichelle_RSC_AI_Chem.pdf" class="btn-presentation btn-slides">SLIDES</a> <a href="https://cdn.eventsforce.net/files/ef-px6ci6a56tzs/website/237/final_ai_in_chemistry_2nd_ann_2023.pdf" class="btn-presentation btn-program">PROGRAM</a>
+<br><a href="https://cdn.eventsforce.net/files/ef-px6ci6a56tzs/website/237/final_ai_in_chemistry_2nd_ann_2023.pdf" class="btn-presentation btn-program">PROGRAM</a>
 
 ## 2021
 
