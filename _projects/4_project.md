@@ -1,4 +1,5 @@
 ---
+inline: true
 layout: page
 title: project 4
 description: another without an image
@@ -6,6 +7,7 @@ img:
 importance: 3
 category: fun
 ---
+inline: true
 
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
