@@ -1,7 +1,7 @@
 {%- comment -%}
 Publications section using jekyll-scholar with papers.bib
-Shows selected publications marked with keywords = {selected}
+Shows selected publications marked with selected={true}
 {%- endcomment -%}
 <div class="publications">
-  {% bibliography --query @*[keywords=selected] %}
+  {% bibliography --query @*[selected=true] %}
 </div>
