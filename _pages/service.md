@@ -7,12 +7,7 @@ nav: true
 nav_order: 7
 ---
 
-{% for svc in site.data.service %}
-{% if svc.visible != false %}
-**{{ svc.title }}**
-<br>*{{ svc.institution }}*{% if svc.year %}, {{ svc.year }}{% endif %}
-{% if svc.description %}{% for desc in svc.description %}
-<br>{{ desc }}{% endfor %}{% endif %}
+{% for svc in site.data.service %}{% if svc.visible != false %}
+**{{ svc.title }}**<br>*{{ svc.institution }}*{% if svc.year %}, {{ svc.year }}{% endif %}{% if svc.description %}{% for desc in svc.description %}<br>{{ desc }}{% endfor %}{% endif %}
 
-{% endif %}
-{% endfor %}
+{% endif %}{% endfor %}
