@@ -1,5 +1,5 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
-  {% for content in entry.contents %}
+  {% for content in include.data %}
     {% if content.visible == false %}{% continue %}{% endif %}
     <li class="list-group-item">
       <div class="row">

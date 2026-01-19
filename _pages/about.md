@@ -24,6 +24,4 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am an R&D Manager on NVIDIA's Virtual Cell team. Our team uses data, deep learning, and HPC to develop models that simulate cellular states. My focus is on the benchmarks and development of supporting tools that help evaluate and improve these models.
-
-Previously I was a Senior Machine Learning Engineer and Data Scientist at BenevolentAI and a member of [Arthur Palmer's](https://www.biochem.cumc.columbia.edu/research-labs/palmer-lab) research group where I developed and applied nuclear magnetic resonance (NMR) spin relaxation experiments to understand how enzyme dynamics are critical to biological function.
+{{ site.data.bio.bio | markdownify }}

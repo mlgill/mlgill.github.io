@@ -1,0 +1,183 @@
+# Presentations entries (year-grouped)
+# visible: false to hide entry everywhere (archived)
+# selected: true to include in abbreviated CV
+
+- year: 2024
+  entries:
+    - title: "Scientific Discovery: From the Lab Bench to the GPU"
+      venue: "Andy Byrd Retirement Symposium"
+      type: "Invited Keynote"
+      date: "April 19, 2024"
+      location: "Institute for Bioscience & Biotechnology Research, University of Maryland, NIST, Bethesda, MD"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2024_GillMichelle_Byrd_Retirement_Symposium.pdf
+        program: https://www.ibbr.umd.edu/groups/andy-byrd-retirement-symposium/agenda
+
+- year: 2023
+  entries:
+    - title: "Scientific Discovery: From the Lab Bench to the GPU"
+      venue: "PyData NYC"
+      type: "Invited Keynote"
+      date: "November 2, 2023"
+      location: "New York, NY"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2023_GillMichelle_PyDataNYC.pdf
+        abstract: https://pydata.org/nyc2023/schedule/html_export/html/talk/YN7ZQG/
+        video: https://www.youtube.com/watch?v=ATo2SzA1Pp4
+
+    - title: "NVIDIA BioNeMo: A framework and service for development and use of generative AI in drug discovery"
+      venue: "6th RSC-BMCS / RSC-CICAG Artificial Intelligence in Chemistry Conference"
+      type: "Invited Keynote"
+      date: "September 5, 2023"
+      location: "Cambridge, UK"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2023_GillMichelle_RSC_AI_Chem.pdf
+        program: https://cdn.eventsforce.net/files/ef-px6ci6a56tzs/website/237/final_ai_in_chemistry_2nd_ann_2023.pdf
+
+- year: 2021
+  entries:
+    - title: "Exploring Molecular Space and Accelerating Drug Discovery on the GPU with Clara Discovery"
+      venue: "Gates Foundation Grand Challenges: Applications of Artificial Intelligence in Machine Learning"
+      type: "Invited Talk"
+      date: "November 10, 2021"
+      location: "Virtual"
+      authors: ""
+      visible: true
+      selected: true
+      links: {}
+
+    - title: "Accelerating Drug Discovery with Clara Discovery and MegaMolBART"
+      venue: "4th RSC-BMCS / RSC-CICAG Artificial Intelligence in Chemistry"
+      type: "Invited Talk"
+      date: "September 27, 2021"
+      location: "Virtual"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2021_GillMichelle_RSCAIChemistry.pdf
+
+- year: 2020
+  entries:
+    - title: "Real Time, GPU-Accelerated Analysis and Visualization in the Life Sciences"
+      venue: "Ken Kennedy Institute Data Science Conference"
+      type: "Invited Keynote"
+      date: "October 26-27, 2020"
+      location: "Virtual"
+      authors: "<u>Michelle Gill</u> and Avantika Lal"
+      visible: true
+      selected: true
+      links:
+        program: https://2020ricedsconference.rice.edu/speakers/
+        abstract: /assets/pdf/press/GillMichelle_RiceDataScienceConference_Abstract_2020.pdf
+        slides: /assets/pdf/presentations/2020_GillMichelle_RiceDataScienceConference.pdf
+
+- year: 2019
+  entries:
+    - title: "Artificial intelligence driven drug discovery"
+      venue: "NYC R Conference"
+      type: "Invited Presentation"
+      date: "May 10, 2019"
+      location: "New York, NY"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2019_GillMichelle_NYC_R_Keynote.pdf
+
+    - title: "Panel: Careers in data science"
+      venue: "Tri-Institutional Career Symposium"
+      type: "Panel"
+      date: "April 9, 2019"
+      location: "Memorial Sloan Kettering Cancer Center, The Rockefeller University and Weill Cornell Medicine, New York, NY"
+      authors: ""
+      visible: true
+      selected: false
+      links:
+        program: /assets/pdf/press/GillMichelle_TriICareerSymposiumFlyer_2019.pdf
+
+    - title: "Machine learning for target identification and lead optimization in drug discovery"
+      venue: "New York Area Group for Informatics and Modeling"
+      type: "Invited Presentation"
+      date: "February 26, 2019"
+      location: "New York, NY"
+      authors: "Alix Lacoste and <u>Michelle Gill</u>"
+      visible: true
+      selected: true
+      links:
+        abstract: https://www.meetup.com/New-York-Area-Group-for-Informatics-and-Modeling/events/258069925/
+
+- year: 2018
+  entries:
+    - title: "Accelerating the journey from data to medicine"
+      venue: "NeurIPS"
+      type: "Expo Talk"
+      date: "2018"
+      location: "Montreal, Canada"
+      authors: "Amir Saffari, Dan Neil, Alix Lacoste, and <u>Michelle Gill</u>"
+      visible: true
+      selected: true
+      links:
+        abstract: https://nips.cc/Expo/Conferences/2018/Schedule?talk_id=20
+
+    - title: "Artificial intelligence as a catalyst for scientific discovery"
+      venue: "JupyterCon"
+      type: "Invited Keynote"
+      date: "2018"
+      location: "New York, NY"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        abstract: https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/speaker/264851
+        slides: /assets/pdf/presentations/2018_GillMichelle_JupyterCon_Keynote.pdf
+        video: https://www.oreilly.com/library/view/jupytercon-new-york/9781492025818/video322559.html
+
+    - title: "From structural biology to AI: a holistic approach to studying molecular machines"
+      venue: "Brookhaven National Laboratory"
+      type: "Invited Presentation"
+      date: "2018"
+      location: "Upton, NY"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2018_GillMichelle_Brookhaven.pdf
+
+- year: 2017
+  entries:
+    - title: "Efficient image search and identification: the making of Wine-O.AI"
+      venue: "SciPy Conference"
+      type: "Selected Presentation"
+      date: "2017"
+      location: "Austin, TX"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2017_GillMichelle_SciPy_WINE-O_AI.pdf
+        video: https://www.youtube.com/watch?v=3CUWMZ1304I
+        code: https://github.com/mlgill/wine-o.ai
+
+- year: 2006
+  entries:
+    - title: "Development of <sup>205</sup>Tl NMR methods for the direct study of monovalent metal ions and ligands in nucleic acids"
+      venue: "Ph.D. Thesis Defense, Yale University"
+      type: "Thesis Defense"
+      date: "2006"
+      location: "New Haven, CT"
+      authors: ""
+      visible: true
+      selected: true
+      links:
+        slides: /assets/pdf/presentations/2006_GillMichelle_ThesisDefense.pdf
+        thesis: /assets/pdf/GillMichelle_Thesis.pdf

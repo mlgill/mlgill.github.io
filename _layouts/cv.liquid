@@ -28,35 +28,50 @@ layout: default
 
     <article>
       <div class="cv">
-        {% for entry in site.data.cv %}
-          <a class="anchor" id="{{ entry.title }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
-            <div>
-              {% if entry.type == 'list' %}
-                {% include cv/list.liquid %}
-              {% elsif entry.type == 'map' %}
-                {% include cv/map.liquid %}
-              {% elsif entry.type == 'nested_list' %}
-                {% include cv/nested_list.liquid %}
-              {% elsif entry.type == 'time_table' %}
-                {% include cv/time_table.liquid %}
-              {% elsif entry.type == 'publications' %}
-                {% include cv/publications.liquid %}
-              {% elsif entry.type == 'experience' %}
-                {% include cv/experience.liquid %}
-              {% elsif entry.type == 'awards' %}
-                {% include cv/awards.liquid %}
-              {% elsif entry.type == 'education' %}
-                {% include cv/education.liquid %}
-              {% elsif entry.type == 'list_groups' %}
-                {% include cv/list_groups.liquid %}
-              {% else %}
-                {{ entry.contents }}
-              {% endif %}
-            </div>
+        {%- comment -%} Education Section {%- endcomment -%}
+        <a class="anchor" id="Education"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Education</h3>
+          <div>
+            {% include cv/education.liquid data=site.data.education %}
           </div>
-        {% endfor %}
+        </div>
+
+        {%- comment -%} Experience Section {%- endcomment -%}
+        <a class="anchor" id="Selected Experience"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Selected Experience</h3>
+          <div>
+            {% include cv/experience.liquid data=site.data.experience %}
+          </div>
+        </div>
+
+        {%- comment -%} Publications Section {%- endcomment -%}
+        <a class="anchor" id="Selected Publications"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Selected Publications</h3>
+          <div>
+            {% include cv/publications_bib.liquid %}
+          </div>
+        </div>
+
+        {%- comment -%} Service Section {%- endcomment -%}
+        <a class="anchor" id="Service"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Service</h3>
+          <div>
+            {% include cv/service.liquid data=site.data.service %}
+          </div>
+        </div>
+
+        {%- comment -%} Awards Section {%- endcomment -%}
+        <a class="anchor" id="Honors and Awards"></a>
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">Honors and Awards</h3>
+          <div>
+            {% include cv/awards.liquid data=site.data.awards %}
+          </div>
+        </div>
       </div>
     </article>
   </div>

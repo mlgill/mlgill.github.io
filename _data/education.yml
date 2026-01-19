@@ -1,0 +1,32 @@
+# Education entries
+# visible: false to hide entry everywhere (archived)
+# selected: true to include in abbreviated CV
+
+- title: Ph.D., Molecular Biophysics & Biochemistry
+  institution: Yale University
+  location: New Haven, CT
+  year: 2003-2006
+  visible: true
+  selected: true
+  description:
+    - "Thesis: Development of <sup>205</sup>Tl NMR methods for the direct study of monovalent metal ions and ligands in nucleic acids"
+    - "Advisors: J. Patrick Loria and Scott Strobel"
+  links:
+    thesis: /assets/pdf/GillMichelle_Thesis.pdf
+    defense: /assets/pdf/presentations/2006_GillMichelle_ThesisDefense.pdf
+
+- title: M.Phil., Molecular Biophysics & Biochemistry
+  institution: Yale University
+  location: New Haven, CT
+  year: 2001-2003
+  visible: true
+  selected: true
+
+- title: B.S., Biochemistry
+  institution: University of Kansas
+  location: Lawrence, KS
+  year: 1997-2001
+  visible: true
+  selected: true
+  description:
+    - Highest Distinction and Honors (Summa Cum Laude)

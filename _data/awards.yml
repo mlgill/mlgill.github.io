@@ -1,0 +1,39 @@
+# Awards entries (year-grouped)
+# visible: false to hide entry everywhere (archived)
+# selected: true to include in abbreviated CV
+
+- year: 2009-2012
+  visible: true
+  selected: true
+  items:
+    - NIH Postdoctoral Research Fellowship (F32 GM089047)
+
+- year: 2007
+  visible: true
+  selected: true
+  items:
+    - Global BCG Strategy Olympics, Winning Team
+
+- year: 2002-2006
+  visible: true
+  selected: true
+  items:
+    - NSF Graduate Research Fellowship
+
+- year: 2000-2001
+  visible: true
+  selected: true
+  items:
+    - Barry M. Goldwater Scholar
+
+- year: 2001
+  visible: true
+  selected: true
+  items:
+    - Outstanding Undergraduate Honors Research Thesis
+
+- year: 1997-2001
+  visible: true
+  selected: true
+  items:
+    - Kansas Board of Regents Full Tuition Merit Scholarship

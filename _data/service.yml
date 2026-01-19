@@ -1,0 +1,42 @@
+# Service entries
+# visible: false to hide entry everywhere (archived)
+# selected: true to include in abbreviated CV
+
+- title: Judge, Preliminary and Final Rounds
+  institution: NYC STEM Fair
+  year: 2022
+  location: New York, NY
+  visible: true
+  selected: true
+  description:
+    - Evaluated submissions in the biochemistry track
+
+- title: Program Chair
+  institution: PyData NYC
+  year: 2018
+  location: New York, NY
+  visible: true
+  selected: true
+  description:
+    - Responsible for conference content, proposal review, speaker selection, and scheduling
+
+- title: Machine Learning Symposium Co-Chair
+  institution: SciPy Conference
+  year: 2018
+  location: Austin, TX
+  visible: true
+  selected: true
+  description:
+    - Co-chair of machine learning / deep learning symposium
+
+- title: Proposal Reviewer
+  institution: JupyterCon
+  year: 2018
+  visible: true
+  selected: false
+
+- title: Reviewer
+  institution: Journal of Open Source Software (JOSS)
+  year: 2018-2019
+  visible: true
+  selected: false

@@ -1,0 +1,84 @@
+# Experience entries
+# visible: false to hide entry everywhere (archived)
+# selected: true to include in abbreviated CV
+
+- title: Applied Research Manager
+  institution: NVIDIA, Virtual Cell Team
+  year: 2022-Present
+  visible: true
+  selected: true
+  description:
+    - Lead benchmarking efforts for virtual cell models, including internal and external collaborations
+    - Developed benchmarking framework and tooling for model assessment and reproducibility
+    - Collaboration with Chan Zuckerberg Initiative on cz-benchmarks for evaluating virtual cell models
+
+- title: Scientific Lead, BioNeMo
+  institution: NVIDIA
+  year: 2019-2023
+  visible: true
+  selected: true
+  description:
+    - R&D Manager and Scientific Lead for Clara Discovery, NVIDIA's platform for accelerating drug discovery
+    - Developed BioNeMo for pre-training and fine tuning of large language models for cheminformatics and proteomics
+
+- title: Senior AI and Deep Learning Scientist
+  institution: NVIDIA
+  year: 2019-2023
+  visible: true
+  selected: true
+  description:
+    - Focused on proteomics including deep learning models to predict peptide spectral matches with >95% F1
+    - Led team using GCNNs to predict molecular properties
+
+- title: Senior Data Scientist and Machine Learning Engineer
+  institution: BenevolentAI
+  year: 2018-2019
+  visible: true
+  selected: true
+  description:
+    - Matrix factorization and GCNNs for drug mechanism importance in knowledge graphs
+    - 3D CNNs for ligand pose and affinity prediction
+
+- title: Senior Deep Learning Consultant
+  institution: NVIDIA
+  year: 2017-2018
+  visible: true
+  selected: true
+  description:
+    - Assisted clients in pharmaceutical and materials science in utilizing deep learning
+
+- title: Senior Data Scientist
+  institution: Metis
+  year: 2016-2017
+  visible: false
+  selected: false
+  description:
+    - Co-instructed 12-week data science bootcamps
+    - Developed 12-week machine learning course for F100 company
+
+- title: Scientist
+  institution: National Cancer Institute, NIH
+  year: 2014-2016
+  visible: true
+  selected: true
+  description:
+    - Developed parallelized, compressed sensing methods for NMR data reconstruction
+
+- title: Postdoctoral Research Fellow
+  institution: Columbia University, Department of Biochemistry and Molecular Biophysics
+  year: 2008-2014
+  visible: true
+  selected: true
+  description:
+    - Demonstrated conformational selection in DNA methyltransferase AlkB
+    - Developed multiple quantum NMR spin relaxation experiments
+    - "Advisor: Professor Arthur G. Palmer, III"
+
+- title: Consultant
+  institution: The Boston Consulting Group
+  year: 2006-2007
+  visible: false
+  selected: false
+  description:
+    - Worked with clients in finance and pharmaceutical sectors
+    - Part of winning team for 2007 Global BCG Strategy Olympics

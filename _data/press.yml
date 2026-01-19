@@ -1,0 +1,34 @@
+# Press and media entries
+# visible: false to hide entry everywhere (archived)
+# selected: true to include in abbreviated CV
+
+- title: "Michelle Gill: AI-Assisted Drug Discovery, NVIDIA, Biofoundation Models, Creating Applied Research Teams"
+  venue: "Learning from Machine Learning"
+  type: "Podcast Interview"
+  year: 2024
+  description: "Discussion of my work on BioNeMo and biofoundation models for drug discovery at NVIDIA"
+  visible: true
+  selected: true
+  links:
+    video: https://www.youtube.com/shorts/plafBzhqd10
+    audio: https://podcasts.apple.com/us/podcast/michelle-gill-ai-assisted-drug-discovery-nvidia-biofoundation/id1663925230?i=1000641253270
+
+- title: "Deep Learning at NVIDIA (with Michelle Gill)"
+  venue: "DataFramed, DataCamp"
+  type: "Podcast Interview"
+  year: 2018
+  description: "Interview about my deep learning work at NVIDIA"
+  visible: true
+  selected: true
+  links:
+    audio: https://www.datacamp.com/community/podcast/deep-learning-nvidia
+
+- title: "How to Keep Your Job Regardless of AI"
+  venue: "International Business Times"
+  type: "Article"
+  year: 2017
+  description: "Profile of my transition from biophysicist to data scientist"
+  visible: true
+  selected: true
+  links:
+    article: https://www.ibtimes.com/how-keep-your-job-regardless-ai-2624078
