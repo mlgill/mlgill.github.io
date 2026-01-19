@@ -1,0 +1,42 @@
+---
+---
+{%- comment -%}
+Simplified bibliography entry for CV page
+Format: Authors, Title. Journal Volume, Pages (Year)
+{%- endcomment -%}
+<li class="list-group-item">
+  <div class="publication-entry">
+    {%- comment -%} Authors {%- endcomment -%}
+    <span class="authors">
+      {%- for author in entry.author_array -%}
+        {% assign author_is_self = false %}
+        {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+        {% if site.scholar.last_name contains author_last_name %}
+          {% if site.scholar.first_name contains author.first %}
+            {% assign author_is_self = true %}
+          {% endif %}
+        {%- endif -%}
+        {%- if forloop.length > 1 -%}
+          {% if forloop.first == false -%}, {% endif %}
+          {%- if forloop.last %}and {% endif -%}
+        {% endif %}
+        {%- if author_is_self -%}<u>{{ author.first }} {{ author.last }}</u>{%- else -%}{{ author.first }} {{ author.last }}{%- endif -%}
+      {%- endfor -%},
+    </span>
+    {%- comment -%} Title with link {%- endcomment -%}
+    {% if entry.doi %}
+      <span class="title"><a href="https://doi.org/{{ entry.doi }}" target="_blank">{{ entry.title }}</a>.</span>
+    {% elsif entry.html %}
+      <span class="title"><a href="{{ entry.html }}" target="_blank">{{ entry.title }}</a>.</span>
+    {% else %}
+      <span class="title">{{ entry.title }}.</span>
+    {% endif %}
+    {%- comment -%} Journal/Venue {%- endcomment -%}
+    {% if entry.journal %}
+      <span class="venue"><em>{{ entry.journal }}</em></span>
+      {% if entry.volume %} <strong>{{ entry.volume }}</strong>{% endif %}
+      {% if entry.pages %}, {{ entry.pages }}{% endif %}
+    {% endif %}
+    {% if entry.year %} <span class="year">({{ entry.year }})</span>{% endif %}
+  </div>
+</li>
