@@ -134,3 +134,4 @@ eval "$(rbenv init -)" && rbenv local 3.3.10 && bundle exec jekyll serve
 - [x] Fix author list truncation
 - [x] Add BioNeMo framework paper to publications
 - [x] Selected Publications formatting in CV
+- [x] Update asset link colors to jewel-toned palette with separate light/dark theme support
