@@ -20,6 +20,15 @@
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #{$white-color};
   --global-highlight-color: #{$red-color-dark};
+
+  // Button colors for light theme (jewel tones, slightly deeper)
+  --btn-blue-color: #1D4ED8;       // Deep Sapphire
+  --btn-red-color: #880000;        // Burgundy (matches theme)
+  --btn-red-dark-color: #991B1B;   // Dark Ruby
+  --btn-green-color: #047857;      // Forest Emerald
+  --btn-cyan-color: #0891B2;       // Deep Aquamarine
+  --btn-purple-color: #7C3AED;     // Deep Amethyst
+  --btn-orange-color: #D97706;     // Deep Amber
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
     #{color.channel($black-color, "green", $space: rgb)},
@@ -91,6 +100,15 @@ html[data-theme="dark"] {
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
   --global-card-bg-color: #{$grey-900};
+
+  // Button colors for dark theme (bright jewel tones)
+  --btn-blue-color: #{$blue-color};       // Sapphire
+  --btn-red-color: #{$red-color};         // Ruby
+  --btn-red-dark-color: #{$red-color-dark}; // Cardinal Ruby
+  --btn-green-color: #{$green-color};     // Emerald
+  --btn-cyan-color: #{$cyan-color};       // Aquamarine
+  --btn-purple-color: #{$purple-color};   // Amethyst
+  --btn-orange-color: #{$orange-color};   // Amber
   --global-back-to-top-bg-color: rgba(
     #{color.channel($white-color, "red", $space: rgb)},
     #{color.channel($white-color, "green", $space: rgb)},

@@ -859,50 +859,50 @@ footer.sticky-bottom {
         }
         // Colored button styles for publication links
         a.btn.btn-doi {
-          color: $blue-color;
-          border-color: $blue-color;
+          color: var(--btn-blue-color);
+          border-color: var(--btn-blue-color);
           &:hover {
-            background-color: $blue-color;
+            background-color: var(--btn-blue-color);
             color: $white-color;
           }
         }
         a.btn.btn-arxiv {
-          color: $red-color-dark;
-          border-color: $red-color-dark;
+          color: var(--btn-red-dark-color);
+          border-color: var(--btn-red-dark-color);
           &:hover {
-            background-color: $red-color-dark;
+            background-color: var(--btn-red-dark-color);
             color: $white-color;
           }
         }
         a.btn.btn-pdf {
-          color: $red-color;
-          border-color: $red-color;
+          color: var(--btn-red-color);
+          border-color: var(--btn-red-color);
           &:hover {
-            background-color: $red-color;
+            background-color: var(--btn-red-color);
             color: $white-color;
           }
         }
         a.btn.bibtex {
-          color: $green-color;
-          border-color: $green-color;
+          color: var(--btn-green-color);
+          border-color: var(--btn-green-color);
           &:hover {
-            background-color: $green-color;
+            background-color: var(--btn-green-color);
             color: $white-color;
           }
         }
         a.btn.abstract {
-          color: $cyan-color;
-          border-color: $cyan-color;
+          color: var(--btn-cyan-color);
+          border-color: var(--btn-cyan-color);
           &:hover {
-            background-color: $cyan-color;
+            background-color: var(--btn-cyan-color);
             color: $white-color;
           }
         }
         a.btn.btn-code {
-          color: $purple-color;
-          border-color: $purple-color;
+          color: var(--btn-purple-color);
+          border-color: var(--btn-purple-color);
           &:hover {
-            background-color: $purple-color;
+            background-color: var(--btn-purple-color);
             color: $white-color;
           }
         }
@@ -925,18 +925,18 @@ footer.sticky-bottom {
             margin-left: 0;
           }
           a.btn-poster {
-            color: $orange-color;
-            border-color: $orange-color;
+            color: var(--btn-orange-color);
+            border-color: var(--btn-orange-color);
             &:hover {
-              background-color: $orange-color;
+              background-color: var(--btn-orange-color);
               color: $white-color;
             }
           }
           a.btn-conf-abstract {
-            color: $cyan-color;
-            border-color: $cyan-color;
+            color: var(--btn-cyan-color);
+            border-color: var(--btn-cyan-color);
             &:hover {
-              background-color: $cyan-color;
+              background-color: var(--btn-cyan-color);
               color: $white-color;
             }
           }
@@ -1119,80 +1119,80 @@ html.transition *:after {
   text-decoration: none;
 
   &.btn-slides {
-    color: $orange-color;
-    border-color: $orange-color;
+    color: var(--btn-orange-color);
+    border-color: var(--btn-orange-color);
     &:hover {
-      background-color: $orange-color;
+      background-color: var(--btn-orange-color);
       color: $white-color;
       text-decoration: none;
     }
   }
 
   &.btn-video {
-    color: $red-color;
-    border-color: $red-color;
+    color: var(--btn-red-color);
+    border-color: var(--btn-red-color);
     &:hover {
-      background-color: $red-color;
+      background-color: var(--btn-red-color);
       color: $white-color;
       text-decoration: none;
     }
   }
 
   &.btn-abstract {
-    color: $cyan-color;
-    border-color: $cyan-color;
+    color: var(--btn-cyan-color);
+    border-color: var(--btn-cyan-color);
     &:hover {
-      background-color: $cyan-color;
+      background-color: var(--btn-cyan-color);
       color: $white-color;
       text-decoration: none;
     }
   }
 
   &.btn-program {
-    color: $blue-color;
-    border-color: $blue-color;
+    color: var(--btn-blue-color);
+    border-color: var(--btn-blue-color);
     &:hover {
-      background-color: $blue-color;
+      background-color: var(--btn-blue-color);
       color: $white-color;
       text-decoration: none;
     }
   }
 
   &.btn-code {
-    color: $purple-color;
-    border-color: $purple-color;
+    color: var(--btn-purple-color);
+    border-color: var(--btn-purple-color);
     &:hover {
-      background-color: $purple-color;
+      background-color: var(--btn-purple-color);
       color: $white-color;
       text-decoration: none;
     }
   }
 
   &.btn-audio {
-    color: $green-color;
-    border-color: $green-color;
+    color: var(--btn-green-color);
+    border-color: var(--btn-green-color);
     &:hover {
-      background-color: $green-color;
+      background-color: var(--btn-green-color);
       color: $white-color;
       text-decoration: none;
     }
   }
 
   &.btn-article {
-    color: $blue-color;
-    border-color: $blue-color;
+    color: var(--btn-blue-color);
+    border-color: var(--btn-blue-color);
     &:hover {
-      background-color: $blue-color;
+      background-color: var(--btn-blue-color);
       color: $white-color;
       text-decoration: none;
     }
   }
 
   &.btn-thesis {
-    color: $purple-color;
-    border-color: $purple-color;
+    color: var(--btn-purple-color);
+    border-color: var(--btn-purple-color);
     &:hover {
-      background-color: $purple-color;
+      background-color: var(--btn-purple-color);
       color: $white-color;
       text-decoration: none;
     }

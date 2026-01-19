@@ -5,24 +5,24 @@
 
 @use "sass:color";
 
-// Colors
-$red-color: #ff3636 !default;
-$red-color-dark: #b71c1c !default;
-$orange-color: #f29105 !default;
-$blue-color: #0076df !default;
-$blue-color-dark: #00369f !default;
-$cyan-color: #2698ba !default;
-$light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
-$green-color: #00ab37 !default;
-$green-color-lime: #b7d12a !default;
-$green-color-dark: #009f06 !default;
-$green-color-light: #ddffdd !default;
-$green-color-bright: #11d68b !default;
-$purple-color: #b509ac !default;
-$light-purple-color: color.adjust($purple-color, $lightness: 25%);
-$pink-color: #f92080 !default;
-$pink-color-light: #ffdddd !default;
-$yellow-color: #efcc00 !default;
+// Colors - Jewel tones palette
+$red-color: #E63946 !default;          // Ruby
+$red-color-dark: #C41E3A !default;     // Cardinal Ruby
+$orange-color: #F4A261 !default;       // Amber/Topaz
+$blue-color: #3A86FF !default;         // Sapphire
+$blue-color-dark: #2563EB !default;    // Deep Sapphire
+$cyan-color: #4CC9F0 !default;         // Aquamarine
+$light-cyan-color: color.adjust($cyan-color, $lightness: 15%);
+$green-color: #50C878 !default;        // Emerald
+$green-color-lime: #84CC16 !default;   // Peridot
+$green-color-dark: #059669 !default;   // Deep Emerald
+$green-color-light: #D1FAE5 !default;
+$green-color-bright: #10B981 !default; // Bright Emerald
+$purple-color: #9B5DE5 !default;       // Amethyst
+$light-purple-color: color.adjust($purple-color, $lightness: 15%);
+$pink-color: #F472B6 !default;         // Pink Tourmaline
+$pink-color-light: #FCE7F3 !default;
+$yellow-color: #FBBF24 !default;       // Citrine
 
 $grey-color: #828282 !default;
 $grey-color-light: color.adjust($grey-color, $lightness: 40%);
