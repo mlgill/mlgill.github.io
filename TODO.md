@@ -2,8 +2,6 @@
 
 ## Pending Issues
 
-- [ ] **Search showing old content**: The search link in the navbar is surfacing old/stale content. Likely cause: example/template content from al-folio is being indexed (e.g., `_projects/`, `_posts/`, `_news/`, `_pages/about_einstein.md`, etc.). To fix, either delete the example content or exclude it from indexing.
-
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
 
 - [ ] **CV to PDF conversion**: Investigate how to convert CV to PDF when building (find markdown CV example on web). Create PDF and add a PDF link to the top right of the CV page, like in the template.
@@ -135,3 +133,6 @@ eval "$(rbenv init -)" && rbenv local 3.3.10 && bundle exec jekyll serve
 - [x] Add BioNeMo framework paper to publications
 - [x] Selected Publications formatting in CV
 - [x] Update asset link colors to jewel-toned palette with separate light/dark theme support
+- [x] Fix search indexing example content (added inline: true, disabled posts_in_search, fixed search script)
+- [x] Disable search feature temporarily (search_enabled: false)
+- [x] Fix Adams 2004 publication: correct volume (10) and DOI (10.1261/rna.7140504)
