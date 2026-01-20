@@ -2,8 +2,8 @@
 # Builds Jekyll site and generates CV PDFs
 
 [build]
-  # Build command: Jekyll build, then generate PDFs from built files
-  command = "bundle exec jekyll build && cd scripts && npm install && node generate-cv-pdf.js --file"
+  # Build command: Jekyll build only (PDF generation disabled until formatting is fixed)
+  command = "bundle exec jekyll build"
   publish = "_site"
 
 [build.environment]
