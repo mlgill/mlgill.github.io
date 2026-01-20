@@ -1,13 +1,11 @@
 ---
 layout: cv-standalone
-permalink: /cv/
+permalink: /cv/concise/
 title: cv
-nav: true
-nav_order: 10
-cv_type: descriptive
+nav: false
+cv_type: concise
 # cv_pdf_descriptive: GillMichelle_DescriptiveCV.pdf
 # cv_pdf_concise: GillMichelle_ConciseCV.pdf
-description: Michelle Lynn Gill, Ph.D.
 ---
 # {{ site.data.bio.name }}
 {{ site.data.bio.title }}
@@ -25,7 +23,7 @@ description: Michelle Lynn Gill, Ph.D.
 
 ## Education
 {% for edu in site.data.education %}
-{% if edu.visible != false %}
+{% if edu.visible != false and edu.selected == true %}
 `{{ edu.year }}`
 __{{ edu.title }}__
 <br>{{ edu.institution }}, {{ edu.location }}
@@ -40,7 +38,7 @@ __{{ edu.title }}__
 
 ## Experience
 {% for exp in site.data.experience %}
-{% if exp.visible != false %}
+{% if exp.visible != false and exp.selected == true %}
 `{{ exp.year }}`
 __{{ exp.title }}__, {{ exp.institution }}
 {% if exp.description %}
@@ -54,12 +52,12 @@ __{{ exp.title }}__, {{ exp.institution }}
 
 ## Publications
 
-{% bibliography --template cv_bib --group_by none %}
+{% bibliography --template cv_bib --group_by none --query @*[selected=true] %}
 
 ### Patents
 {% for year_group in site.data.patents %}
 {% for patent in year_group.entries %}
-{% if patent.visible != false %}
+{% if patent.visible != false and patent.selected == true %}
 `{{ year_group.year }}`
 __{{ patent.title }}__
 - {{ patent.authors }}
@@ -72,7 +70,7 @@ __{{ patent.title }}__
 ## Presentations
 {% for year_group in site.data.presentations %}
 {% for pres in year_group.entries %}
-{% if pres.visible != false %}
+{% if pres.visible != false and pres.selected == true %}
 `{{ year_group.year }}`
 __{{ pres.title }}__{% if pres.venue %}, *{{ pres.venue }}*{% endif %}
 {% if pres.authors and pres.authors != "" %}- {{ pres.authors }}
@@ -85,7 +83,7 @@ __{{ pres.title }}__{% if pres.venue %}, *{{ pres.venue }}*{% endif %}
 
 ## Awards
 {% for award in site.data.awards %}
-{% if award.visible != false %}
+{% if award.visible != false and award.selected == true %}
 `{{ award.year }}`
 {{ award.items | join: "; " }}
 
@@ -94,7 +92,7 @@ __{{ pres.title }}__{% if pres.venue %}, *{{ pres.venue }}*{% endif %}
 
 ## Service
 {% for svc in site.data.service %}
-{% if svc.visible != false %}
+{% if svc.visible != false and svc.selected == true %}
 `{{ svc.year }}`
 __{{ svc.title }}__, {{ svc.institution }}{% if svc.location %}, {{ svc.location }}{% endif %}
 {% if svc.description %}

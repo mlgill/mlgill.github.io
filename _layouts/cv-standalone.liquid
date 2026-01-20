@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="cv-standalone">
+  {% if page.cv_pdf_descriptive or page.cv_pdf_concise %}
+  <div class="cv-download-buttons">
+    {% if page.cv_pdf_descriptive %}
+      <a href="{{ 'assets/pdf/' | append: page.cv_pdf_descriptive | relative_url }}"
+         class="btn-cv-download" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-file-pdf"></i> Descriptive CV
+      </a>
+    {% endif %}
+    {% if page.cv_pdf_concise %}
+      <a href="{{ 'assets/pdf/' | append: page.cv_pdf_concise | relative_url }}"
+         class="btn-cv-download" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-file-pdf"></i> Concise CV
+      </a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="cv-content">
+    {{ content }}
+  </div>
+</div>

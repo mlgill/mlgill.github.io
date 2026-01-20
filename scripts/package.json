@@ -1,0 +1,14 @@
+{
+  "name": "mlgill-cv-scripts",
+  "version": "1.0.0",
+  "description": "CV PDF generation scripts",
+  "scripts": {
+    "pdf": "node generate-cv-pdf.js",
+    "pdf:file": "node generate-cv-pdf.js --file",
+    "pdf:descriptive": "node generate-cv-pdf.js descriptive",
+    "pdf:concise": "node generate-cv-pdf.js concise"
+  },
+  "dependencies": {
+    "puppeteer-core": "^21.0.0"
+  }
+}

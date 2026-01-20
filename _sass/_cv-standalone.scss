@@ -1,0 +1,300 @@
+// CV Standalone Styles
+// Ported from markdown-cv davewhipp theme
+// Scoped under .cv-standalone to avoid conflicts with al-folio theme
+
+.cv-standalone {
+  // Break out of the site's max-width container for full viewport width
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 0 1em;
+  box-sizing: border-box;
+
+  // Download buttons at top
+  .cv-download-buttons {
+    position: relative;
+    left: 18%;
+    margin-bottom: 2em;
+
+    .btn-cv-download {
+      display: inline-block;
+      margin-right: 1em;
+      padding: 0.5em 1em;
+      background-color: #880000;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: Avenir, Verdana, sans-serif;
+      font-size: 0.9em;
+
+      &:hover {
+        background-color: #aa0000;
+        color: white;
+      }
+
+      i {
+        margin-right: 0.5em;
+      }
+    }
+  }
+
+  // CV content area
+  .cv-content {
+    font: normal normal 400;
+    font-size: 100%;
+    line-height: 1.5em;
+    font-family: Avenir, Verdana, sans-serif;
+    margin-top: 1em;
+
+    p {
+      position: relative;
+      left: 18%;
+      margin-bottom: 0.7em;
+      margin-right: 0;
+      width: 58%;
+    }
+
+    code {
+      font: normal normal;
+      font-size: 90%;
+      font-family: Monaco, Menlo, monospace, sans-serif;
+      color: #888;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    p code {
+      position: absolute;
+      text-align: right;
+      right: -32%;
+    }
+
+    // Add space between consecutive entries without lists
+    p + p {
+      margin-top: 0.8em;
+    }
+
+    ul {
+      position: relative;
+      left: 18%;
+      width: 72%;
+      margin-bottom: 1.5em;
+      margin-top: -0.5em;
+      list-style: none;
+      padding: 0;
+    }
+
+    li p {
+      left: 0;
+      width: 100%;
+      margin-bottom: 0.3em;
+    }
+
+    li ul {
+      position: relative;
+      left: 0;
+      width: 100%;
+      margin-top: 0.25em;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 400;
+      font-family: Avenir, Cousine, Verdana, sans-serif;
+      width: 80%;
+    }
+
+    h1 {
+      text-align: left;
+      font-size: 3em;
+      font-weight: 500;
+      line-height: 1em;
+      position: relative;
+      left: 18%;
+      color: #880000;
+    }
+
+    h1 + p {
+      // subtitle
+      font-style: italic;
+      font-size: 110%;
+    }
+
+    h2 {
+      font-size: 1.1em;
+      color: #880000;
+      margin-top: 3em;
+      position: relative;
+      top: 1.4em;
+      text-align: right;
+      width: 14%;
+    }
+
+    h3 {
+      font-size: 1em;
+      line-height: 2em;
+      position: relative;
+      top: 1.7em;
+      text-align: right;
+      width: 14%;
+      color: #888;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:hover {
+      color: #39f;
+    }
+
+    #webaddress {
+      margin-top: 1em;
+      position: relative;
+      left: 18%;
+      color: #888;
+      font-family: Monaco, Menlo, monospace, sans-serif;
+      font-size: 100%;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    // Bibliography styling
+    h2.bibliography {
+      display: none;
+    }
+
+    ol.bibliography {
+      position: relative;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    ol.bibliography li {
+      margin-bottom: 0.8em;
+    }
+
+    ol.bibliography li p {
+      left: 18%;
+      width: 58%;
+    }
+
+    ol.bibliography li .publication-entry {
+      position: relative;
+      left: 18%;
+      width: 58%;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    // Restore proper styling (browsers may reset these)
+    sup {
+      vertical-align: super;
+      font-size: 0.75em;
+      line-height: 0;
+    }
+
+    sub {
+      vertical-align: sub;
+      font-size: 0.75em;
+      line-height: 0;
+    }
+
+    i {
+      font-style: italic;
+    }
+
+    // Presentation link colors - matching mlgill.github.io light theme
+    a.pres-slides { color: #D97706; }   // Deep Amber
+    a.pres-video { color: #880000; }    // Burgundy - matches CV red
+    a.pres-abstract { color: #0891B2; } // Deep Aquamarine
+    a.pres-program { color: #1D4ED8; }  // Deep Sapphire
+    a.pres-code { color: #7C3AED; }     // Deep Amethyst
+    a.pres-thesis { color: #7C3AED; }   // Deep Amethyst
+
+    #address {
+      display: none;
+    }
+  }
+}
+
+// Print styles for CV
+@media print {
+  .cv-standalone {
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+
+    .cv-download-buttons {
+      display: none;
+    }
+
+    .cv-content {
+      // Match markdown-cv print CSS - slightly larger to compensate for Puppeteer rendering
+      font: normal normal 400;
+      font-size: 12pt;
+      line-height: 1.35em;
+      font-family: Avenir, Verdana, sans-serif;
+
+      p {
+        margin-bottom: 0.2em;
+      }
+
+      ul {
+        margin-bottom: 1em;
+        margin-top: 0;
+      }
+
+      li p {
+        margin-bottom: 0.2em;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+
+      h2 {
+        font-size: 1.1em;
+        margin-top: 2em;
+        top: 1.2em;
+      }
+
+      h3 {
+        font-size: 1em;
+        top: 1.6em;
+      }
+
+      code {
+        font-size: 90%;
+      }
+
+      ol.bibliography li {
+        margin-bottom: 0.5em;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      #webaddress {
+        font-size: 90%;
+      }
+    }
+  }
+}
