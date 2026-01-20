@@ -8,6 +8,7 @@
 - [ ] **Evaluate how to speed up build, e.g. precaching bibliography**
 - [ ] **Convert CV colors for dark format**
 - [ ] **White is default format**
+- [ ] **Some abbreviation of author lists**
 
 ## Blog Content Updates
 
