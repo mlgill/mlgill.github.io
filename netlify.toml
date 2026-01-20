@@ -8,6 +8,7 @@
   command = """
 echo "Cleaning build artifacts..." && \
 rm -rf _site assets/pdf/cv && \
+bundle install && \
 bundle exec jekyll build && \
 if [ "$SKIP_PDF_GENERATION" = "true" ]; then \
   echo "Skipping PDF generation (SKIP_PDF_GENERATION=true)"; \
