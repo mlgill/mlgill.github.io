@@ -5,6 +5,7 @@
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
 - [ ] **Evaluate removing year column for publications**: Publications already have years in their data (e.g., "(2024)"), so the year column on the left may be redundant.
 - [ ] **Annotate presentations for concise CV**: Review presentations and add `selected: true` to those that should appear in the concise CV.
+- [ ] **Evaluate how to speed up build, e.g. precaching bibliography**
 
 ## Blog Content Updates
 
