@@ -3,16 +3,13 @@
 ## Pending Issues
 
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
-
-
 - [ ] **Evaluate removing year column for publications**: Publications already have years in their data (e.g., "(2024)"), so the year column on the left may be redundant.
-
 - [ ] **Annotate presentations for concise CV**: Review presentations and add `selected: true` to those that should appear in the concise CV.
 
 ## Blog Content Updates
 
+- [ ] **Add email address to CV**
 - [ ] **Add CZ-benchmarks coverage to press**: Add press coverage of CZ-benchmarks.
-
 - [ ] **Check patent grant status**: Search patents to determine which ones have been granted and update accordingly.
 
 ## CV to PDF Implementation Notes (Completed 2026-01-20)
