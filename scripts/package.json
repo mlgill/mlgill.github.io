@@ -9,6 +9,6 @@
     "pdf:concise": "node generate-cv-pdf.js concise"
   },
   "dependencies": {
-    "puppeteer-core": "^21.0.0"
+    "puppeteer": "^24.0.0"
   }
 }

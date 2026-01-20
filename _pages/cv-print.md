@@ -1,13 +1,10 @@
 ---
-layout: cv-standalone
-permalink: /cv/
-title: cv
-nav: true
-nav_order: 10
+layout: cv-print
+permalink: /cv/print/
+title: Descriptive CV
+nav: false
 cv_type: descriptive
-cv_pdf_descriptive: GillMichelle_DescriptiveCV.pdf
-cv_pdf_concise: GillMichelle_ConciseCV.pdf
-description: Michelle Lynn Gill, Ph.D.
+sitemap: false
 ---
 # {{ site.data.bio.name }}
 {{ site.data.bio.title }}

@@ -4,9 +4,10 @@
 
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
 
-- [ ] **CV to PDF conversion**: Investigate how to convert CV to PDF when building (find markdown CV example on web). Create PDF and add a PDF link to the top right of the CV page, like in the template.
 
-- [ ] **Consider adding Selected Presentations to CV**: Decide if Selected Presentations should be added to the CV.
+- [ ] **Evaluate removing year column for publications**: Publications already have years in their data (e.g., "(2024)"), so the year column on the left may be redundant.
+
+- [ ] **Annotate presentations for concise CV**: Review presentations and add `selected: true` to those that should appear in the concise CV.
 
 ## Blog Content Updates
 
@@ -14,83 +15,39 @@
 
 - [ ] **Check patent grant status**: Search patents to determine which ones have been granted and update accordingly.
 
-## CV to PDF Research Notes (2025-12-31)
+## CV to PDF Implementation Notes (Completed 2026-01-20)
 
-### Current Setup
-- CV data lives in `_data/cv.yml` (YAML format)
-- CV page uses `_layouts/cv.liquid` template
-- Template already supports `cv_pdf` front matter variable - if set, displays a PDF icon (`fa-solid fa-file-pdf`) in top right linking to the PDF
-- Currently `cv_pdf:` is blank in `_pages/cv.md`
-- No custom `@media print` styles exist
+### Final Implementation
 
-### Approaches Considered
+Used Puppeteer with bundled Chromium to generate PDFs from dedicated print pages.
 
-**1. Browser-based rendering (Puppeteer/Playwright/wkhtmltopdf)**
-- Renders the actual CV webpage as PDF
-- Pros: Exact visual match, uses same data (no duplication)
-- Cons: Requires headless browser in CI, may need print-specific CSS tweaks
+**Key files:**
+- `_layouts/cv-print.liquid` - Minimal layout with embedded davewhipp CSS (no Bootstrap)
+- `_pages/cv-print.md` - Print version of descriptive CV (`/cv/print/`)
+- `_pages/cv-concise-print.md` - Print version of concise CV (`/cv/concise/print/`)
+- `scripts/generate-cv-pdf.js` - Puppeteer script to generate PDFs
+- `scripts/package.json` - Uses `puppeteer` v24 (bundled Chromium)
+- `_sass/_cv-standalone.scss` - Styles for website CV display
 
-**2. Pandoc with YAML input**
-- Pandoc can read YAML data directly and apply templates
-- Pros: Fast, lightweight, good PDF output via LaTeX
-- Cons: Need to create a pandoc/LaTeX template that matches CV structure
+**How it works:**
+1. Jekyll builds the site including print pages at `/cv/print/` and `/cv/concise/print/`
+2. `generate-cv-pdf.js --file` loads the print pages via `file://` protocol
+3. Puppeteer renders to PDF with custom footer (name, page numbers, date)
+4. PDFs saved to `_site/assets/pdf/GillMichelle_DescriptiveCV.pdf` and `GillMichelle_ConciseCV.pdf`
 
-**3. WeasyPrint (Python HTML→PDF)**
-- Converts HTML to PDF with good CSS support
-- Could render the Jekyll-generated `_site/cv/index.html`
-- Pros: Python already in build process, respects CSS
-- Cons: May need print CSS adjustments
+**Netlify build:**
+- `netlify.toml` runs Jekyll build, then PDF generation
+- Set `SKIP_PDF_GENERATION=true` env var to skip PDF step
+- Build cleans `_site` and `assets/pdf/cv/` before each build
 
-**4. Print CSS only (manual)**
-- Add `@media print` styles for clean printing
-- Users print to PDF from browser (Cmd+P)
-- Pros: Zero build complexity
-- Cons: Not automatic
+**Local development:**
+- Use `./scripts/serve-local.sh` to build, generate PDFs, and serve
+- Or manually: `jekyll build` → `node generate-cv-pdf.js --file` → `python3 -m http.server 4000` from `_site/`
+- Don't use `jekyll serve --skip-initial-build` (won't pick up PDFs added after start)
 
-### Preferred Approach: davewhipp-style Template
-
-Liked the davewhipp format from https://github.com/elipapa/markdown-cv
-- Example output: https://davewhipp.github.io/markdown-cv/
-- Clean, minimal academic design
-- Right-aligned dates (in backticks/code tags)
-- Bold for institutions/titles
-- Horizontal rules between sections
-- Uses print CSS for PDF output via browser print
-
-**davewhipp CSS Assessment:**
-- Complexity: Low-Medium (~100-150 lines of actual styling after reset)
-- Uses positioning-based two-column layout (not flexbox/grid)
-- Main content: 25% from left, 55-60% width
-- Section headers (h2): Right-aligned in 20% left sidebar, burgundy color (#bc412b)
-- Dates: Uses `<code>` tags with absolute positioning (`right: -20%`) to push to right margin
-- Fonts: Avenir/Verdana sans-serif stack, 12pt for print
-- Includes Meyer CSS reset
-
-**Layout structure:**
-```
-|  h2 sidebar  |  main content  |  dates  |
-|    (20%)     |    (55-60%)    |  (right)|
-```
-
-### Recommended Implementation
-
-Create a `/cv-print/` page with davewhipp styling:
-1. New Jekyll template that outputs `_data/cv.yml` in davewhipp HTML structure
-2. h2 for section titles, entries in paragraphs/lists, dates in `<code>` tags
-3. Include davewhipp screen and print CSS
-4. Print to PDF from browser, or automate with Puppeteer
-
-**Estimated effort:** 2-3 hours total
-
-### Automation Options
-
-To automatically generate PDF during build:
-1. After Jekyll build, serve `_site` locally
-2. Use Puppeteer to navigate to `/cv-print/` and print to PDF
-3. Save PDF to `_site/assets/pdf/cv.pdf`
-4. Deploy
-
-Could add this as a step in `.github/workflows/deploy.yml` after the Jekyll build.
+**Debug mode:**
+- `DEBUG=true` in `generate-cv-pdf.js` saves copies to `assets/pdf/cv/` (gitignored)
+- `DEBUG=false` saves copies to `/tmp/cv-pdf/`
 
 ## Deployment Steps
 
@@ -136,3 +93,5 @@ eval "$(rbenv init -)" && rbenv local 3.3.10 && bundle exec jekyll serve
 - [x] Fix search indexing example content (added inline: true, disabled posts_in_search, fixed search script)
 - [x] Disable search feature temporarily (search_enabled: false)
 - [x] Fix Adams 2004 publication: correct volume (10) and DOI (10.1261/rna.7140504)
+- [x] CV to PDF conversion: Implemented using Puppeteer with dedicated print layouts. PDFs auto-generated during Netlify build. Download buttons on CV pages (right-aligned).
+- [x] Consider adding Selected Presentations to CV: Yes, presentations are included in CV.

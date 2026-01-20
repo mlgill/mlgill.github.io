@@ -28,6 +28,36 @@ bundle exec jekyll serve
 
 The site will be available at http://127.0.0.1:4000
 
+### Running Locally with CV PDF Generation
+
+The standard `jekyll serve` command doesn't include CV PDF generation. To test the site with PDFs:
+
+```bash
+# Use the convenience script (recommended)
+./scripts/serve-local.sh
+```
+
+This script:
+1. Builds the Jekyll site
+2. Generates CV PDFs using Puppeteer
+3. Serves the site using Python's HTTP server
+
+**Why not `jekyll serve`?** Jekyll serve with `--skip-initial-build` caches the `_site` directory in memory and won't pick up PDFs generated after the server starts. The Python HTTP server serves files directly from disk, avoiding this issue.
+
+**Manual steps** (if you prefer):
+```bash
+# 1. Build site
+bundle exec jekyll build
+
+# 2. Generate PDFs
+cd scripts && npm install && node generate-cv-pdf.js --file && cd ..
+
+# 3. Serve with Python (no caching)
+cd _site && python3 -m http.server 4000
+```
+
+The site will be available at http://localhost:4000
+
 ### Building
 
 ```bash

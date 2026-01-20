@@ -2,15 +2,24 @@
 # Builds Jekyll site and generates CV PDFs
 
 [build]
-  # Build command: Jekyll build only (PDF generation disabled until formatting is fixed)
-  command = "bundle exec jekyll build"
+  # Build command: Clean + Jekyll build + PDF generation
+  # Uses Puppeteer's bundled Chromium for PDF generation
+  # Set SKIP_PDF_GENERATION=true in Netlify env vars to skip PDF generation
+  command = """
+echo "Cleaning build artifacts..." && \
+rm -rf _site assets/pdf/cv && \
+bundle exec jekyll build && \
+if [ "$SKIP_PDF_GENERATION" = "true" ]; then \
+  echo "Skipping PDF generation (SKIP_PDF_GENERATION=true)"; \
+else \
+  cd scripts && npm install && node generate-cv-pdf.js --file; \
+fi
+"""
   publish = "_site"
 
 [build.environment]
   RUBY_VERSION = "3.3.10"
   NODE_VERSION = "20"
-  # Netlify's Ubuntu image has Chrome at this path
-  CHROME_PATH = "/usr/bin/google-chrome-stable"
 
 # Redirects (if needed)
 # [[redirects]]

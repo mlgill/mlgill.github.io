@@ -13,15 +13,16 @@
   padding: 0 1em;
   box-sizing: border-box;
 
-  // Download buttons at top
+  // Download buttons at top-right
   .cv-download-buttons {
     position: relative;
-    left: 18%;
+    text-align: right;
+    padding-right: 10%;
     margin-bottom: 2em;
 
     .btn-cv-download {
       display: inline-block;
-      margin-right: 1em;
+      margin-left: 1em;
       padding: 0.5em 1em;
       background-color: #880000;
       color: white;
@@ -195,6 +196,11 @@
       position: relative;
       left: 18%;
       width: 58%;
+    }
+
+    // Publication title should be bold (matching other CV entry titles)
+    .publication-entry .title {
+      font-weight: bold;
     }
 
     strong {

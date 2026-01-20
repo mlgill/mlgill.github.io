@@ -4,8 +4,8 @@ permalink: /cv/concise/
 title: cv
 nav: false
 cv_type: concise
-# cv_pdf_descriptive: GillMichelle_DescriptiveCV.pdf
-# cv_pdf_concise: GillMichelle_ConciseCV.pdf
+cv_pdf_descriptive: GillMichelle_DescriptiveCV.pdf
+cv_pdf_concise: GillMichelle_ConciseCV.pdf
 ---
 # {{ site.data.bio.name }}
 {{ site.data.bio.title }}

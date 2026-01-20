@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate CV PDFs using Puppeteer
- * Works both locally (macOS Chromium) and on Netlify (system Chrome)
+ * Uses Puppeteer's bundled Chromium for consistent rendering across environments
  *
  * Usage:
  *   node generate-cv-pdf.js                           # Generate both PDFs (uses localhost:4000)
@@ -11,20 +11,26 @@
  *   node generate-cv-pdf.js concise                   # Generate concise CV only
  */
 
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 
-// Find Chrome/Chromium executable
+// Debug mode: when true, also saves PDFs to assets/pdf/cv/ for debugging
+const DEBUG = true;
+
+// Optional: Find a custom Chrome/Chromium executable
+// Uncomment and modify findChromePath() if you want to use a specific Chrome installation
+// instead of Puppeteer's bundled Chromium
+/*
 function findChromePath() {
   const possiblePaths = [
-    // Netlify build environment
-    '/usr/bin/google-chrome-stable',
-    '/usr/bin/chromium-browser',
-    '/usr/bin/chromium',
     // Local macOS
     '/Applications/Chromium.app/Contents/MacOS/Chromium',
     '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    // Linux
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
   ];
 
   for (const p of possiblePaths) {
@@ -38,8 +44,9 @@ function findChromePath() {
     return process.env.CHROME_PATH;
   }
 
-  throw new Error('Could not find Chrome/Chromium. Set CHROME_PATH environment variable.');
+  return null; // Fall back to Puppeteer's bundled Chromium
 }
+*/
 
 // Parse command line arguments
 function parseArgs() {
@@ -65,18 +72,19 @@ function parseArgs() {
 }
 
 // CV configurations
+// Uses dedicated print pages (/cv/print/, /cv/concise/print/) with minimal layout
 function getCVConfigs(baseUrl, useFile) {
   const siteDir = path.join(__dirname, '..', '_site');
 
   if (useFile) {
     return {
       descriptive: {
-        url: `file://${path.join(siteDir, 'cv', 'index.html')}`,
+        url: `file://${path.join(siteDir, 'cv', 'print', 'index.html')}`,
         output: path.join(siteDir, 'assets', 'pdf', 'GillMichelle_DescriptiveCV.pdf'),
         title: 'Descriptive CV',
       },
       concise: {
-        url: `file://${path.join(siteDir, 'cv', 'concise', 'index.html')}`,
+        url: `file://${path.join(siteDir, 'cv', 'concise', 'print', 'index.html')}`,
         output: path.join(siteDir, 'assets', 'pdf', 'GillMichelle_ConciseCV.pdf'),
         title: 'Concise CV',
       },
@@ -85,12 +93,12 @@ function getCVConfigs(baseUrl, useFile) {
 
   return {
     descriptive: {
-      url: `${baseUrl}/cv/`,
+      url: `${baseUrl}/cv/print/`,
       output: path.join(siteDir, 'assets', 'pdf', 'GillMichelle_DescriptiveCV.pdf'),
       title: 'Descriptive CV',
     },
     concise: {
-      url: `${baseUrl}/cv/concise/`,
+      url: `${baseUrl}/cv/concise/print/`,
       output: path.join(siteDir, 'assets', 'pdf', 'GillMichelle_ConciseCV.pdf'),
       title: 'Concise CV',
     },
@@ -179,6 +187,19 @@ async function generatePDF(browser, url, outputPath, cvTitle) {
   });
 
   console.log(`PDF saved to: ${outputPath}`);
+
+  // Also save a debug copy:
+  // - DEBUG=true: save to assets/pdf/cv/ (in repo for inspection)
+  // - DEBUG=false: save to /tmp/cv-pdf/ (won't be committed)
+  const debugDir = DEBUG
+    ? path.join(__dirname, '..', 'assets', 'pdf', 'cv')
+    : '/tmp/cv-pdf';
+  if (!fs.existsSync(debugDir)) {
+    fs.mkdirSync(debugDir, { recursive: true });
+  }
+  const debugPath = path.join(debugDir, path.basename(outputPath));
+  fs.copyFileSync(outputPath, debugPath);
+  console.log(`PDF copy saved to: ${debugPath}`);
 }
 
 /**
@@ -186,16 +207,17 @@ async function generatePDF(browser, url, outputPath, cvTitle) {
  */
 async function main() {
   const args = parseArgs();
-  const chromePath = findChromePath();
-  console.log(`Using Chrome at: ${chromePath}`);
 
   const configs = getCVConfigs(args.baseUrl, args.useFile);
 
+  // Use Puppeteer's bundled Chromium
+  // To use a custom Chrome path, uncomment findChromePath() above and add:
+  //   executablePath: findChromePath() || undefined,
   const browser = await puppeteer.launch({
-    executablePath: chromePath,
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'], // Required for Netlify
+    args: ['--no-sandbox', '--disable-setuid-sandbox'], // Required for CI environments
   });
+  console.log('Using Puppeteer bundled Chromium');
 
   try {
     if (args.cvType) {
