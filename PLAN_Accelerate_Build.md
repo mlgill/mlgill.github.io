@@ -3,82 +3,57 @@
 ## Overview
 Comprehensive plan to optimize Netlify build times from estimated 5-8 minutes down to 30-60 seconds for typical content updates.
 
----
-
-## Priority 1: Enable Netlify Build Cache
-
-### Problem
-Every build re-downloads Ruby gems (~100+ dependencies), Puppeteer/Chromium (51MB), and regenerates Jekyll caches.
-
-### Solution
-Add cache configuration to `netlify.toml`:
-
-```toml
-[build.processing]
-  skip_processing = false
-
-[[plugins]]
-  package = "netlify-plugin-cache"
-  [plugins.inputs]
-    paths = [
-      "vendor/bundle",           # Ruby gems
-      "scripts/node_modules",    # Puppeteer dependencies (51MB)
-      ".jekyll-cache",           # Jekyll incremental cache
-      "_site"                    # For incremental builds
-    ]
-```
-
-### Expected Impact
-Saves 60-90 seconds on every build after the first.
+**Note:** Netlify already caches Ruby gems and node_modules by default, so explicit dependency caching is not needed.
 
 ---
 
-## Priority 2: Implement Smart PDF Generation
+## Priority 1: Implement Smart PDF Generation - DONE
 
 ### Problem
-PDF generation with Puppeteer runs on every build, even when CV content hasn't changed. Downloads 51MB of dependencies each time if not cached.
+PDF generation with Puppeteer runs on every build, even when CV content hasn't changed.
 
-### Solution A: Conditional Generation
-Modify `netlify.toml` build command:
+### Solution Implemented
+Created HTML-diff-based change detection that compares rendered CV HTML against cached versions:
 
-```bash
-echo "Cleaning build artifacts..." && \
-rm -rf _site assets/pdf/cv && \
-bundle install && \
-bundle exec jekyll build && \
-if git diff --name-only HEAD~1 | grep -q "_data/cv.yml"; then \
-  echo "CV changed, regenerating PDFs..." && \
-  cd scripts && npm ci && node generate-cv-pdf.js --file; \
-else \
-  echo "CV unchanged, skipping PDF generation"; \
-fi
-```
+**Scripts:**
+- `scripts/check-cv-html-changes.sh` - Diffs current `_site/cv/*/print/index.html` against cached HTML
+- `scripts/save-cv-html-cache.sh` - Saves HTML to Netlify cache after PDF generation
 
-### Solution B: Manual Trigger
-Set `SKIP_PDF_GENERATION=true` by default, regenerate PDFs manually when needed.
+**How it works:**
+1. Jekyll builds, generating HTML in `_site/`
+2. `check-cv-html-changes.sh` compares rendered HTML against cached versions
+3. Returns "none", "descriptive", "concise", or "both" based on what changed
+4. Only regenerates PDFs for CVs whose HTML actually changed
+5. `save-cv-html-cache.sh` updates the cache for next build
+
+**Advantages over source-file monitoring:**
+- Detects ANY change affecting output (content, styling, templates, includes, etc.)
+- No false positives from unrelated site changes
+- No need to maintain a list of monitored files
+
+**Cache behavior:**
+- Uses Netlify's build cache (`$NETLIFY_CACHE_DIR/cv-html-cache/`)
+- If cache is cleared, both PDFs rebuild (safe default)
 
 ### Expected Impact
 Saves 20-40 seconds on builds where CV hasn't changed (most builds).
 
 ---
 
-## Priority 3: Use `npm ci` Instead of `npm install`
+## Priority 2: Use `npm ci` Instead of `npm install` - DONE
 
 ### Problem
 `npm install` in the build command is slower and can produce inconsistent results.
 
-### Solution
-Change `netlify.toml` line 16:
-```bash
-cd scripts && npm ci && node generate-cv-pdf.js --file
-```
+### Solution Implemented
+Changed to `npm ci` in the `netlify.toml` build command (implemented as part of Priority 1).
 
 ### Expected Impact
 20-30% faster npm installs (5-10 seconds saved).
 
 ---
 
-## Priority 4: Cache Bibliography Processing
+## Priority 3: Cache Bibliography Processing
 
 ### Problem
 Jekyll-scholar processes the full bibliography on every build (~2 min), even when publications haven't changed.
@@ -112,25 +87,12 @@ Saves ~120 seconds on builds where bibliography hasn't changed (most builds).
 
 ---
 
-## Priority 5: Optimize Image Processing
+## Priority 4: Optimize Image Processing
 
 ### Problem
 Jekyll-imagemagick processes images on every build, generating responsive WebP versions.
 
 ### Solution
-Cache generated responsive images:
-
-```toml
-paths = [
-  "vendor/bundle",
-  "scripts/node_modules",
-  ".jekyll-cache",
-  "_site",
-  "assets/img/**/*.webp",  # Add cached responsive images
-]
-```
-
-### Alternative
 Generate responsive images ahead of time and commit them to the repository.
 
 ### Expected Impact
@@ -138,7 +100,7 @@ Saves 10-30 seconds depending on image count.
 
 ---
 
-## Priority 6: Evaluate Heavy Jekyll Plugins
+## Priority 5: Evaluate Heavy Jekyll Plugins
 
 ### Problem
 Some Jekyll plugins add significant build time but may not be critical.
@@ -153,7 +115,7 @@ Variable, could save 10-30 seconds depending on plugins disabled.
 
 ---
 
-## Priority 7: Split Build into Stages
+## Priority 6: Split Build into Stages
 
 ### Problem
 Critical site deployment waits for non-critical PDF generation to complete.
@@ -173,7 +135,7 @@ Makes builds feel faster by deploying site immediately, with PDFs generated afte
 ### Current Estimated Build Time
 5-8 minutes (cold start, no caching)
 
-### With Priorities 1-4 Implemented
+### With Priorities 1-3 Implemented
 
 | Scenario | Current | Optimized | Savings |
 |----------|---------|-----------|---------|
@@ -183,11 +145,10 @@ Makes builds feel faster by deploying site immediately, with PDFs generated afte
 
 ### Breakdown by Priority
 
-1. **Caching dependencies** (Priority 1) - saves 60-90s every build
-2. **Conditional PDF generation** (Priority 2) - saves 20-40s most builds
-3. **npm ci optimization** (Priority 3) - saves 5-10s every build
-4. **Bibliography caching** (Priority 4) - saves ~120s most builds
-5. **Image caching** (Priority 5) - saves 10-30s every build
+1. **Conditional PDF generation** (Priority 1) - saves 20-40s most builds
+2. **npm ci optimization** (Priority 2) - saves 5-10s every build
+3. **Bibliography caching** (Priority 3) - saves ~120s most builds
+4. **Image caching** (Priority 4) - saves 10-30s every build
 
 ### Total Potential Savings
-**4-6 minutes** on typical content updates after implementing Priorities 1-4.
+**3-5 minutes** on typical content updates after implementing Priorities 1-3.

@@ -2,9 +2,10 @@
 # Builds Jekyll site and generates CV PDFs
 
 [build]
-  # Build command: Clean + Jekyll build + PDF generation
+  # Build command: Clean + Jekyll build + Smart PDF generation
   # Uses Puppeteer's bundled Chromium for PDF generation
-  # Set SKIP_PDF_GENERATION=true in Netlify env vars to skip PDF generation
+  # Set SKIP_PDF_GENERATION=true in Netlify env vars to skip PDF generation entirely
+  # Smart PDF generation compares rendered HTML against cached versions to detect changes
   command = """
 echo "Cleaning build artifacts..." && \
 rm -rf _site assets/pdf/cv && \
@@ -13,7 +14,24 @@ bundle exec jekyll build && \
 if [ "$SKIP_PDF_GENERATION" = "true" ]; then \
   echo "Skipping PDF generation (SKIP_PDF_GENERATION=true)"; \
 else \
-  cd scripts && npm install && node generate-cv-pdf.js --file; \
+  CV_CHANGES=$(bash scripts/check-cv-html-changes.sh) && \
+  echo "CV changes detected: $CV_CHANGES" && \
+  if [ "$CV_CHANGES" = "none" ]; then \
+    echo "No CV HTML changes, skipping PDF generation"; \
+  else \
+    cd scripts && npm ci && \
+    if [ "$CV_CHANGES" = "both" ]; then \
+      echo "Regenerating both CV PDFs..." && \
+      node generate-cv-pdf.js --file; \
+    elif [ "$CV_CHANGES" = "descriptive" ]; then \
+      echo "Regenerating descriptive CV PDF only..." && \
+      node generate-cv-pdf.js --file descriptive; \
+    elif [ "$CV_CHANGES" = "concise" ]; then \
+      echo "Regenerating concise CV PDF only..." && \
+      node generate-cv-pdf.js --file concise; \
+    fi && \
+    cd .. && bash scripts/save-cv-html-cache.sh "$CV_CHANGES"; \
+  fi; \
 fi
 """
   publish = "_site"
