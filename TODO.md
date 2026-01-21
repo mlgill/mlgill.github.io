@@ -5,7 +5,6 @@
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
 - [ ] **Evaluate removing year column for publications**: Publications already have years in their data (e.g., "(2024)"), so the year column on the left may be redundant.
 - [ ] **Annotate presentations for concise CV**: Review presentations and add `selected: true` to those that should appear in the concise CV.
-- [ ] **Evaluate how to speed up build, e.g. precaching bibliography**
 - [ ] **Convert CV colors for dark format**
 - [ ] **White is default format**
 - [ ] **Some abbreviation of author lists**
@@ -95,4 +94,5 @@ eval "$(rbenv init -)" && rbenv local 3.3.10 && bundle exec jekyll serve
 - [x] Disable search feature temporarily (search_enabled: false)
 - [x] Fix Adams 2004 publication: correct volume (10) and DOI (10.1261/rna.7140504)
 - [x] CV to PDF conversion: Implemented using Puppeteer with dedicated print layouts. PDFs auto-generated during Netlify build. Download buttons on CV pages (right-aligned).
+- [x] Speed up build with precaching: Implemented smart PDF generation (only rebuilds when CV HTML changes), bibliography caching for CV pages (prebuild-bibliography.js), and npm ci optimization. See PLAN_Accelerate_Build.md for details.
 - [x] Consider adding Selected Presentations to CV: Yes, presentations are included in CV.
