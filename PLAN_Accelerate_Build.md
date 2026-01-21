@@ -53,34 +53,28 @@ Changed to `npm ci` in the `netlify.toml` build command (implemented as part of 
 
 ---
 
-## Priority 3: Cache Bibliography Processing
+## Priority 3: Cache Bibliography Processing - DONE
 
 ### Problem
 Jekyll-scholar processes the full bibliography on every build (~2 min), even when publications haven't changed.
 
-### Solution
-Pre-process `papers.bib` into a cached JSON/YAML data file that Jekyll can read directly, bypassing repeated BibTeX parsing and filter application.
+### Solution Implemented
+Created `scripts/prebuild-bibliography.js` that pre-processes `papers.bib` into cached YAML:
 
-### Implementation Steps
+**Scripts:**
+- `scripts/prebuild-bibliography.js` - Parses BibTeX, applies LaTeX filters, outputs to `_data/bibliography_cache.yml`
+- Uses MD5 hash of `papers.bib` to detect changes (stored in `_data/.bibliography_hash`)
 
-1. **Create a preprocessing script** (`scripts/prebuild-bibliography.js` or Ruby)
-   - Parse `papers.bib` using a BibTeX library
-   - Apply LaTeX filters (mathmode, subscript, superscript, italics)
-   - Output to `_data/bibliography_cache.yml`
-   - Include a hash of `papers.bib` to detect changes
+**Templates:**
+- `_includes/cv_bibliography.liquid` - Renders bibliography from cached data
+- CV pages (`cv.md`, `cv-print.md`, `cv-concise.md`, `cv-concise-print.md`) use cached data
+- Main publications page (`publications.md`) still uses Jekyll-scholar for full functionality
 
-2. **Modify build process**
-   - Check if `papers.bib` hash matches cached version
-   - Only regenerate cache when bibliography changes
-   - Update `netlify.toml` to run preprocessing before Jekyll build
+**Build process:**
+- `netlify.toml` runs `prebuild-bibliography.js` before Jekyll build
+- Script skips regeneration if `papers.bib` hash matches cached version
 
-3. **Update CV templates**
-   - Read from `site.data.bibliography_cache` instead of using `{% bibliography %}` tag
-   - Or create a custom Jekyll plugin that checks cache first
-
-### Alternative: Incremental Builds
-- Use `jekyll build --incremental` for local development
-- Less invasive but won't help Netlify cold builds
+**Note:** Full site builds still include Jekyll-scholar processing for `publications.md`. The caching primarily benefits CV page generation and incremental builds.
 
 ### Expected Impact
 Saves ~120 seconds on builds where bibliography hasn't changed (most builds).

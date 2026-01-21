@@ -51,7 +51,7 @@ __{{ exp.title }}__, {{ exp.institution }}
 
 ## Publications
 
-{% bibliography --template cv_bib --group_by none %}
+{% include cv_bibliography.liquid selected_only=false %}
 
 ### Patents
 {% for year_group in site.data.patents %}

@@ -9,6 +9,8 @@
   command = """
 echo "Cleaning build artifacts..." && \
 rm -rf _site assets/pdf/cv && \
+echo "Pre-processing bibliography..." && \
+node scripts/prebuild-bibliography.js && \
 bundle install && \
 bundle exec jekyll build && \
 if [ "$SKIP_PDF_GENERATION" = "true" ]; then \
