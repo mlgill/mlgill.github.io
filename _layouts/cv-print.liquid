@@ -3,7 +3,43 @@
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }} | CV</title>
+  {% comment %}Calculate relative path to site root based on page depth{% endcomment %}
+  {% assign path_parts = page.url | split: '/' | size | minus: 1 %}
+  {% assign rel_path = '' %}
+  {% for i in (1..path_parts) %}{% assign rel_path = rel_path | append: '../' %}{% endfor %}
   <style>
+/* Self-hosted Inter font */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('{{ rel_path }}assets/fonts/inter/Inter-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('{{ rel_path }}assets/fonts/inter/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('{{ rel_path }}assets/fonts/inter/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('{{ rel_path }}assets/fonts/inter/Inter-Bold.woff2') format('woff2');
+}
 /* CSS Reset - http://meyerweb.com/eric/tools/css/reset/ v2.0 */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -53,7 +89,7 @@ body {
   font: normal normal 400;
   font-size: 12pt;
   line-height: 1.35em;
-  font-family: Avenir, Verdana, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 p {
@@ -106,23 +142,29 @@ li ul {
 
 h1, h2, h3, h4 {
   font-weight: 400;
-  font-family: Avenir, Cousine, Verdana, sans-serif;
+  font-family: Inter, sans-serif;
   width: 80%;
 }
 
 h1 {
   text-align: left;
   font-size: 3em;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1em;
   position: relative;
   left: 18%;
   color: #880000;
 }
 
+h1 .font-weight-bold {
+  font-weight: 700;
+}
+
 h1 + p {
   font-style: italic;
   font-size: 110%;
+  margin-top: 0.4em;
+  margin-bottom: 0.3em;
 }
 
 h2 {

@@ -15,12 +15,17 @@ if command -v rbenv &> /dev/null; then
     eval "$(rbenv init -)"
 fi
 
+echo "==> Pre-processing bibliography..."
+node scripts/prebuild-bibliography.js
+
 echo "==> Building Jekyll site..."
 bundle exec jekyll build
 
-echo "==> Generating CV PDFs..."
+echo "==> Installing Puppeteer dependencies..."
 cd "$SCRIPT_DIR"
 npm install --silent
+
+echo "==> Generating CV PDFs..."
 node generate-cv-pdf.js --file
 
 echo "==> Starting local server on http://localhost:4000"

@@ -2,6 +2,39 @@
 // Ported from markdown-cv davewhipp theme
 // Scoped under .cv-standalone to avoid conflicts with al-folio theme
 
+// Self-hosted Inter font
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/assets/fonts/inter/Inter-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/inter/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/inter/Inter-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/inter/Inter-Bold.woff2') format('woff2');
+}
+
 .cv-standalone {
   // Break out of the site's max-width container for full viewport width
   width: 100vw;
@@ -28,7 +61,7 @@
       color: white;
       text-decoration: none;
       border-radius: 4px;
-      font-family: Avenir, Verdana, sans-serif;
+      font-family: Inter, sans-serif;
       font-size: 0.9em;
 
       &:hover {
@@ -104,24 +137,31 @@
 
     h1, h2, h3, h4 {
       font-weight: 400;
-      font-family: Avenir, Cousine, Verdana, sans-serif;
+      font-family: Inter, sans-serif;
       width: 80%;
     }
 
     h1 {
       text-align: left;
       font-size: 3em;
-      font-weight: 500;
+      font-weight: 300;
       line-height: 1em;
       position: relative;
       left: 18%;
       color: #880000;
+
+      .font-weight-bold {
+        font-weight: 700;
+        color: inherit;
+      }
     }
 
     h1 + p {
       // subtitle
       font-style: italic;
       font-size: 110%;
+      margin-top: 0.4em;
+      margin-bottom: 0.3em;
     }
 
     h2 {
@@ -317,7 +357,7 @@ html[data-theme="dark"] {
       font: normal normal 400;
       font-size: 12pt;
       line-height: 1.35em;
-      font-family: Avenir, Verdana, sans-serif;
+      font-family: Inter, sans-serif;
 
       p {
         margin-bottom: 0.2em;

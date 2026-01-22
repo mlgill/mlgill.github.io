@@ -9,7 +9,7 @@ cv_pdf_descriptive: GillMichelle_DescriptiveCV.pdf
 cv_pdf_concise: GillMichelle_ConciseCV.pdf
 description: Michelle Lynn Gill, Ph.D.
 ---
-# {{ site.data.bio.name }}
+# <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}, PhD
 {{ site.data.bio.title }}
 
 {% if site.data.socials.email %}<div id="email"><a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a></div>{% endif %}

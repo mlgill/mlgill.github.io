@@ -113,7 +113,7 @@ function getFooterTemplate(cvTitle) {
   const preparedDate = `Prepared ${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}/${now.getFullYear()}`;
 
   return `
-    <div style="font-family: Avenir, Verdana, sans-serif; font-size: 9px;
+    <div style="font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 9px;
                 color: #666; width: 100%; padding: 0 0.5in;
                 display: flex; justify-content: space-between;">
       <span>Michelle Lynn Gill &middot; ${cvTitle}</span>
