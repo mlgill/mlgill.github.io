@@ -5,13 +5,9 @@
 - [ ] **Add year groupings to presentations and patents**: Should have year headings and a rule between years, similar to publications.
 - [ ] **Evaluate removing year column for publications**: Publications already have years in their data (e.g., "(2024)"), so the year column on the left may be redundant.
 - [ ] **Annotate presentations for concise CV**: Review presentations and add `selected: true` to those that should appear in the concise CV.
-- [ ] **Convert CV colors for dark format**
-- [ ] **White is default format**
 - [ ] **Some abbreviation of author lists**
 
 ## Blog Content Updates
-
-- [ ] **Add email address to CV**
 - [ ] **Add CZ-benchmarks coverage to press**: Add press coverage of CZ-benchmarks.
 - [ ] **Check patent grant status**: Search patents to determine which ones have been granted and update accordingly.
 
@@ -96,3 +92,6 @@ eval "$(rbenv init -)" && rbenv local 3.3.10 && bundle exec jekyll serve
 - [x] CV to PDF conversion: Implemented using Puppeteer with dedicated print layouts. PDFs auto-generated during Netlify build. Download buttons on CV pages (right-aligned).
 - [x] Speed up build with precaching: Implemented smart PDF generation (only rebuilds when CV HTML changes), bibliography caching for CV pages (prebuild-bibliography.js), and npm ci optimization. See PLAN_Accelerate_Build.md for details.
 - [x] Consider adding Selected Presentations to CV: Yes, presentations are included in CV.
+- [x] Add email address to CV: Email displayed on own line above social links, matching Monaco/Menlo font.
+- [x] Convert CV colors for dark format: HTML CV uses cyan highlight and bright jewel-tone link colors in dark mode (PDF stays light-only).
+- [x] Light mode as default: Website now defaults to light mode for first-time visitors.

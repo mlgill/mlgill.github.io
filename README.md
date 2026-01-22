@@ -70,6 +70,8 @@ bundle exec jekyll build
 
 The built site will be in the `_site/` directory.
 
+**IMPORTANT for AI assistants:** After running `jekyll build`, you MUST also run the PDF generation script (`node scripts/generate-cv-pdf.js --file`) or the CV download links will 404. The PDFs are not part of Jekyll's build - they're generated separately by Puppeteer. Always use `./scripts/serve-local.sh` for local development, or run both commands in sequence.
+
 ## Deployment
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the `master` branch.

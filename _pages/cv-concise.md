@@ -10,8 +10,8 @@ cv_pdf_concise: GillMichelle_ConciseCV.pdf
 # {{ site.data.bio.name }}
 {{ site.data.bio.title }}
 
+{% if site.data.socials.email %}<div id="email"><a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a></div>{% endif %}
 <div id="webaddress">
-{% if site.data.socials.email %}<a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a> | {% endif %}
 <a href="https://github.com/{{ site.data.socials.github_username }}">GitHub</a> |
 <a href="https://linkedin.com/in/{{ site.data.socials.linkedin_username }}">LinkedIn</a> |
 <a href="https://michellelynngill.com">Personal Website</a>

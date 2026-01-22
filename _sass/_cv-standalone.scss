@@ -152,8 +152,21 @@
       color: #39f;
     }
 
-    #webaddress {
+    #email {
       margin-top: 1em;
+      position: relative;
+      left: 18%;
+      color: #888;
+      font-family: Monaco, Menlo, monospace, sans-serif;
+      font-size: 100%;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    #webaddress {
+      margin-top: 0.3em;
       position: relative;
       left: 18%;
       color: #888;
@@ -234,6 +247,54 @@
 
     #address {
       display: none;
+    }
+  }
+}
+
+// Dark mode styles for CV (HTML only, not PDF)
+html[data-theme="dark"] {
+  .cv-standalone {
+    .cv-download-buttons {
+      .btn-cv-download {
+        background-color: #4CC9F0;
+        color: #1c1c1d;
+
+        &:hover {
+          background-color: #7DD8F4;
+          color: #1c1c1d;
+        }
+      }
+    }
+
+    .cv-content {
+      h1 {
+        color: #4CC9F0;
+      }
+
+      h2 {
+        color: #4CC9F0;
+      }
+
+      code {
+        color: #b0b0b0;
+      }
+
+      a:hover {
+        color: #4CC9F0;
+      }
+
+      #email,
+      #webaddress {
+        color: #b0b0b0;
+      }
+
+      // Presentation link colors - bright jewel tones for dark mode
+      a.pres-slides { color: #F4A261; }   // Amber
+      a.pres-video { color: #E63946; }    // Ruby
+      a.pres-abstract { color: #4CC9F0; } // Aquamarine
+      a.pres-program { color: #3A86FF; }  // Sapphire
+      a.pres-code { color: #9B5DE5; }     // Amethyst
+      a.pres-thesis { color: #9B5DE5; }   // Amethyst
     }
   }
 }
