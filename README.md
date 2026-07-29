@@ -32,7 +32,7 @@ for Puppeteer, and launches Chrome once to verify the installation.
 Build the website, generate both CV PDFs, and serve the built site:
 
 ```sh
-bash scripts/serve-local.sh
+bash scripts/site.sh serve
 ```
 
 Open <http://localhost:4000>. Press `Ctrl+C` to stop the server.
@@ -40,14 +40,14 @@ Open <http://localhost:4000>. Press `Ctrl+C` to stop the server.
 To build the Jekyll site without serving it:
 
 ```sh
-bash scripts/build-site.sh development
+bash scripts/site.sh build development
 ```
 
 That command does not generate PDFs. For a complete production-equivalent build,
 including both CV PDFs, use:
 
 ```sh
-bash scripts/build-netlify.sh
+bash scripts/site.sh netlify
 ```
 
 ## Testing
@@ -55,7 +55,7 @@ bash scripts/build-netlify.sh
 Run the complete production-build and regression suite:
 
 ```sh
-bash scripts/test-site.sh
+bash scripts/site.sh test
 ```
 
 The suite verifies important routes and content, CV web/print parity,
@@ -100,9 +100,9 @@ verification automatically.
 ## Deployment
 
 Netlify deploys the `master` branch using `netlify.toml`, which calls
-`scripts/build-netlify.sh`. The same scripts used locally and in GitHub Actions
-perform the production Jekyll build and Puppeteer setup. Every Netlify build
-generates and verifies both CV PDFs before `_site` is published.
+`bash scripts/site.sh netlify`. The same orchestrator is used locally and in
+GitHub Actions. Every Netlify build generates and verifies both CV PDFs before
+`_site` is published.
 
 GitHub Actions runs the site and CV regression suite on pushes and pull requests.
 It caches the project-local Puppeteer browser between runs, but still verifies

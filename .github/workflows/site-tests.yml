@@ -42,7 +42,7 @@ jobs:
           key: ${{ runner.os }}-${{ runner.arch }}-puppeteer-${{ hashFiles('scripts/package-lock.json', '.puppeteerrc.cjs') }}
 
       - name: Run site and CV tests
-        run: bash scripts/test-site.sh
+        run: bash scripts/site.sh test
 
       - name: Upload PDF visual differences
         if: failure()

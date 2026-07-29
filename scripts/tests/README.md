@@ -3,7 +3,7 @@
 Run the complete production-build and CV test suite from the repository root:
 
 ```sh
-bash scripts/test-site.sh
+bash scripts/site.sh test
 ```
 
 The command installs the pinned PDF dependencies, verifies the repository-local

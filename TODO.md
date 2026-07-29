@@ -36,13 +36,13 @@ Used Puppeteer with bundled Chromium to generate PDFs from dedicated print pages
 
 **Netlify build:**
 
-- `netlify.toml` calls `scripts/build-netlify.sh`
+- `netlify.toml` calls `bash scripts/site.sh netlify`
 - Every deploy builds the site and verifies that both CV PDFs were generated
 
 **Local development:**
 
-- Use `./scripts/serve-local.sh` to build, generate PDFs, and serve
-- Use `scripts/build-netlify.sh` for a complete production-equivalent build
+- Use `bash scripts/site.sh serve` to build, generate PDFs, and serve
+- Use `bash scripts/site.sh netlify` for a complete production-equivalent build
 - Don't use `jekyll serve --skip-initial-build` (won't pick up PDFs added after start)
 
 **Testing and browser setup:**
@@ -54,14 +54,14 @@ Used Puppeteer with bundled Chromium to generate PDFs from dedicated print pages
 
 Steps to run before deploying the blog:
 
-1. Run `bash scripts/test-site.sh`.
+1. Run `bash scripts/site.sh test`.
 2. Push the reviewed commit to `master`; Netlify runs
-   `bash scripts/build-netlify.sh`.
+   `bash scripts/site.sh netlify`.
 
 For local development:
 
 ```bash
-bash scripts/serve-local.sh
+bash scripts/site.sh serve
 ```
 
 ## Completed
