@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Applied Research Manager, <a href='https://www.nvidia.com/'>NVIDIA</a> Virtual Cell Team
+subtitle: Applied Research Manager, <a href='https://www.nvidia.com/'>NVIDIA</a> BioNeMo Team
 
 profile:
   align: right
