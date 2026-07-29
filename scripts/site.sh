@@ -82,6 +82,7 @@ case "$site_command" in
     node scripts/prebuild-bibliography.js --check
     build_site production
     npm --prefix scripts run test:content
+    npm --prefix scripts run test:browser
     generate_pdfs --prepared-date 2026-07-29
     npm --prefix scripts run test:pdf
     ;;

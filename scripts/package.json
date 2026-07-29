@@ -11,9 +11,11 @@
     "pdf:file": "node generate-cv-pdf.js --file",
     "pdf:descriptive": "node generate-cv-pdf.js descriptive",
     "pdf:concise": "node generate-cv-pdf.js concise",
-    "test": "npm run test:content && npm run test:pdf",
+    "test": "npm run test:content && npm run test:browser && npm run test:pdf",
+    "test:browser": "node --test --test-concurrency=1 tests/browser.test.mjs",
     "test:content": "node --test --test-concurrency=1 tests/routes.test.mjs tests/cv-parity.test.mjs tests/bibliography.test.mjs",
     "test:pdf": "node --test --test-concurrency=1 tests/pdf.test.mjs",
+    "test:update-browser-baselines": "node tests/update-browser-baselines.mjs",
     "test:update-pdf-baselines": "node tests/update-pdf-baselines.mjs"
   },
   "dependencies": {

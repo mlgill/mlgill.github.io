@@ -59,9 +59,20 @@ bash scripts/site.sh test
 ```
 
 The suite verifies important routes and content, CV web/print parity,
-bibliography synchronization, PDF metadata and text, and reviewed page images
-for both CV versions. PDF failures place expected, actual, and diff images under
-`tmp/pdfs/visual-diffs`.
+bibliography synchronization, representative browser views in light and dark
+themes at desktop and mobile sizes, PDF metadata and text, and reviewed page
+images for both CV versions. Visual failures place expected, actual, and diff
+images under `tmp/browser/visual-diffs` or `tmp/pdfs/visual-diffs`.
+
+After an intentional website styling change:
+
+```sh
+bash scripts/site.sh build production
+npm --prefix scripts run test:update-browser-baselines
+npm --prefix scripts run test:browser
+```
+
+Review every changed browser baseline before committing it.
 
 The PDF tests use a fixed prepared date so the image baselines are deterministic.
 Every PDF page is rendered at 144 DPI and must match its reviewed baseline
