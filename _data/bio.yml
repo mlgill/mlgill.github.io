@@ -1,8 +1,13 @@
 # Bio information for CV and about pages
 
 name: Michelle Lynn Gill, PhD
-title: "Applied Research Manager, NVIDIA Virtual Cell Team"
-title_html: "Applied Research Manager, <a href='https://www.nvidia.com/'>NVIDIA</a> Virtual Cell Team"
+# Shared role defaults. A page may override any individual field with a
+# `role_override` mapping in its front matter.
+role:
+  title: "Applied Research Manager"
+  organization: "NVIDIA"
+  organization_url: "https://www.nvidia.com/"
+  team: "BioNeMo Team"
 
 bio: |
   I am an Applied Research Manager on NVIDIA’s BioNeMo team, where I lead a cross-functional effort to train NVIDIA’s Nemotron reasoning models for chemistry and drug-discovery applications. My team develops post-training and evaluation data, benchmarks, and metrics that guide model development.

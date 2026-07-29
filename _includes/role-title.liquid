@@ -1,0 +1,6 @@
+{% assign shared_role = site.data.bio.role %}
+{% assign role_title = include.override.title | default: shared_role.title %}
+{% assign role_organization = include.override.organization | default: shared_role.organization %}
+{% assign role_organization_url = include.override.organization_url | default: shared_role.organization_url %}
+{% assign role_team = include.override.team | default: shared_role.team %}
+{{ role_title }}, {% if include.link_organization %}<a href="{{ role_organization_url }}">{{ role_organization }}</a>{% else %}{{ role_organization }}{% endif %} {{ role_team }}

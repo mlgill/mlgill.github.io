@@ -11,7 +11,7 @@ layout: default
         {{ site.title }}
       {% endif %}
     </h1>
-    <p class="desc">{{ page.subtitle }}</p>
+    <p class="desc">{% include role-title.liquid override=page.role_override link_organization=true %}</p>
   </header>
 
   <article>

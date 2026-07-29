@@ -7,7 +7,7 @@ cv_type: concise
 sitemap: false
 ---
 # <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}, PhD
-{{ site.data.bio.title }}
+{% include role-title.liquid override=page.role_override %}
 
 {% if site.data.socials.email %}<div id="email"><a href="mailto:{{ site.data.socials.email }}">{{ site.data.socials.email }}</a></div>{% endif %}
 <div id="webaddress">
