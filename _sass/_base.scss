@@ -2,6 +2,8 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+@use "design-system" as design;
+
 // Typography
 
 p,
@@ -668,12 +670,12 @@ footer.sticky-bottom {
       padding: 0.75rem 1.15rem;
 
       &:hover {
-        color: $black-color;
+        color: design.$black-color;
       }
     }
 
     &.active .page-link {
-      color: $white-color;
+      color: design.$white-color;
       background-color: var(--global-theme-color);
 
       &:hover {
@@ -857,7 +859,7 @@ footer.sticky-bottom {
           border-color: var(--btn-blue-color);
           &:hover {
             background-color: var(--btn-blue-color);
-            color: $white-color;
+            color: design.$white-color;
           }
         }
         a.btn.btn-arxiv {
@@ -865,7 +867,7 @@ footer.sticky-bottom {
           border-color: var(--btn-red-dark-color);
           &:hover {
             background-color: var(--btn-red-dark-color);
-            color: $white-color;
+            color: design.$white-color;
           }
         }
         a.btn.btn-pdf {
@@ -873,7 +875,7 @@ footer.sticky-bottom {
           border-color: var(--btn-red-color);
           &:hover {
             background-color: var(--btn-red-color);
-            color: $white-color;
+            color: design.$white-color;
           }
         }
         a.btn.bibtex {
@@ -881,7 +883,7 @@ footer.sticky-bottom {
           border-color: var(--btn-green-color);
           &:hover {
             background-color: var(--btn-green-color);
-            color: $white-color;
+            color: design.$white-color;
           }
         }
         a.btn.abstract {
@@ -889,7 +891,7 @@ footer.sticky-bottom {
           border-color: var(--btn-cyan-color);
           &:hover {
             background-color: var(--btn-cyan-color);
-            color: $white-color;
+            color: design.$white-color;
           }
         }
         a.btn.btn-code {
@@ -897,7 +899,7 @@ footer.sticky-bottom {
           border-color: var(--btn-purple-color);
           &:hover {
             background-color: var(--btn-purple-color);
-            color: $white-color;
+            color: design.$white-color;
           }
         }
       }
@@ -923,7 +925,7 @@ footer.sticky-bottom {
             border-color: var(--btn-orange-color);
             &:hover {
               background-color: var(--btn-orange-color);
-              color: $white-color;
+              color: design.$white-color;
             }
           }
           a.btn-conf-abstract {
@@ -931,7 +933,7 @@ footer.sticky-bottom {
             border-color: var(--btn-cyan-color);
             &:hover {
               background-color: var(--btn-cyan-color);
-              color: $white-color;
+              color: design.$white-color;
             }
           }
         }
@@ -941,7 +943,7 @@ footer.sticky-bottom {
         padding-bottom: 0.5rem;
         span {
           display: inline-block;
-          color: $black-color;
+          color: design.$black-color;
           height: 100%;
           padding-right: 0.5rem;
           vertical-align: middle;
@@ -1117,7 +1119,7 @@ html.transition *:after {
     border-color: var(--btn-orange-color);
     &:hover {
       background-color: var(--btn-orange-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }
@@ -1127,7 +1129,7 @@ html.transition *:after {
     border-color: var(--btn-red-color);
     &:hover {
       background-color: var(--btn-red-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }
@@ -1137,7 +1139,7 @@ html.transition *:after {
     border-color: var(--btn-cyan-color);
     &:hover {
       background-color: var(--btn-cyan-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }
@@ -1147,7 +1149,7 @@ html.transition *:after {
     border-color: var(--btn-blue-color);
     &:hover {
       background-color: var(--btn-blue-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }
@@ -1157,7 +1159,7 @@ html.transition *:after {
     border-color: var(--btn-purple-color);
     &:hover {
       background-color: var(--btn-purple-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }
@@ -1167,7 +1169,7 @@ html.transition *:after {
     border-color: var(--btn-green-color);
     &:hover {
       background-color: var(--btn-green-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }
@@ -1177,7 +1179,7 @@ html.transition *:after {
     border-color: var(--btn-blue-color);
     &:hover {
       background-color: var(--btn-blue-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }
@@ -1187,7 +1189,7 @@ html.transition *:after {
     border-color: var(--btn-purple-color);
     &:hover {
       background-color: var(--btn-purple-color);
-      color: $white-color;
+      color: design.$white-color;
       text-decoration: none;
     }
   }

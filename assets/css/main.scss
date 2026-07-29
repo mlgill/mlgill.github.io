@@ -3,16 +3,13 @@
 ---
 @charset "utf-8";
 
-// Dimensions
-$max-content-width: {{ site.max_width }};
-
-@import
-  "variables",
-  "themes",
-  "layout",
-  "base",
-  "distill",
-  "cv-standalone",
-  "tabs",
-  "typograms"
-;
+@use "design-system" with (
+  $max-content-width: {{ site.max_width }}
+);
+@use "themes";
+@use "layout";
+@use "base";
+@use "distill";
+@use "cv-standalone";
+@use "tabs";
+@use "typograms";
