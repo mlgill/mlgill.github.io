@@ -21,7 +21,6 @@ import { expectedRoleText, normalizeText } from "./helpers/site.mjs";
 const letterWidthPoints = 612;
 const letterHeightPoints = 792;
 const pageSizeTolerancePoints = 0.5;
-const maximumDifferentPixelRatio = 0.0005;
 const requiredHeadings = ["Overview", "Education", "Experience", "Publications", "Patents", "Presentations", "Awards", "Service"];
 
 test("generated CV PDFs are nonempty US Letter documents with expected text", async (t) => {
@@ -101,14 +100,25 @@ function comparePage(pdfName, pageNumber, expectedFile, actualFile) {
   assert.equal(actual.width, expected.width, `${pdfName} page ${pageNumber} width changed`);
   assert.equal(actual.height, expected.height, `${pdfName} page ${pageNumber} height changed`);
 
-  const diff = new PNG({ width: expected.width, height: expected.height });
-  const differentPixels = pixelmatch(expected.data, actual.data, diff.data, expected.width, expected.height, {
-    threshold: 0.1,
-    includeAA: false,
-  });
-  const ratio = differentPixels / (expected.width * expected.height);
+  let differentPixels = 0;
+  for (let offset = 0; offset < expected.data.length; offset += 4) {
+    if (
+      expected.data[offset] !== actual.data[offset] ||
+      expected.data[offset + 1] !== actual.data[offset + 1] ||
+      expected.data[offset + 2] !== actual.data[offset + 2] ||
+      expected.data[offset + 3] !== actual.data[offset + 3]
+    ) {
+      differentPixels++;
+    }
+  }
 
-  if (ratio > maximumDifferentPixelRatio) {
+  const diff = new PNG({ width: expected.width, height: expected.height });
+  pixelmatch(expected.data, actual.data, diff.data, expected.width, expected.height, {
+    threshold: 0,
+    includeAA: true,
+  });
+
+  if (differentPixels > 0) {
     const outputDirectory = path.join(diffRoot, pdfName);
     fs.mkdirSync(outputDirectory, { recursive: true });
     const prefix = `page-${String(pageNumber).padStart(2, "0")}`;
@@ -117,8 +127,9 @@ function comparePage(pdfName, pageNumber, expectedFile, actualFile) {
     fs.writeFileSync(path.join(outputDirectory, `${prefix}-diff.png`), PNG.sync.write(diff));
   }
 
-  assert.ok(
-    ratio <= maximumDifferentPixelRatio,
-    `${pdfName} page ${pageNumber} differs from baseline by ${(ratio * 100).toFixed(3)}%; visual artifacts are in ${diffRoot}`
+  assert.equal(
+    differentPixels,
+    0,
+    `${pdfName} page ${pageNumber} differs from baseline by ${differentPixels} pixels; visual artifacts are in ${diffRoot}`
   );
 }

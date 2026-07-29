@@ -4,7 +4,7 @@ import { spawnSync } from "node:child_process";
 
 import { rootDirectory } from "./site.mjs";
 
-export const renderDpi = 110;
+export const renderDpi = 144;
 export const pdfPreparedDate = "2026-07-29";
 export const expectedPreparedText = "Prepared 07/29/2026";
 

@@ -10,8 +10,8 @@ The command installs the pinned PDF dependencies, verifies the repository-local
 Puppeteer browser, and performs a production Jekyll build before running tests.
 
 The PDF tests use `pdfinfo`, `pdftotext`, and `pdftoppm` from Poppler. They render
-every page at a fixed resolution and compare it with the reviewed PNG fixtures in
-`scripts/tests/fixtures/pdf`.
+every page at 144 DPI and require an exact pixel-for-pixel match with the reviewed
+PNG fixtures in `scripts/tests/fixtures/pdf`.
 
 After an intentional PDF layout change, review the generated PDFs and update the
 fixtures explicitly:

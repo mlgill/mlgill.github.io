@@ -64,6 +64,8 @@ for both CV versions. PDF failures place expected, actual, and diff images under
 `tmp/pdfs/visual-diffs`.
 
 The PDF tests use a fixed prepared date so the image baselines are deterministic.
+Every PDF page is rendered at 144 DPI and must match its reviewed baseline
+pixel-for-pixel with zero differences.
 Production PDFs continue to use the build date.
 
 After an intentional PDF layout change:
