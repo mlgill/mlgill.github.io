@@ -220,7 +220,7 @@ defaults:
 
 sass:
   style: compressed
-  silence_deprecations:
+  fatal_deprecations:
     - import
     - global-builtin
     - if-function
