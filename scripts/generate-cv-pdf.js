@@ -16,9 +16,6 @@ const puppeteer = require("puppeteer");
 const path = require("path");
 const fs = require("fs");
 
-// Debug mode: when true, also saves PDFs to assets/pdf/cv/ for debugging
-const DEBUG = true;
-
 // Optional: Find a custom Chrome/Chromium executable
 // Uncomment and modify findChromePath() if you want to use a specific Chrome installation
 // instead of Puppeteer's bundled Chromium
@@ -214,17 +211,6 @@ async function generatePDF(browser, url, outputPath, cvTitle, preparedDate) {
   });
 
   console.log(`PDF saved to: ${outputPath}`);
-
-  // Also save a debug copy:
-  // - DEBUG=true: save to assets/pdf/cv/ (in repo for inspection)
-  // - DEBUG=false: save to /tmp/cv-pdf/ (won't be committed)
-  const debugDir = DEBUG ? path.join(__dirname, "..", "assets", "pdf", "cv") : "/tmp/cv-pdf";
-  if (!fs.existsSync(debugDir)) {
-    fs.mkdirSync(debugDir, { recursive: true });
-  }
-  const debugPath = path.join(debugDir, path.basename(outputPath));
-  fs.copyFileSync(outputPath, debugPath);
-  console.log(`PDF copy saved to: ${debugPath}`);
 }
 
 /**
@@ -234,6 +220,7 @@ async function main() {
   const args = parseArgs();
 
   const configs = getCVConfigs(args.baseUrl, args.useFile);
+  const executablePath = await puppeteer.executablePath();
 
   // Use Puppeteer's bundled Chromium
   // To use a custom Chrome path, uncomment findChromePath() above and add:
@@ -242,11 +229,7 @@ async function main() {
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"], // Required for CI environments
   });
-  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
-    console.log(`Using Chrome at ${process.env.PUPPETEER_EXECUTABLE_PATH}`);
-  } else {
-    console.log("Using Puppeteer bundled Chromium");
-  }
+  console.log(`Using Chrome at ${executablePath}`);
 
   try {
     if (args.cvType) {

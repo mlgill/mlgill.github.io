@@ -1,71 +1,115 @@
 # mlgill.github.io
 
-Personal academic website for Michelle Lynn Gill, Ph.D.
+Personal academic website for Michelle Lynn Gill, Ph.D. The site is built with
+Jekyll, deployed by Netlify, and uses Puppeteer to generate descriptive and
+concise CV PDFs.
 
-## Local Development
+## Requirements
 
-### Prerequisites
+Runtime versions are pinned in `.ruby-version` and `.node-version`:
 
-- Ruby (managed via rbenv)
-- Bundler
-- Node.js (for PDF generation)
-- Python 3 (for local server)
+- Ruby 3.3.10 with Bundler
+- Node.js 24.18.0 with npm
+- Python 3 for the local static server
+- Poppler for PDF regression tests (`brew install poppler` on macOS)
 
-### Setup
+Using `rbenv` and a Node version manager is recommended. Netlify and GitHub
+Actions read the same version files used locally.
 
-```bash
-# Initialize rbenv
-eval "$(rbenv init -)"
+## Initial setup
 
-# Install Ruby dependencies
-bundle install
+From the repository root:
 
-# Install Node dependencies for PDF generation
-cd scripts && npm install && cd ..
+```sh
+bash scripts/setup.sh
 ```
 
-### Running Locally with CV PDF Generation
+This installs the Ruby and Node dependencies, installs a project-local Chrome
+for Puppeteer, and launches Chrome once to verify the installation.
 
-```bash
-# Clean previous build (recommended)
-bundle exec jekyll clean
+## Local development
 
-# Use the convenience script (recommended)
-./scripts/serve-local.sh
+Build the website, generate both CV PDFs, and serve the built site:
+
+```sh
+bash scripts/serve-local.sh
 ```
 
-This script:
-1. Pre-processes the bibliography for faster builds
-2. Builds the Jekyll site
-3. Generates CV PDFs using Puppeteer
-4. Serves the site using Python's HTTP server
+Open <http://localhost:4000>. Press `Ctrl+C` to stop the server.
 
-The site will be available at http://localhost:4000
+To build the Jekyll site without serving it:
 
-**Manual steps** (if you prefer):
-```bash
-# 1. Clean and build site
-bundle exec jekyll clean
-bundle exec jekyll build
-
-# 2. Generate PDFs
-cd scripts && npm install && node generate-cv-pdf.js --file && cd ..
-
-# 3. Serve with Python
-cd _site && python3 -m http.server 4000
+```sh
+bash scripts/build-site.sh development
 ```
 
-**Note for AI assistants:** After running `jekyll build`, you MUST also run the PDF generation script (`node scripts/generate-cv-pdf.js --file`) or the CV download links will 404. The PDFs are not part of Jekyll's build - they're generated separately by Puppeteer. Always use `./scripts/serve-local.sh` for local development, or run both commands in sequence.
+That command does not generate PDFs. For a complete production-equivalent build,
+including both CV PDFs, use:
+
+```sh
+bash scripts/build-netlify.sh
+```
+
+## Testing
+
+Run the complete production-build and regression suite:
+
+```sh
+bash scripts/test-site.sh
+```
+
+The suite verifies important routes and content, CV web/print parity,
+bibliography synchronization, PDF metadata and text, and reviewed page images
+for both CV versions. PDF failures place expected, actual, and diff images under
+`tmp/pdfs/visual-diffs`.
+
+The PDF tests use a fixed prepared date so the image baselines are deterministic.
+Production PDFs continue to use the build date.
+
+After an intentional PDF layout change:
+
+```sh
+node scripts/generate-cv-pdf.js --file --prepared-date 2026-07-29
+npm --prefix scripts run test:update-pdf-baselines
+npm --prefix scripts run test:pdf
+```
+
+Review every changed baseline image before committing it. More details are in
+[`scripts/tests/README.md`](scripts/tests/README.md).
+
+## Puppeteer browser maintenance
+
+Puppeteer uses `.cache/puppeteer` inside this repository. The directory is
+ignored by Git and can be repaired without touching browser caches used by other
+projects.
+
+```sh
+# Confirm Chrome exists and can launch
+npm --prefix scripts run browser:verify
+
+# Remove only this repository's Puppeteer cache
+npm --prefix scripts run browser:clean
+
+# Verify Chrome, reinstalling it if missing or incomplete
+npm --prefix scripts run browser:setup
+```
+
+The normal setup, test, local-server, and Netlify build scripts run the
+verification automatically.
 
 ## Deployment
 
-The site is automatically deployed via [Netlify](https://www.netlify.com/) when changes are pushed to the `master` branch. The build configuration is in `netlify.toml`.
+Netlify deploys the `master` branch using `netlify.toml`, which calls
+`scripts/build-netlify.sh`. The same scripts used locally and in GitHub Actions
+perform the production Jekyll build and Puppeteer setup. Every Netlify build
+generates and verifies both CV PDFs before `_site` is published.
 
-Netlify handles:
-- Jekyll site build
-- Bibliography pre-processing
-- CV PDF generation (with smart caching to skip unchanged CVs)
+GitHub Actions runs the site and CV regression suite on pushes and pull requests.
+It caches the project-local Puppeteer browser between runs, but still verifies
+that Chrome launches before testing.
 
 ---
 
-This site is based on the [al-folio](https://github.com/alshedivat/al-folio) Jekyll theme, available under the [MIT License](https://github.com/alshedivat/al-folio/blob/main/LICENSE).
+This site is based on the
+[al-folio](https://github.com/alshedivat/al-folio) Jekyll theme, available under
+the [MIT License](https://github.com/alshedivat/al-folio/blob/main/LICENSE).

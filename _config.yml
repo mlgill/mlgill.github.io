@@ -179,15 +179,18 @@ exclude:
   - INSTALL.md
   - LICENSE
   - lighthouse_results/
+  - netlify.toml
   - package.json
   - package-lock.json
+  - PLAN_Accelerate_Build.md
+  - .cache/
   - _pages/about_einstein.md
   - purgecss.config.js
   - README.md
   - readme_preview/
-  - scripts/node_modules/
-  - scripts/tests/
-  - scripts/test-site.sh
+  - requirements.txt
+  - scripts/
+  - TODO.md
   - tmp/
   - vendor
 keep_files:

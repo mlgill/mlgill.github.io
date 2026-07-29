@@ -23,21 +23,23 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.10"
           bundler-cache: true
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ".node-version"
           cache: npm
           cache-dependency-path: scripts/package-lock.json
 
       - name: Install PDF inspection tools
         run: brew install poppler
 
-      - name: Install CV test dependencies
-        run: npm --prefix scripts ci
+      - name: Cache Puppeteer browser
+        uses: actions/cache@v4
+        with:
+          path: .cache/puppeteer
+          key: ${{ runner.os }}-${{ runner.arch }}-puppeteer-${{ hashFiles('scripts/package-lock.json', '.puppeteerrc.cjs') }}
 
       - name: Run site and CV tests
         run: bash scripts/test-site.sh
