@@ -1,13 +1,15 @@
 # Auto-generated from papers.bib - DO NOT EDIT DIRECTLY
 # Run: node scripts/prebuild-bibliography.js
 
-- key: "dicks2025rapids"
+- key: "dicks2026rapids"
   type: "article"
   author_array:
     - first: "S."
       last: "Dicks"
     - first: "L."
       last: "Heumos"
+    - first: "L."
+      last: "May"
     - first: "S."
       last: "Jimenez"
     - first: "P."
@@ -18,20 +20,24 @@
       last: "Virshup"
     - first: "F."
       last: "Fischer"
-    - first: "L."
-      last: "May"
-    - first: "C. J."
-      last: "Nolet"
     - first: "M."
       last: "Gill"
     - first: "M."
       last: "Boerries"
-    - first: "F."
+    - first: "C. J."
+      last: "Nolet"
+    - first: "T. J."
+      last: "Chen"
+    - first: "F. J."
       last: "Theis"
-  title: "Accelerating single-cell analysis with GPU-enabled RAPIDS-singlecell"
-  journal: "In preparation"
-  year: 2025
+  title: "GPU-accelerated single-cell analysis at scale with rapids-singlecell"
+  journal: "arXiv"
+  doi: "10.48550/arXiv.2603.02402"
+  html: "https://arxiv.org/abs/2603.02402"
+  pdf: "GillMichelle_arXiv_2026.pdf"
+  year: 2026
   selected: true
+  recent: true
   bibtex_show: true
 
 - key: "sevgen2025protvae"

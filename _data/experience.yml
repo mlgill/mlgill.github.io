@@ -3,11 +3,12 @@
 # selected: true to include in abbreviated CV
 
 - title: Applied Research Manager
-  institution: NVIDIA, Virtual Cell Team
+  institution: NVIDIA, Virtual Cell and BioNeMo Teams
   year: 2022-Present
   visible: true
   selected: true
   description:
+    - Lead benchmarking and evaluation of NVIDIA’s Nemotron reasoning models for chemistry and drug discovery
     - Lead benchmarking efforts for virtual cell models, including internal and external collaborations
     - Developed benchmarking framework and tooling for model assessment and reproducibility
     - Collaboration with Chan Zuckerberg Initiative on cz-benchmarks for evaluating virtual cell models

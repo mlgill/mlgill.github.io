@@ -5,9 +5,9 @@ title: "Applied Research Manager, NVIDIA Virtual Cell Team"
 title_html: "Applied Research Manager, <a href='https://www.nvidia.com/'>NVIDIA</a> Virtual Cell Team"
 
 bio: |
-  I am an Applied Research Manager on NVIDIA's Virtual Cell team. Our team uses data, deep learning, and HPC to develop models that simulate cellular states. My focus is on the benchmarks and development of supporting tools that help evaluate and improve these models.
+  I am an Applied Research Manager on NVIDIA’s BioNeMo team, where I lead a cross-functional effort to train NVIDIA’s Nemotron reasoning models for chemistry and drug-discovery applications. My team develops post-training and evaluation data, benchmarks, and metrics that guide model development.
 
-  Previously I was a Senior Machine Learning Engineer and Data Scientist at BenevolentAI and a member of [Arthur Palmer's](https://www.biochem.cumc.columbia.edu/research-labs/palmer-lab) research group where I developed and applied nuclear magnetic resonance (NMR) spin relaxation experiments to understand how enzyme dynamics are critical to biological function.
+  Previously, I was a Senior Machine Learning Engineer and Data Scientist at BenevolentAI and a member of [Arthur Palmer’s](https://www.biochem.cumc.columbia.edu/research-labs/palmer-lab) research group, where I developed and applied nuclear magnetic resonance (NMR) spin relaxation experiments to study how enzyme dynamics shape biological function.
 
 specialized_in: "Deep learning, computational biology, drug discovery, benchmarking"
 research_interests: "Virtual cell models, proteomics, NMR spectroscopy, enzyme dynamics"

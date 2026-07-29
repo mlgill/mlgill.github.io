@@ -6,8 +6,8 @@
   {% if site.impressum_path %}
     <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
   {% endif %}
-  {% if site.last_updated %}
-    Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+  {% if site.last_commit_date %}
+    Updated: {{ site.last_commit_date | date: '%B %-d, %Y' }}.
   {% endif %}
 {% endcapture %}
 

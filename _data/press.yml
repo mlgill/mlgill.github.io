@@ -2,6 +2,17 @@
 # visible: false to hide entry everywhere (archived)
 # selected: true to include in abbreviated CV
 
+- title: "NVIDIA Litmus Bench v0.1: Chemistry Reasoning Dataset and Benchmark"
+  venue: "NVIDIA Health"
+  type: "Release Announcement"
+  year: 2026
+  description: "NVIDIA announced LitmusBench v0.1, a chemistry-reasoning dataset and benchmark for evaluating reasoning models. I lead the development of Litmus Bench at NVIDIA."
+  visible: true
+  selected: true
+  links:
+    x: https://x.com/NVIDIAHealth/status/2071968289425625153
+    huggingface: https://huggingface.co/datasets/nvidia/Nemotron-RL-litmus-bench-v0.1
+
 - title: "Michelle Gill: AI-Assisted Drug Discovery, NVIDIA, Biofoundation Models, Creating Applied Research Teams"
   venue: "Learning from Machine Learning"
   type: "Podcast Interview"

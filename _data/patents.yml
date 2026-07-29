@@ -2,6 +2,14 @@
 # visible: false to hide entry everywhere (archived)
 # selected: true to include in abbreviated CV
 
+- year: 2026
+  entries:
+    - title: "Machine Learning for Domain Specific Models"
+      authors: "<u>Gill, M.L.</u>, Paliwal, S., Corneil, D., Veccham Krishna Prasad, S.P., Novikov, M., Viessmann, O., Bakhturina, E., Gitman, D., Tramel, E."
+      details: "US Provisional Patent Application No. 64/081,016; Filing Date: 2026/06/02"
+      visible: true
+      selected: true
+
 - year: 2025
   entries:
     - title: "Automated FEP Path Generation and Optimization by Molecule Foundation Models and Generative AI"
