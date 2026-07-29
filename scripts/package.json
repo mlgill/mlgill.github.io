@@ -6,9 +6,19 @@
     "pdf": "node generate-cv-pdf.js",
     "pdf:file": "node generate-cv-pdf.js --file",
     "pdf:descriptive": "node generate-cv-pdf.js descriptive",
-    "pdf:concise": "node generate-cv-pdf.js concise"
+    "pdf:concise": "node generate-cv-pdf.js concise",
+    "test": "npm run test:content && npm run test:pdf",
+    "test:content": "node --test --test-concurrency=1 tests/routes.test.mjs tests/cv-parity.test.mjs tests/bibliography.test.mjs",
+    "test:pdf": "node --test --test-concurrency=1 tests/pdf.test.mjs",
+    "test:update-pdf-baselines": "node tests/update-pdf-baselines.mjs"
   },
   "dependencies": {
     "puppeteer": "^24.0.0"
+  },
+  "devDependencies": {
+    "cheerio": "^1.1.2",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0",
+    "yaml": "^2.8.1"
   }
 }

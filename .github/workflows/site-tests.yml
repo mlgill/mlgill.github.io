@@ -1,0 +1,52 @@
+name: Site and CV regression tests
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  test:
+    # The reviewed PDF baselines are generated on macOS so the system fallback
+    # fonts used by Chromium remain stable across local and CI comparisons.
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.10"
+          bundler-cache: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install PDF inspection tools
+        run: brew install poppler
+
+      - name: Install CV test dependencies
+        run: npm --prefix scripts ci
+
+      - name: Run site and CV tests
+        run: bash scripts/test-site.sh
+
+      - name: Upload PDF visual differences
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf-visual-differences
+          path: tmp/pdfs/visual-diffs
+          if-no-files-found: ignore
+          retention-days: 7

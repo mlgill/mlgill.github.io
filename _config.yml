@@ -185,6 +185,10 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - scripts/node_modules/
+  - scripts/tests/
+  - scripts/test-site.sh
+  - tmp/
   - vendor
 keep_files:
   - CNAME
