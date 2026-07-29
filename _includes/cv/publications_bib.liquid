@@ -1,8 +1,0 @@
-{%- comment -%}
-Publications section using jekyll-scholar with papers.bib
-Shows selected publications marked with selected={true}
-Uses simplified cv_bib template for cleaner CV formatting
-{%- endcomment -%}
-<div class="publications cv-publications">
-  {% bibliography --template cv_bib --group_by none --query @*[selected=true] %}
-</div>
