@@ -221,6 +221,10 @@ defaults:
 
 sass:
   style: compressed
+  silence_deprecations:
+    - import
+    - global-builtin
+    - if-function
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
