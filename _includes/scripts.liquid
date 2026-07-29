@@ -13,7 +13,10 @@
   crossorigin="anonymous"
 ></script>
 
-{% if site.enable_masonry %}
+{% if include.distill %}
+  <!-- Custom overrides -->
+  <script src="{{ '/assets/js/distillpub/overrides.js' | relative_url }}"></script>
+{% elsif site.enable_masonry %}
   <!-- Masonry & imagesLoaded -->
   <script
     defer
@@ -187,12 +190,16 @@
 <!-- Jupyter Open External Links New Tab -->
 <script defer src="{{ '/assets/js/jupyter_new_tab.js' | relative_url | bust_file_cache }}"></script>
 
-<!-- Badges -->
-{% if site.enable_publication_badges.altmetric %}
-  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-{% endif %}
-{% if site.enable_publication_badges.dimensions %}
-  <script async src="https://badge.dimensions.ai/badge.js"></script>
+{% if include.distill %}
+  <!-- Removed Badges -->
+{% else %}
+  <!-- Badges -->
+  {% if site.enable_publication_badges.altmetric %}
+    <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  {% endif %}
+  {% if site.enable_publication_badges.dimensions %}
+    <script async src="https://badge.dimensions.ai/badge.js"></script>
+  {% endif %}
 {% endif %}
 
 {% if site.enable_math %}
@@ -205,14 +212,15 @@
     integrity="{{ site.third_party_libraries.mathjax.integrity.js }}"
     crossorigin="anonymous"
   ></script>
-  {% unless page.pseudocode %}
+  {% if include.distill %}
     <script src="{{ '/assets/js/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
     <script
       defer
       src="{{ site.third_party_libraries.polyfill.url.js }}"
       crossorigin="anonymous"
     ></script>
-  {% else %}
+    <!-- Removed Pseudocode -->
+  {% elsif page.pseudocode %}
     <script src="{{ '/assets/js/pseudocode-setup.js' | relative_url | bust_file_cache }}"></script>
     <script
       type="text/javascript"
@@ -220,7 +228,14 @@
       integrity="{{ site.third_party_libraries.pseudocode.integrity.js }}"
       crossorigin="anonymous"
     ></script>
-  {% endunless %}
+  {% else %}
+    <script src="{{ '/assets/js/mathjax-setup.js' | relative_url | bust_file_cache }}"></script>
+    <script
+      defer
+      src="{{ site.third_party_libraries.polyfill.url.js }}"
+      crossorigin="anonymous"
+    ></script>
+  {% endif %}
 {% endif %}
 
 {% if site.enable_google_analytics %}
@@ -322,6 +337,6 @@
   <script src="{{ '/assets/js/shortcut-key.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
 
-{% if site.newsletter.enabled %}
+{% if site.newsletter.enabled and include.distill != true %}
   <script defer src="{{ '/assets/js/newsletter.js' | relative_url | bust_file_cache }}"></script>
 {% endif %}
