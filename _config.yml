@@ -7,9 +7,9 @@ first_name: Michelle
 middle_name: Lynn
 last_name: Gill
 contact_note: >
-description: > # the ">" symbol means to ignore newlines until the next setting
-  Michelle Lynn Gill, Ph.D. - R&D Manager at NVIDIA's Virtual Cell team, focusing on deep learning and computational biology.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+description: >
+  Michelle Lynn Gill, Ph.D., conducts research in AI, deep learning, computational biology, and drug discovery.
+keywords: Michelle Lynn Gill, deep learning, computational biology, drug discovery, machine learning
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🧬 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -87,7 +87,7 @@ lsi: false # produce an index for related posts
 
 # Pagination
 pagination:
-  enabled: true
+  enabled: false
 
 related_blog_posts:
   enabled: true
@@ -113,16 +113,8 @@ giscus:
 disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
-# External sources.
-# If you have blog posts published on medium.com or other external sources,
-# you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
-  - name: Google Blog
-    posts:
-      - url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
-        published_date: 2024-05-14
+# No external blog sources are configured. The external-posts generator only
+# fetches when this setting is present.
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -139,13 +131,13 @@ newsletter:
 
 collections:
   books:
-    output: true
+    output: false
   news:
     defaults:
       layout: post
-    output: true
+    output: false
   projects:
-    output: true
+    output: false
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -184,6 +176,19 @@ exclude:
   - PLAN_Accelerate_Build.md
   - .cache/
   - _pages/about_einstein.md
+  # Unused al-folio demonstration pages and collections.
+  - _pages/blog.md
+  - _pages/books.md
+  - _pages/dropdown.md
+  - _pages/news.md
+  - _pages/profiles.md
+  - _pages/projects.md
+  - _pages/repositories.md
+  - _pages/teaching.md
+  - _books/
+  - _news/
+  - _posts/
+  - _projects/
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -194,14 +199,11 @@ exclude:
   - vendor
 # Plug-ins
 plugins:
-  - jekyll-archives-v2
   - jekyll-email-protect
-  - jekyll-feed
   - jekyll-imagemagick
   - jekyll-jupyter-notebook
   - jekyll-link-attributes
   - jekyll-minifier
-  - jekyll-paginate-v2
   - jekyll-regex-replace
   - jekyll/scholar
   - jekyll-sitemap
@@ -247,16 +249,9 @@ terser:
 
 jekyll-archives:
   posts:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-    permalinks:
-      year: "/blog/:year/"
-      tags: "/blog/:type/:name/"
-      categories: "/blog/:type/:name/"
+    enabled: []
   books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+    enabled: []
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

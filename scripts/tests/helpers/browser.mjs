@@ -15,7 +15,7 @@ const routes = [
   { name: "cv", route: "/cv/" },
   { name: "publications", route: "/publications/" },
   { name: "presentations", route: "/presentations/" },
-  { name: "blog", route: "/blog/" },
+  { name: "patents", route: "/patents/" },
 ];
 
 const themes = ["light", "dark"];
@@ -56,13 +56,7 @@ export async function captureBrowserScreenshots(outputRoot) {
   const siteServer = await startSiteServer();
   const browser = await puppeteer.launch({
     headless: true,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-gpu",
-      "--disable-lcd-text",
-      "--font-render-hinting=none",
-    ],
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu", "--disable-lcd-text", "--font-render-hinting=none"],
   });
 
   const captures = [];
@@ -119,11 +113,7 @@ async function captureCase(browser, origin, route, viewport, theme, outputFile) 
     });
 
     await page.goto(`${origin}${route.route}`, { waitUntil: "networkidle2" });
-    await page.waitForFunction(
-      (selectedTheme) => document.documentElement.getAttribute("data-theme") === selectedTheme,
-      {},
-      theme
-    );
+    await page.waitForFunction((selectedTheme) => document.documentElement.getAttribute("data-theme") === selectedTheme, {}, theme);
     await page.evaluate(() => document.fonts.ready);
     await page.evaluate(async () => {
       await Promise.all(
@@ -151,57 +141,42 @@ async function captureCase(browser, origin, route, viewport, theme, outputFile) 
     });
     await page.evaluate(() => {
       document.querySelectorAll("footer").forEach((footer) => {
-        footer.innerHTML = footer.innerHTML.replace(
-          /Updated: [A-Z][a-z]+ \d{1,2}, \d{4}\./,
-          "Updated: July 29, 2026."
-        );
+        footer.innerHTML = footer.innerHTML.replace(/Updated: [A-Z][a-z]+ \d{1,2}, \d{4}\./, "Updated: July 29, 2026.");
       });
       window.scrollTo(0, 0);
     });
 
-    if (route.name === "landing") {
-      const icons = await page.evaluate(async () => {
-        const beaker = document.querySelector('.contact-icons a[title="Blog"] .fa-flask');
-        const themeToggle = [...document.querySelectorAll("#light-toggle i")].find(
-          (icon) => getComputedStyle(icon).display !== "none"
-        );
-        const themeToggleContent = themeToggle
-          ? getComputedStyle(themeToggle, "::before").content.replaceAll('"', "")
-          : "";
-        const themeToggleFont = themeToggle ? getComputedStyle(themeToggle, "::before").fontFamily : null;
+    const icons = await page.evaluate(async (checkSocialIcons) => {
+      const beaker = checkSocialIcons ? document.querySelector('.contact-icons a[title="Blog"] .fa-flask') : null;
+      const themeToggle = [...document.querySelectorAll("#light-toggle i")].find((icon) => getComputedStyle(icon).display !== "none");
+      const themeToggleContent = themeToggle ? getComputedStyle(themeToggle, "::before").content.replaceAll('"', "") : "";
+      const themeToggleFont = themeToggle ? getComputedStyle(themeToggle, "::before").fontFamily : null;
 
-        if (themeToggleContent && themeToggleFont) {
-          await document.fonts.load(`400 16px ${themeToggleFont}`, themeToggleContent);
-        }
-
-        const fontFaces = [...document.fonts];
-
-        return {
-          beakerContent: beaker ? getComputedStyle(beaker, "::before").content : null,
-          beakerFont: beaker ? getComputedStyle(beaker, "::before").fontFamily : null,
-          fontAwesomeLoaded: fontFaces.some(
-            (font) => font.family.includes("Font Awesome 6 Free") && font.status === "loaded"
-          ),
-          tablerLoaded: fontFaces.some(
-            (font) => themeToggleFont?.includes(font.family.replaceAll('"', "")) && font.status === "loaded"
-          ),
-          themeToggleContent,
-          themeToggleFont,
-        };
-      });
-
-      if (
-        !icons.fontAwesomeLoaded ||
-        !icons.tablerLoaded ||
-        !icons.beakerContent ||
-        icons.beakerContent === "none" ||
-        !icons.beakerFont?.includes("Font Awesome") ||
-        !icons.themeToggleContent ||
-        icons.themeToggleContent === "none" ||
-        !icons.themeToggleFont?.includes("tabler-icons")
-      ) {
-        throw new Error(`Expected social and navigation icon glyphs were not rendered: ${JSON.stringify(icons)}`);
+      if (themeToggleContent && themeToggleFont) {
+        await document.fonts.load(`400 16px ${themeToggleFont}`, themeToggleContent);
       }
+
+      const fontFaces = [...document.fonts];
+
+      return {
+        beakerContent: beaker ? getComputedStyle(beaker, "::before").content : null,
+        beakerFont: beaker ? getComputedStyle(beaker, "::before").fontFamily : null,
+        fontAwesomeLoaded: !checkSocialIcons || fontFaces.some((font) => font.family.includes("Font Awesome 6 Free") && font.status === "loaded"),
+        tablerLoaded: fontFaces.some((font) => themeToggleFont?.includes(font.family.replaceAll('"', "")) && font.status === "loaded"),
+        themeToggleContent,
+        themeToggleFont,
+      };
+    }, route.name === "landing");
+
+    if (!icons.tablerLoaded || !icons.themeToggleContent || icons.themeToggleContent === "none" || !icons.themeToggleFont?.includes("tabler-icons")) {
+      throw new Error(`Expected navigation icon glyph was not rendered: ${JSON.stringify(icons)}`);
+    }
+
+    if (
+      route.name === "landing" &&
+      (!icons.fontAwesomeLoaded || !icons.beakerContent || icons.beakerContent === "none" || !icons.beakerFont?.includes("Font Awesome"))
+    ) {
+      throw new Error(`Expected social icon glyph was not rendered: ${JSON.stringify(icons)}`);
     }
 
     if (failedLocalRequests.length > 0) {

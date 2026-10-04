@@ -90,6 +90,16 @@ p {
   width: 58%;
 }
 
+/* Keep each entry title with the details that follow it in printed CVs. */
+p:has(+ ul), h2, h3 {
+  break-after: avoid-page;
+  page-break-after: avoid;
+}
+
+p:has(+ ul) {
+  break-inside: avoid-page;
+}
+
 code {
   font: normal normal;
   font-size: 90%;

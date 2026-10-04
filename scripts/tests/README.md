@@ -10,12 +10,12 @@ The command installs the pinned test dependencies, verifies the repository-local
 Puppeteer browser, and performs a production Jekyll build before running tests.
 
 The browser visual tests capture the landing page, CV, publications,
-presentations, and blog in light and dark themes at desktop and mobile sizes.
+presentations, and patents in light and dark themes at desktop and mobile sizes.
 The pinned Puppeteer browser blocks external dynamic scripts, waits for fonts and
 images, disables animation, and requires exact pixel matches with the reviewed
 PNG fixtures in `scripts/tests/fixtures/browser`.
 
-After an intentional website styling change, review the generated site and
+After an intentional website content or styling change, review the generated site and
 update the fixtures explicitly:
 
 ```sh
@@ -31,7 +31,7 @@ The PDF tests use `pdfinfo`, `pdftotext`, and `pdftoppm` from Poppler. They rend
 every page at 144 DPI and require an exact pixel-for-pixel match with the reviewed
 PNG fixtures in `scripts/tests/fixtures/pdf`.
 
-After an intentional PDF layout change, review the generated PDFs and update the
+After an intentional PDF content or layout change, review the generated PDFs and update the
 fixtures explicitly:
 
 ```sh

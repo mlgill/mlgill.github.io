@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 import test from "node:test";
 import assert from "node:assert/strict";
 
@@ -29,6 +30,12 @@ test("production build contains every important route", async (t) => {
   }
 });
 
+test("theme demonstration routes are excluded from the published site", () => {
+  for (const route of ["/blog/", "/books/", "/news/", "/people/", "/projects/", "/repositories/", "/teaching/"]) {
+    assert.equal(fs.existsSync(path.dirname(routeFile(route))), false, `${route} and its child pages should not be published`);
+  }
+});
+
 test("shared role data renders consistently on the landing page and every CV variant", () => {
   const expected = expectedRoleText();
   const locations = [
@@ -43,6 +50,27 @@ test("shared role data renders consistently on the landing page and every CV var
     const { $ } = loadRoute(route);
     assert.equal(selectedText($, selector), expected, `${route} should use the shared role`);
   }
+});
+
+test("landing page metadata agrees with the visible current role", () => {
+  const { $ } = loadRoute("/");
+  const description = $("meta[name='description']").attr("content");
+  assert.ok(description, "Landing page is missing its description");
+  assert.ok(normalizeText(description).includes(expectedRoleText()), "Landing page description should include the current shared role");
+});
+
+test("presentation links agree between the presentations page and full CV", () => {
+  const { $: presentations } = loadRoute("/presentations/");
+  const { $: cv } = loadRoute("/cv/");
+  const pageLinks = presentations("a.btn-presentation")
+    .map((_, link) => presentations(link).attr("href"))
+    .get();
+  const cvLinks = cv("a.pres-slides, a.pres-video, a.pres-abstract, a.pres-program, a.pres-code, a.pres-thesis")
+    .map((_, link) => cv(link).attr("href"))
+    .get();
+
+  assert.ok(pageLinks.length > 0, "Presentations page should have resource links");
+  assert.deepEqual(pageLinks, cvLinks, "Presentation resources should point to the same destinations on both pages");
 });
 
 test("CV variants retain the expected major section headings", () => {

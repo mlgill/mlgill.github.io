@@ -63,7 +63,6 @@ GEM
     cssminify2 (2.1.0)
     csv (3.3.5)
     date (3.5.1)
-    deep_merge (1.2.2)
     drb (2.2.3)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -143,9 +142,6 @@ GEM
     jekyll-email-protect (1.1.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-get-json (1.0.0)
-      deep_merge (~> 1.2)
-      jekyll (>= 3.0)
     jekyll-imagemagick (1.4.0)
       jekyll (>= 3.4)
     jekyll-jupyter-notebook (0.0.6)
@@ -295,7 +291,6 @@ DEPENDENCIES
   jekyll-archives-v2
   jekyll-email-protect
   jekyll-feed
-  jekyll-get-json
   jekyll-imagemagick
   jekyll-jupyter-notebook
   jekyll-link-attributes
@@ -331,7 +326,6 @@ CHECKSUMS
   cssminify2 (2.1.0) sha256=406a0b95fdaab60132c6f1fbb47b4a30f9572d2ef523f806fb94a530d78c2bb1
   csv (3.3.5) sha256=6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f
   date (3.5.1) sha256=750d06384d7b9c15d562c76291407d89e368dda4d4fff957eb94962d325a0dc0
-  deep_merge (1.2.2) sha256=83ced3a3d7f95f67de958d2ce41b1874e83c8d94fe2ddbff50c8b4b82323563a
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   em-websocket (0.5.3) sha256=f56a92bde4e6cb879256d58ee31f124181f68f8887bd14d53d5d9a292758c6a8
   eventmachine (1.2.7) sha256=994016e42aa041477ba9cff45cbe50de2047f25dd418eba003e84f0d16560972
@@ -365,7 +359,6 @@ CHECKSUMS
   jekyll-archives-v2 (0.0.7) sha256=ffb887779682d5d71a8491c56efd49eb44f84b0b9ce1ebd90640cbff15a9e7d9
   jekyll-email-protect (1.1.0) sha256=00d620939c710788ae3f71188ef913e0aa7ff0a5a39f48249213ea6215558c8d
   jekyll-feed (0.17.0) sha256=689aab16c877949bb9e7a5c436de6278318a51ecb974792232fd94d8b3acfcc3
-  jekyll-get-json (1.0.0) sha256=f6b076a93de9cace89a88617b494bea10e6dbb86331c293d663d37d9b9ae7522
   jekyll-imagemagick (1.4.0) sha256=dcf4ae46ffbeabfac584a5256821e39fc5fae8d651fd5c4a56fef3a2061a7ef4
   jekyll-jupyter-notebook (0.0.6) sha256=33f757eaad9035bebc5309e23ce2274db089ae8a0d002a53c3acbc5265d322cd
   jekyll-link-attributes (1.0.1) sha256=c88e6742ea1ee0442a49ac183f89ad68b194bf9bffe1b05e0cc308dbaebd3e23

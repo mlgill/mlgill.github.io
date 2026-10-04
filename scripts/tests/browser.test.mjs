@@ -6,12 +6,7 @@ import assert from "node:assert/strict";
 import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
 
-import {
-  browserActualRoot,
-  browserBaselineRoot,
-  browserDiffRoot,
-  captureBrowserScreenshots,
-} from "./helpers/browser.mjs";
+import { browserActualRoot, browserBaselineRoot, browserDiffRoot, captureBrowserScreenshots } from "./helpers/browser.mjs";
 
 test("representative website views match reviewed browser baselines", async () => {
   fs.rmSync(browserDiffRoot, { recursive: true, force: true });

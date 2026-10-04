@@ -1,0 +1,17 @@
+{% comment %}Required: links and variant ("cv" or "page").{% endcomment %}
+{%- if include.variant == 'cv' or include.variant == 'page' -%}
+{%- assign link_types = 'slides,video,abstract,program,code,thesis' | split: ',' -%}
+{%- capture presentation_links -%}
+  {%- assign separator = '' -%}
+  {%- for kind in link_types -%}
+    {%- assign url = include.links[kind] -%}
+    {%- if url -%}
+      {{- separator -}}<a href="{%- if include.variant == 'page' or kind == 'video' or kind == 'code' -%}{{ url }}{%- elsif include.variant == 'cv' -%}{%- if url contains '://' -%}{{ url }}{%- else -%}{{ url | relative_url }}{%- endif -%}{%- endif -%}" class="{%- if include.variant == 'cv' -%}pres-{%- elsif include.variant == 'page' -%}btn-presentation btn-{%- endif -%}{{ kind }}">{%- if include.variant == 'cv' -%}{{ kind | capitalize }}{%- elsif include.variant == 'page' -%}{{ kind | upcase }}{%- endif -%}</a>
+      {%- if include.variant == 'cv' -%}{%- assign separator = ' · ' -%}{%- elsif include.variant == 'page' -%}{%- assign separator = ' ' -%}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if presentation_links != empty -%}
+  {%- if include.variant == 'cv' -%}- {% elsif include.variant == 'page' -%}<br>{%- endif -%}{{ presentation_links }}
+{%- endif -%}
+{%- endif -%}
