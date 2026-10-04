@@ -20,7 +20,7 @@
   selected: true
   description:
     - R&D Manager and Scientific Lead for Clara Discovery, NVIDIA's platform for accelerating drug discovery
-    - Developed BioNeMo for pre-training and fine tuning of large language models for cheminformatics and proteomics
+    - Developed BioNeMo for pre-training and fine-tuning large language models for cheminformatics and proteomics
 
 - title: Senior AI and Deep Learning Scientist
   institution: NVIDIA
@@ -28,8 +28,8 @@
   visible: true
   selected: true
   description:
-    - Focused on proteomics including deep learning models to predict peptide spectral matches with >95% F1
-    - Led team using GCNNs to predict molecular properties
+    - Developed deep learning models for peptide-spectrum matching in proteomics
+    - Led a team applying graph convolutional neural networks to predict molecular properties
 
 - title: Senior Data Scientist and Machine Learning Engineer
   institution: BenevolentAI
@@ -37,8 +37,8 @@
   visible: true
   selected: true
   description:
-    - Matrix factorization and GCNNs for drug mechanism importance in knowledge graphs
-    - 3D CNNs for ligand pose and affinity prediction
+    - Applied matrix factorization and graph convolutional neural networks to study drug mechanisms in knowledge graphs
+    - Applied 3D convolutional neural networks to predict ligand binding poses and affinities
 
 - title: Senior Deep Learning Consultant
   institution: NVIDIA
@@ -46,7 +46,7 @@
   visible: true
   selected: true
   description:
-    - Assisted clients in pharmaceutical and materials science in utilizing deep learning
+    - Helped clients apply deep learning to research problems in pharmaceutical and materials science
 
 - title: Senior Data Scientist
   institution: Metis
@@ -63,7 +63,7 @@
   visible: true
   selected: true
   description:
-    - Developed parallelized, compressed sensing methods for NMR data reconstruction
+    - Developed parallelized compressed sensing methods for reconstructing NMR data
 
 - title: Postdoctoral Research Fellow
   institution: Columbia University, Department of Biochemistry and Molecular Biophysics
@@ -71,8 +71,8 @@
   visible: true
   selected: true
   description:
-    - Demonstrated conformational selection in DNA methyltransferase AlkB
-    - Developed multiple quantum NMR spin relaxation experiments
+    - Demonstrated conformational selection in the DNA repair enzyme AlkB
+    - Developed multiple-quantum NMR spin relaxation experiments
     - "Advisor: Professor Arthur G. Palmer, III"
 
 - title: Consultant

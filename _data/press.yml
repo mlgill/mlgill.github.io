@@ -6,7 +6,7 @@
   venue: "NVIDIA Health"
   type: "Release Announcement"
   year: 2026
-  description: "NVIDIA announced LitmusBench v0.1, a chemistry-reasoning dataset and benchmark for evaluating reasoning models. I lead the development of Litmus Bench at NVIDIA."
+  description: "NVIDIA announced Litmus Bench v0.1, a chemistry-reasoning dataset and benchmark for evaluating reasoning models. I lead the development of Litmus Bench at NVIDIA."
   visible: true
   selected: true
   links:
