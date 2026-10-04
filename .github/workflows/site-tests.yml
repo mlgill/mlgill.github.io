@@ -1,4 +1,4 @@
-name: Site and CV regression tests
+name: Site and CV visual tests
 
 on:
   pull_request:
@@ -12,9 +12,8 @@ on:
 
 jobs:
   test:
-    # The reviewed PDF baselines are generated on macOS so the system fallback
-    # fonts used by Chromium remain stable across local and CI comparisons.
-    runs-on: macos-latest
+    # Pin the macOS major to reduce drift from macos-latest upgrades.
+    runs-on: macos-26
 
     steps:
       - name: Checkout
@@ -43,8 +42,17 @@ jobs:
           path: .cache/puppeteer
           key: ${{ runner.os }}-${{ runner.arch }}-puppeteer-${{ hashFiles('scripts/package-lock.json', '.puppeteerrc.cjs') }}
 
-      - name: Run site and CV tests
-        run: bash scripts/site.sh test
+      - name: Prepare site and visual checks
+        id: visual_prepare
+        run: bash scripts/site.sh visual:prepare
+
+      - name: Run browser visual checks
+        if: ${{ !cancelled() && steps.visual_prepare.outcome == 'success' }}
+        run: bash scripts/site.sh visual:browser
+
+      - name: Run PDF visual checks
+        if: ${{ !cancelled() && steps.visual_prepare.outcome == 'success' }}
+        run: bash scripts/site.sh visual:pdf
 
       - name: Upload PDF visual differences
         if: failure()

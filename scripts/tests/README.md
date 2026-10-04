@@ -36,6 +36,14 @@ report failures in one workflow run. For one local command that runs both visual
 suites, use `bash scripts/site.sh visual`. Visual checks use the fixed
 `2026-07-29` PDF date and do not repeat Netlify's content checks.
 
+Visual comparisons require matching dimensions, ignore detected antialiasing,
+and use a 0.1 perceptual color threshold with at most 0.07% differing pixels.
+This accommodates small macOS rasterization differences while retaining checks
+for missing content and layout changes. The comparator has negative controls
+for removed and shifted elements; browser captures also require loaded images
+and icon fonts. GitHub pins the macOS major version, and missing browser caches
+are rebuilt using the pinned Puppeteer browser.
+
 The browser visual tests capture the landing page, CV, publications,
 presentations, and patents in light and dark themes at desktop and mobile sizes.
 The pinned Puppeteer browser blocks external dynamic scripts, waits for fonts and

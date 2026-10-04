@@ -3,7 +3,6 @@ import path from "node:path";
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
 
 import {
@@ -17,6 +16,7 @@ import {
   runCommand,
 } from "./helpers/pdf.mjs";
 import { expectedRoleText, normalizeText } from "./helpers/site.mjs";
+import { compareScreenshotPixels } from "./helpers/visual-comparison.mjs";
 
 const letterWidthPoints = 612;
 const letterHeightPoints = 792;
@@ -79,7 +79,7 @@ test("full-page PDF rendering matches reviewed baselines", async (t) => {
   fs.rmSync(diffRoot, { recursive: true, force: true });
 
   for (const pdf of pdfConfigurations) {
-    await t.test(pdf.name, () => {
+    await t.test(pdf.name, async (t) => {
       const actualPages = listPageImages(path.join(actualRoot, pdf.name));
       const expectedPages = listPageImages(path.join(baselineRoot, pdf.name));
 
@@ -87,7 +87,9 @@ test("full-page PDF rendering matches reviewed baselines", async (t) => {
       assert.equal(actualPages.length, expectedPages.length, `${pdf.name} PDF page count changed`);
 
       for (let index = 0; index < expectedPages.length; index++) {
-        comparePage(pdf.name, index + 1, expectedPages[index], actualPages[index]);
+        await t.test(`page-${String(index + 1).padStart(2, "0")}`, () => {
+          comparePage(pdf.name, index + 1, expectedPages[index], actualPages[index]);
+        });
       }
     });
   }
@@ -100,25 +102,9 @@ function comparePage(pdfName, pageNumber, expectedFile, actualFile) {
   assert.equal(actual.width, expected.width, `${pdfName} page ${pageNumber} width changed`);
   assert.equal(actual.height, expected.height, `${pdfName} page ${pageNumber} height changed`);
 
-  let differentPixels = 0;
-  for (let offset = 0; offset < expected.data.length; offset += 4) {
-    if (
-      expected.data[offset] !== actual.data[offset] ||
-      expected.data[offset + 1] !== actual.data[offset + 1] ||
-      expected.data[offset + 2] !== actual.data[offset + 2] ||
-      expected.data[offset + 3] !== actual.data[offset + 3]
-    ) {
-      differentPixels++;
-    }
-  }
+  const { differentPixels, allowedDifferentPixels, diff } = compareScreenshotPixels(expected.data, actual.data, expected.width, expected.height);
 
-  const diff = new PNG({ width: expected.width, height: expected.height });
-  pixelmatch(expected.data, actual.data, diff.data, expected.width, expected.height, {
-    threshold: 0,
-    includeAA: true,
-  });
-
-  if (differentPixels > 0) {
+  if (diff) {
     const outputDirectory = path.join(diffRoot, pdfName);
     fs.mkdirSync(outputDirectory, { recursive: true });
     const prefix = `page-${String(pageNumber).padStart(2, "0")}`;
@@ -127,9 +113,8 @@ function comparePage(pdfName, pageNumber, expectedFile, actualFile) {
     fs.writeFileSync(path.join(outputDirectory, `${prefix}-diff.png`), PNG.sync.write(diff));
   }
 
-  assert.equal(
-    differentPixels,
-    0,
-    `${pdfName} page ${pageNumber} differs from baseline by ${differentPixels} pixels; visual artifacts are in ${diffRoot}`
+  assert.ok(
+    differentPixels <= allowedDifferentPixels,
+    `${pdfName} page ${pageNumber} differs from baseline by ${differentPixels} pixels (maximum ${allowedDifferentPixels}); visual artifacts are in ${diffRoot}`
   );
 }

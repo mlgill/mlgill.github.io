@@ -127,6 +127,12 @@ async function captureCase(browser, origin, route, viewport, theme, outputFile) 
         )
       );
     });
+    const unloadedImages = await page.evaluate(() =>
+      [...document.images].filter((image) => image.naturalWidth === 0).map((image) => image.currentSrc || image.src)
+    );
+    if (unloadedImages.length > 0) {
+      throw new Error(`Images failed to load: ${unloadedImages.join(", ")}`);
+    }
 
     await page.addStyleTag({
       content: `
