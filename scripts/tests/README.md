@@ -8,6 +8,8 @@ bash scripts/site.sh test
 
 The command installs the pinned test dependencies, verifies the repository-local
 Puppeteer browser, and performs a production Jekyll build before running tests.
+The build requires ImageMagick's `convert` command for Jekyll image processing;
+the PDF tests require Poppler's `pdfinfo`, `pdftotext`, and `pdftoppm` commands.
 
 The browser visual tests capture the landing page, CV, publications,
 presentations, and patents in light and dark themes at desktop and mobile sizes.

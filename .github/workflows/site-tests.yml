@@ -32,8 +32,10 @@ jobs:
           cache: npm
           cache-dependency-path: scripts/package-lock.json
 
-      - name: Install PDF inspection tools
-        run: brew install poppler
+      - name: Install PDF and image processing tools
+        run: |
+          brew install poppler imagemagick
+          command -v convert
 
       - name: Cache Puppeteer browser
         uses: actions/cache@v4
