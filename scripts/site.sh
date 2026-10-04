@@ -5,7 +5,7 @@ repository_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repository_root"
 
 usage() {
-  echo "Usage: $0 build <development|production> | netlify | test | serve" >&2
+  echo "Usage: $0 build <development|production> | netlify | test | visual | visual:prepare | visual:browser | visual:pdf | serve" >&2
 }
 
 require_no_arguments() {
@@ -73,8 +73,11 @@ case "$site_command" in
     require_no_arguments "$site_command" "$#"
     prepare_pdf_environment
     build_site production
-    generate_pdfs
+    npm --prefix scripts run test:content
+    deploy_prepared_date="$(date +%Y-%m-%d)"
+    generate_pdfs --prepared-date "$deploy_prepared_date"
     verify_pdfs
+    CV_PDF_EXPECTED_DATE="$deploy_prepared_date" npm --prefix scripts run test:pdf:structure
     ;;
   test)
     require_no_arguments "$site_command" "$#"
@@ -83,6 +86,38 @@ case "$site_command" in
     build_site production
     npm --prefix scripts run test:content
     npm --prefix scripts run test:browser
+    generate_pdfs --prepared-date 2026-07-29
+    CV_PDF_EXPECTED_DATE=2026-07-29 npm --prefix scripts run test:pdf:structure
+    npm --prefix scripts run test:pdf
+    ;;
+  visual)
+    require_no_arguments "$site_command" "$#"
+    prepare_pdf_environment
+    build_site production
+    visual_failed=0
+    if ! npm --prefix scripts run test:browser; then
+      visual_failed=1
+    fi
+    if generate_pdfs --prepared-date 2026-07-29; then
+      if ! npm --prefix scripts run test:pdf; then
+        visual_failed=1
+      fi
+    else
+      visual_failed=1
+    fi
+    exit "$visual_failed"
+    ;;
+  visual:prepare)
+    require_no_arguments "$site_command" "$#"
+    prepare_pdf_environment
+    build_site production
+    ;;
+  visual:browser)
+    require_no_arguments "$site_command" "$#"
+    npm --prefix scripts run test:browser
+    ;;
+  visual:pdf)
+    require_no_arguments "$site_command" "$#"
     generate_pdfs --prepared-date 2026-07-29
     npm --prefix scripts run test:pdf
     ;;

@@ -11,6 +11,31 @@ Puppeteer browser, and performs a production Jekyll build before running tests.
 The build requires ImageMagick's `convert` command for Jekyll image processing;
 the PDF tests require Poppler's `pdfinfo`, `pdftotext`, and `pdftoppm` commands.
 
+Netlify runs `bash scripts/site.sh netlify`. After the production build, it checks
+site content and routes, generates the current CV PDFs, then validates their PDF
+structure before publishing. The build supplies the same explicit date to PDF
+generation and validation, including across midnight. The PDF structure check uses pinned `pdfjs-dist`
+and needs no Poppler installation. It checks Letter page size, the shared role,
+section headings, the actual prepared date on every page, and body text on
+every page. Run it against freshly generated PDFs with:
+
+```sh
+CV_PDF_EXPECTED_DATE=YYYY-MM-DD npm --prefix scripts run test:pdf:structure
+```
+
+GitHub can run the visual checks in separate steps after a shared setup/build:
+
+```sh
+bash scripts/site.sh visual:prepare
+bash scripts/site.sh visual:browser
+bash scripts/site.sh visual:pdf
+```
+
+The browser and PDF steps are independent once setup succeeds, so both can
+report failures in one workflow run. For one local command that runs both visual
+suites, use `bash scripts/site.sh visual`. Visual checks use the fixed
+`2026-07-29` PDF date and do not repeat Netlify's content checks.
+
 The browser visual tests capture the landing page, CV, publications,
 presentations, and patents in light and dark themes at desktop and mobile sizes.
 The pinned Puppeteer browser blocks external dynamic scripts, waits for fonts and

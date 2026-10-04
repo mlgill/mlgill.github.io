@@ -15,6 +15,7 @@
     "test:browser": "node --test --test-concurrency=1 tests/browser.test.mjs",
     "test:content": "node --test --test-concurrency=1 tests/routes.test.mjs tests/cv-parity.test.mjs tests/bibliography.test.mjs",
     "test:pdf": "node --test --test-concurrency=1 tests/pdf.test.mjs",
+    "test:pdf:structure": "node --test --test-concurrency=1 tests/pdf-structure.test.mjs",
     "test:update-browser-baselines": "node tests/update-browser-baselines.mjs",
     "test:update-pdf-baselines": "node tests/update-pdf-baselines.mjs"
   },
@@ -23,6 +24,7 @@
   },
   "devDependencies": {
     "cheerio": "^1.1.2",
+    "pdfjs-dist": "6.3.289",
     "pixelmatch": "^7.1.0",
     "pngjs": "^7.0.0",
     "yaml": "^2.8.1"
