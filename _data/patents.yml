@@ -4,6 +4,12 @@
 
 - year: 2026
   entries:
+    - title: "Retrosynthesis Planning Harness"
+      authors: "Corneil, D., Veccham Krishna Prasad, S., <u>Gill, M.L.</u>"
+      details: "US Patent Application No. 64/165,679; Filing Date: 2026/09/30"
+      visible: true
+      selected: true
+
     - title: "Machine Learning for Domain Specific Models"
       authors: "<u>Gill, M.L.</u>, Paliwal, S., Corneil, D., Veccham Krishna Prasad, S.P., Novikov, M., Viessmann, O., Bakhturina, E., Gitman, D., Tramel, E."
       details: "US Provisional Patent Application No. 64/081,016; Filing Date: 2026/06/02"
