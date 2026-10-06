@@ -82,14 +82,14 @@ Visual failures save expected, actual, and diff images under
 
 Text-level snapshots in `scripts/tests/fixtures/content` make content changes
 readable in diffs and let pipeline refactors be verified exactly. They are
-checked by `scripts/tests/content-snapshots.test.mjs`:
+checked by `content-snapshots.test.mjs` and `pdf-snapshots.test.mjs`:
 
-- `cv-full.txt`, `cv-concise.txt`: normalized text of `.cv-content` on `/cv/` and `/cv/concise/`.
-- `cv-bibliography-full.html`, `cv-bibliography-concise.html`: inner HTML of
+- `cv-descriptive.txt`, `cv-concise.txt`: normalized text of `.cv-content` on `/cv/` and `/cv/concise/`, one line per block element (`h1, h2, h3, p, li`).
+- `cv-bibliography-descriptive.html`, `cv-bibliography-concise.html`: inner HTML of
   `ol.bibliography` on the same routes, with whitespace runs collapsed to one
-  space and spaces between tags removed.
+  space and spaces between tags removed, one `<li>` per line.
 - `publications-keys.txt`: entry ids inside `.publications` on `/publications/`, one per line.
-- `cv-pdf-full.txt`, `cv-pdf-concise.txt`: per-page body text of the generated
+- `cv-pdf-descriptive.txt`, `cv-pdf-concise.txt`: per-page body text of the generated
   PDFs (footer excluded, as in `inspectPdf`), pages separated by `---- page N ----`.
 
 The first three groups run in `test:content`. The PDF text group runs in
