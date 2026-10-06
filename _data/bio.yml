@@ -1,8 +1,7 @@
 # Bio information for CV and about pages
 
 name: Michelle Lynn Gill, PhD
-# Shared role defaults. A page may override any individual field with a
-# `role_override` mapping in its front matter.
+# Shared role, used by the about page, the CV, and the landing-page metadata.
 role:
   title: "Applied Research Manager"
   organization: "NVIDIA"
