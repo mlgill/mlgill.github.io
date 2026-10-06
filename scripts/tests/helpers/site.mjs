@@ -11,6 +11,8 @@ export const scriptsDirectory = path.resolve(helperDirectory, "..", "..");
 export const rootDirectory = path.resolve(scriptsDirectory, "..");
 export const siteDirectory = path.join(rootDirectory, "_site");
 
+export const requiredHeadings = ["Overview", "Education", "Experience", "Publications", "Patents", "Presentations", "Awards", "Service"];
+
 export function readYaml(relativePath) {
   const source = fs.readFileSync(path.join(rootDirectory, relativePath), "utf8");
   return YAML.parse(source);

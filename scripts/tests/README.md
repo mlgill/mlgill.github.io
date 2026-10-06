@@ -9,7 +9,7 @@ bash scripts/site.sh test
 The command installs the pinned test dependencies, verifies the repository-local
 Puppeteer browser, and performs a production Jekyll build before running tests.
 The build requires ImageMagick's `convert` command for Jekyll image processing;
-the PDF tests require Poppler's `pdfinfo`, `pdftotext`, and `pdftoppm` commands.
+the PDF visual tests require Poppler's `pdftoppm` command.
 
 Netlify runs `bash scripts/site.sh netlify`. After the production build, it checks
 site content and routes, generates the current CV PDFs, then validates their PDF
@@ -62,7 +62,7 @@ npm --prefix scripts run test:browser
 Browser visual failures place expected, actual, and diff images under
 `tmp/browser/visual-diffs`.
 
-The PDF tests use `pdfinfo`, `pdftotext`, and `pdftoppm` from Poppler. They render
+The PDF visual tests use `pdftoppm` from Poppler. They render
 every page at 144 DPI and require an exact pixel-for-pixel match with the reviewed
 PNG fixtures in `scripts/tests/fixtures/pdf`.
 

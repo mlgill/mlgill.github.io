@@ -9,68 +9,28 @@ import {
   actualRoot,
   baselineRoot,
   diffRoot,
-  expectedPreparedText,
   listPageImages,
   pdfConfigurations,
   renderPdf,
-  runCommand,
+  visualPdfDate,
 } from "./helpers/pdf.mjs";
-import { expectedRoleText, normalizeText } from "./helpers/site.mjs";
+import { expectedPreparedText, inspectPdf, parsePreparedDate, validatePdfStructure } from "./helpers/pdf-structure.mjs";
+import { expectedRoleText } from "./helpers/site.mjs";
 import { compareScreenshotPixels } from "./helpers/visual-comparison.mjs";
 
-const letterWidthPoints = 612;
-const letterHeightPoints = 792;
-const pageSizeTolerancePoints = 0.5;
-const requiredHeadings = ["Overview", "Education", "Experience", "Publications", "Patents", "Presentations", "Awards", "Service"];
+const preparedText = expectedPreparedText(parsePreparedDate(visualPdfDate));
 
-test("generated CV PDFs are nonempty US Letter documents with expected text", async (t) => {
+test("generated CV PDFs have valid pages, content, and prepared date", async (t) => {
   for (const pdf of pdfConfigurations) {
-    await t.test(pdf.name, () => {
+    await t.test(pdf.name, async () => {
       assert.ok(fs.existsSync(pdf.file), `Missing ${pdf.file}`);
-      assert.ok(fs.statSync(pdf.file).size > 10_000, `${pdf.file} is unexpectedly small`);
-
-      const info = runCommand("pdfinfo", [pdf.file]);
-      const pages = Number(/^Pages:\s+(\d+)$/m.exec(info)?.[1]);
-      const size = /^Page size:\s+([\d.]+) x ([\d.]+) pts/m.exec(info);
-
-      assert.ok(Number.isInteger(pages) && pages > 0, `${pdf.file} has no pages`);
-      assert.ok(size, `Could not read page size from ${pdf.file}`);
-      assert.ok(Math.abs(Number(size[1]) - letterWidthPoints) <= pageSizeTolerancePoints, `${pdf.file} is not US Letter width`);
-      assert.ok(Math.abs(Number(size[2]) - letterHeightPoints) <= pageSizeTolerancePoints, `${pdf.file} is not US Letter height`);
-
-      const text = normalizeText(runCommand("pdftotext", [pdf.file, "-"]));
-      assert.ok(text.includes(expectedRoleText()), `${pdf.file} is missing the shared role`);
-      assert.ok(text.includes(expectedPreparedText), `${pdf.file} lacks the fixed prepared date`);
-      for (const heading of requiredHeadings) {
-        assert.ok(text.includes(heading), `${pdf.file} is missing the ${heading} heading`);
-      }
-    });
-  }
-});
-
-test("every rendered PDF page contains body content", async (t) => {
-  for (const pdf of pdfConfigurations) {
-    await t.test(pdf.name, () => {
-      const pages = renderPdf(pdf.file, path.join(actualRoot, pdf.name));
-      assert.ok(pages.length > 0, `${pdf.file} rendered no pages`);
-
-      for (const page of pages) {
-        const image = PNG.sync.read(fs.readFileSync(page));
-        const bodyHeight = Math.floor(image.height * 0.92);
-        let nonWhitePixels = 0;
-
-        for (let y = 0; y < bodyHeight; y++) {
-          for (let x = 0; x < image.width; x++) {
-            const offset = (image.width * y + x) * 4;
-            if (image.data[offset] < 250 || image.data[offset + 1] < 250 || image.data[offset + 2] < 250) {
-              nonWhitePixels++;
-            }
-          }
-        }
-
-        const ratio = nonWhitePixels / (image.width * bodyHeight);
-        assert.ok(ratio > 0.001, `${page} appears blank`);
-      }
+      const summary = await inspectPdf(pdf.file);
+      validatePdfStructure(summary, {
+        file: pdf.file,
+        title: pdf.title,
+        role: expectedRoleText(),
+        preparedText,
+      });
     });
   }
 });
@@ -80,7 +40,7 @@ test("full-page PDF rendering matches reviewed baselines", async (t) => {
 
   for (const pdf of pdfConfigurations) {
     await t.test(pdf.name, async (t) => {
-      const actualPages = listPageImages(path.join(actualRoot, pdf.name));
+      const actualPages = renderPdf(pdf.file, path.join(actualRoot, pdf.name));
       const expectedPages = listPageImages(path.join(baselineRoot, pdf.name));
 
       assert.ok(expectedPages.length > 0, `No baseline for ${pdf.name}; run npm --prefix scripts run test:update-pdf-baselines`);

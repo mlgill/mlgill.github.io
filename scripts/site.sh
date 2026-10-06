@@ -4,6 +4,8 @@ set -euo pipefail
 repository_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$repository_root"
 
+visual_pdf_date="2026-07-29"
+
 usage() {
   echo "Usage: $0 build <development|production> | netlify | test | visual | visual:prepare | visual:browser | visual:pdf | serve" >&2
 }
@@ -84,8 +86,8 @@ case "$site_command" in
     build_site production
     npm --prefix scripts run test:content
     npm --prefix scripts run test:browser
-    generate_pdfs --prepared-date 2026-07-29
-    CV_PDF_EXPECTED_DATE=2026-07-29 npm --prefix scripts run test:pdf:structure
+    generate_pdfs --prepared-date "$visual_pdf_date"
+    CV_PDF_EXPECTED_DATE="$visual_pdf_date" npm --prefix scripts run test:pdf:structure
     npm --prefix scripts run test:pdf
     ;;
   visual)
@@ -96,7 +98,7 @@ case "$site_command" in
     if ! npm --prefix scripts run test:browser; then
       visual_failed=1
     fi
-    if generate_pdfs --prepared-date 2026-07-29; then
+    if generate_pdfs --prepared-date "$visual_pdf_date"; then
       if ! npm --prefix scripts run test:pdf; then
         visual_failed=1
       fi
@@ -116,7 +118,7 @@ case "$site_command" in
     ;;
   visual:pdf)
     require_no_arguments "$site_command" "$#"
-    generate_pdfs --prepared-date 2026-07-29
+    generate_pdfs --prepared-date "$visual_pdf_date"
     npm --prefix scripts run test:pdf
     ;;
   serve)

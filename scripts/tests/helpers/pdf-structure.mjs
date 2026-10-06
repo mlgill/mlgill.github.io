@@ -2,13 +2,23 @@ import fs from "node:fs";
 
 import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
 
-import { normalizeText } from "./site.mjs";
+import { normalizeText, requiredHeadings } from "./site.mjs";
 
-const letterWidthPoints = 612;
-const letterHeightPoints = 792;
-const pageSizeTolerancePoints = 0.5;
+export const letterWidthPoints = 612;
+export const letterHeightPoints = 792;
+export const pageSizeTolerancePoints = 0.5;
 
-export const requiredHeadings = ["Overview", "Education", "Experience", "Publications", "Patents", "Presentations", "Awards", "Service"];
+export function parsePreparedDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    throw new Error(`Prepared date must be YYYY-MM-DD, got ${value}`);
+  }
+  const [year, month, day] = value.split("-").map(Number);
+  const date = new Date(year, month - 1, day);
+  if (date.getFullYear() !== year || date.getMonth() + 1 !== month || date.getDate() !== day) {
+    throw new Error(`Prepared date is not a valid date: ${value}`);
+  }
+  return date;
+}
 
 export function expectedPreparedText(date) {
   const month = String(date.getMonth() + 1).padStart(2, "0");
