@@ -5,7 +5,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import { pdfConfigurations } from "./helpers/pdf.mjs";
-import { expectedPreparedText, inspectPdf, validatePdfStructure } from "./helpers/pdf-structure.mjs";
+import { expectedPreparedText, inspectPdf, parsePreparedDate, validatePdfStructure } from "./helpers/pdf-structure.mjs";
 import { expectedRoleText } from "./helpers/site.mjs";
 
 function preparedDate() {
@@ -13,15 +13,7 @@ function preparedDate() {
   if (fixedDate === undefined) {
     throw new Error("CV_PDF_EXPECTED_DATE is required and must be YYYY-MM-DD");
   }
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(fixedDate)) {
-    throw new Error("CV_PDF_EXPECTED_DATE must be YYYY-MM-DD");
-  }
-  const [year, month, day] = fixedDate.split("-").map(Number);
-  const date = new Date(year, month - 1, day);
-  if (date.getFullYear() !== year || date.getMonth() + 1 !== month || date.getDate() !== day) {
-    throw new Error("CV_PDF_EXPECTED_DATE is not a valid date");
-  }
-  return date;
+  return parsePreparedDate(fixedDate);
 }
 
 const preparedText = expectedPreparedText(preparedDate());

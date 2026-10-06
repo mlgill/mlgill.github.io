@@ -11,7 +11,7 @@ Runtime versions are pinned in `.ruby-version` and `.node-version`:
 - Ruby 3.3.10 with Bundler
 - Node.js 24.18.0 with npm
 - Python 3 for the local static server
-- Poppler for PDF regression tests (`brew install poppler` on macOS)
+- Poppler (`pdftoppm`) for PDF visual regression tests (`brew install poppler` on macOS)
 
 Using `rbenv` and a Node version manager is recommended. Netlify and GitHub
 Actions read the same version files used locally.

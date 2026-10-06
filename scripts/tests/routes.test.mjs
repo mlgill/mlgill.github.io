@@ -3,7 +3,7 @@ import path from "node:path";
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { expectedRoleText, loadRoute, normalizeText, routeFile, selectedText } from "./helpers/site.mjs";
+import { expectedRoleText, loadRoute, normalizeText, requiredHeadings, routeFile, selectedText } from "./helpers/site.mjs";
 
 const importantRoutes = [
   { route: "/", selector: ".post", text: "Michelle Lynn Gill" },
@@ -74,15 +74,13 @@ test("presentation links agree between the presentations page and full CV", () =
 });
 
 test("CV variants retain the expected major section headings", () => {
-  const headings = ["Overview", "Education", "Experience", "Publications", "Patents", "Presentations", "Awards", "Service"];
-
   for (const route of ["/cv/", "/cv/concise/", "/cv/print/", "/cv/concise/print/"]) {
     const { $ } = loadRoute(route);
     const actual = $("h2, h3")
       .map((_, heading) => normalizeText($(heading).text()))
       .get();
 
-    for (const heading of headings) {
+    for (const heading of requiredHeadings) {
       assert.ok(actual.includes(heading), `${route} should contain the ${heading} heading`);
     }
   }
