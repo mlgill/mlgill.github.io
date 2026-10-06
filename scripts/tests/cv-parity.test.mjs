@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { loadRoute, normalizeText, plainText, readYaml, selectedText } from "./helpers/site.mjs";
+import { bibliographyFlags, loadRoute, normalizeText, plainText, readYaml, renderedPublications, selectedText } from "./helpers/site.mjs";
 
 const fullRoutes = [
   { route: "/cv/", selector: ".cv-content" },
@@ -12,6 +12,13 @@ const conciseRoutes = [
   { route: "/cv/concise/print/", selector: "#content" },
 ];
 
+const selectedKeys = new Set(
+  bibliographyFlags()
+    .filter((entry) => entry.selected)
+    .map((entry) => entry.key)
+);
+const publications = renderedPublications().map((entry) => ({ title: entry.title, selected: selectedKeys.has(entry.key) }));
+
 const records = [
   ...flatRecords("education", readYaml("_data/education.yml"), (entry) => `${entry.year} ${entry.title} ${entry.institution}, ${entry.location}`),
   ...flatRecords("experience", readYaml("_data/experience.yml"), (entry) => `${entry.year} ${entry.title}, ${entry.institution}`),
@@ -19,7 +26,7 @@ const records = [
   ...groupedRecords("presentation", readYaml("_data/presentations.yml"), (entry, group) => `${group.year} ${entry.title}`),
   ...flatRecords("award", readYaml("_data/awards.yml"), (entry) => `${entry.year} ${entry.items.join("; ")}`),
   ...flatRecords("service", readYaml("_data/service.yml"), (entry) => `${entry.year} ${entry.title}, ${entry.institution}`),
-  ...flatRecords("publication", readYaml("_data/bibliography_cache.yml"), (entry) => entry.title),
+  ...flatRecords("publication", publications, (entry) => entry.title),
 ];
 
 test("web and print CVs contain the same normalized content", () => {

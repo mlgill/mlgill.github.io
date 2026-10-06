@@ -1,7 +1,7 @@
 # Plan: Netlify Build Optimization
 
 ## Overview
-Plan to further optimize Netlify build times. Priorities 1-3 from the original plan (smart PDF generation, npm ci, bibliography caching) have been implemented.
+Plan to further optimize Netlify build times. Smart PDF generation and npm ci from the original plan have been implemented. The bibliography cache was later removed; jekyll-scholar now renders every publication list directly from `papers.bib`.
 
 **Current build time:** ~2.5-3 minutes locally
 
@@ -27,7 +27,7 @@ Jekyll-imagemagick processes images on every build, generating 60+ responsive We
 
 ### Solution Options
 1. **Pre-generate and commit:** Generate responsive images ahead of time and commit them to the repository
-2. **Hash-based caching:** Similar to bibliography caching, skip regeneration if source images haven't changed
+2. **Hash-based caching:** Skip regeneration if source images haven't changed
 3. **Use Netlify Image CDN:** Let Netlify handle responsive image generation at request time
 
 ### Expected Impact
@@ -69,4 +69,3 @@ Makes builds feel faster by deploying site immediately, with PDFs generated afte
 
 - **Smart PDF generation:** HTML-diff-based change detection, only regenerates PDFs when CV content changes
 - **npm ci optimization:** Faster, more consistent npm installs
-- **Bibliography caching:** Pre-processes papers.bib into cached YAML, skips regeneration when unchanged
