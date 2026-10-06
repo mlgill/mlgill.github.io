@@ -35,21 +35,12 @@ test("generated CV PDFs have valid pages, content, and prepared date", async (t)
   }
 });
 
-test("PDF pages render with pdftoppm", async (t) => {
-  for (const pdf of pdfConfigurations) {
-    await t.test(pdf.name, () => {
-      const pages = renderPdf(pdf.file, path.join(actualRoot, pdf.name));
-      assert.ok(pages.length > 0, `${pdf.file} rendered no pages`);
-    });
-  }
-});
-
 test("full-page PDF rendering matches reviewed baselines", async (t) => {
   fs.rmSync(diffRoot, { recursive: true, force: true });
 
   for (const pdf of pdfConfigurations) {
     await t.test(pdf.name, async (t) => {
-      const actualPages = listPageImages(path.join(actualRoot, pdf.name));
+      const actualPages = renderPdf(pdf.file, path.join(actualRoot, pdf.name));
       const expectedPages = listPageImages(path.join(baselineRoot, pdf.name));
 
       assert.ok(expectedPages.length > 0, `No baseline for ${pdf.name}; run npm --prefix scripts run test:update-pdf-baselines`);
