@@ -1,17 +1,24 @@
-{% comment %}Required: links and variant ("cv" or "page").{% endcomment %}
-{%- if include.variant == 'cv' or include.variant == 'page' -%}
+{% comment %}
+  Renders the link list for one presentation.
+  Required parameters:
+    links        - the presentation's links map (slides, video, abstract, program, code, thesis)
+    class_prefix - CSS class prefix placed before the link kind
+    label_case   - "capitalize" or "upcase"
+    separator    - text between consecutive links
+    prefix       - text emitted before the list when at least one link exists
+{% endcomment %}
 {%- assign link_types = 'slides,video,abstract,program,code,thesis' | split: ',' -%}
 {%- capture presentation_links -%}
-  {%- assign separator = '' -%}
+  {%- assign current_separator = '' -%}
   {%- for kind in link_types -%}
     {%- assign url = include.links[kind] -%}
     {%- if url -%}
-      {{- separator -}}<a href="{%- if include.variant == 'page' or kind == 'video' or kind == 'code' -%}{{ url }}{%- elsif include.variant == 'cv' -%}{%- if url contains '://' -%}{{ url }}{%- else -%}{{ url | relative_url }}{%- endif -%}{%- endif -%}" class="{%- if include.variant == 'cv' -%}pres-{%- elsif include.variant == 'page' -%}btn-presentation btn-{%- endif -%}{{ kind }}">{%- if include.variant == 'cv' -%}{{ kind | capitalize }}{%- elsif include.variant == 'page' -%}{{ kind | upcase }}{%- endif -%}</a>
-      {%- if include.variant == 'cv' -%}{%- assign separator = ' · ' -%}{%- elsif include.variant == 'page' -%}{%- assign separator = ' ' -%}{%- endif -%}
+      {%- if include.label_case == 'upcase' -%}{%- assign label = kind | upcase -%}{%- else -%}{%- assign label = kind | capitalize -%}{%- endif -%}
+      {{- current_separator -}}<a href="{{ url }}" class="{{ include.class_prefix }}{{ kind }}">{{ label }}</a>
+      {%- assign current_separator = include.separator -%}
     {%- endif -%}
   {%- endfor -%}
 {%- endcapture -%}
 {%- if presentation_links != empty -%}
-  {%- if include.variant == 'cv' -%}- {% elsif include.variant == 'page' -%}<br>{%- endif -%}{{ presentation_links }}
-{%- endif -%}
+  {{- include.prefix }}{{ presentation_links }}
 {%- endif -%}
