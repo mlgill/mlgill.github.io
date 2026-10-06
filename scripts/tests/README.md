@@ -77,3 +77,33 @@ npm --prefix scripts run test:pdf
 
 Visual failures save expected, actual, and diff images under
 `tmp/pdfs/visual-diffs`.
+
+## Content snapshots
+
+Text-level snapshots in `scripts/tests/fixtures/content` make content changes
+readable in diffs and let pipeline refactors be verified exactly. They are
+checked by `content-snapshots.test.mjs` and `pdf-snapshots.test.mjs`:
+
+- `cv-descriptive.txt`, `cv-concise.txt`: normalized text of `.cv-content` on `/cv/` and `/cv/concise/`, one line per block element (`h1, h2, h3, p, li`).
+- `cv-bibliography-descriptive.html`, `cv-bibliography-concise.html`: inner HTML of
+  `ol.bibliography` on the same routes, with whitespace runs collapsed to one
+  space and spaces between tags removed, one `<li>` per line.
+- `publications-keys.txt`: entry ids inside `.publications` on `/publications/`, one per line.
+- `cv-pdf-descriptive.txt`, `cv-pdf-concise.txt`: per-page body text of the generated
+  PDFs (footer excluded, as in `inspectPdf`), pages separated by `---- page N ----`.
+
+The first three groups run in `test:content`. The PDF text group runs in
+`test:pdf`, after the PDFs are generated with the fixed date `2026-07-29`.
+
+After an intentional content change, review the site and PDFs and update all
+snapshots explicitly (the PDF snapshots need the PDFs generated first):
+
+```sh
+bash scripts/site.sh build production
+node scripts/generate-cv-pdf.js --file --prepared-date 2026-07-29
+npm --prefix scripts run test:update-content-snapshots
+npm --prefix scripts run test:content
+npm --prefix scripts run test:pdf
+```
+
+Review every changed snapshot before committing it.

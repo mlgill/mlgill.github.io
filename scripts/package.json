@@ -13,10 +13,11 @@
     "pdf:concise": "node generate-cv-pdf.js concise",
     "test": "npm run test:content && npm run test:browser && npm run test:pdf",
     "test:browser": "node --test --test-concurrency=1 tests/browser.test.mjs",
-    "test:content": "node --test --test-concurrency=1 tests/routes.test.mjs tests/cv-parity.test.mjs tests/bibliography.test.mjs",
-    "test:pdf": "node --test --test-concurrency=1 tests/pdf.test.mjs",
+    "test:content": "node --test --test-concurrency=1 tests/routes.test.mjs tests/cv-parity.test.mjs tests/bibliography.test.mjs tests/content-snapshots.test.mjs",
+    "test:pdf": "node --test --test-concurrency=1 tests/pdf.test.mjs tests/pdf-snapshots.test.mjs",
     "test:pdf:structure": "node --test --test-concurrency=1 tests/pdf-structure.test.mjs",
     "test:update-browser-baselines": "node tests/update-browser-baselines.mjs",
+    "test:update-content-snapshots": "node tests/update-content-snapshots.mjs",
     "test:update-pdf-baselines": "node tests/update-pdf-baselines.mjs"
   },
   "dependencies": {
