@@ -30,7 +30,7 @@ Used Puppeteer with bundled Chromium to generate PDFs from dedicated print pages
 **How it works:**
 
 1. Jekyll builds the site including print pages at `/cv/print/` and `/cv/concise/print/`
-2. `generate-cv-pdf.js --file` loads the print pages via `file://` protocol
+2. `generate-cv-pdf.js` loads the print pages via `file://` protocol
 3. Puppeteer renders to PDF with custom footer (name, page numbers, date)
 4. PDFs saved to `_site/assets/pdf/GillMichelle_DescriptiveCV.pdf` and `GillMichelle_ConciseCV.pdf`
 

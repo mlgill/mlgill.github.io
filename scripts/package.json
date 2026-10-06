@@ -8,7 +8,6 @@
     "browser:setup": "bash setup-puppeteer.sh",
     "browser:verify": "node verify-puppeteer.js",
     "pdf": "node generate-cv-pdf.js",
-    "pdf:file": "node generate-cv-pdf.js --file",
     "pdf:descriptive": "node generate-cv-pdf.js descriptive",
     "pdf:concise": "node generate-cv-pdf.js concise",
     "test": "npm run test:content && npm run test:browser && npm run test:pdf",

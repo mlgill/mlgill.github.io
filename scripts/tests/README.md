@@ -70,7 +70,7 @@ After an intentional PDF content or layout change, review the generated PDFs and
 fixtures explicitly:
 
 ```sh
-node scripts/generate-cv-pdf.js --file --prepared-date 2026-07-29
+node scripts/generate-cv-pdf.js --prepared-date 2026-07-29
 npm --prefix scripts run test:update-pdf-baselines
 npm --prefix scripts run test:pdf
 ```
@@ -100,7 +100,7 @@ snapshots explicitly (the PDF snapshots need the PDFs generated first):
 
 ```sh
 bash scripts/site.sh build production
-node scripts/generate-cv-pdf.js --file --prepared-date 2026-07-29
+node scripts/generate-cv-pdf.js --prepared-date 2026-07-29
 npm --prefix scripts run test:update-content-snapshots
 npm --prefix scripts run test:content
 npm --prefix scripts run test:pdf

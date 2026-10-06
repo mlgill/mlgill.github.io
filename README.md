@@ -82,7 +82,7 @@ Production PDFs continue to use the build date.
 After an intentional PDF layout change:
 
 ```sh
-node scripts/generate-cv-pdf.js --file --prepared-date 2026-07-29
+node scripts/generate-cv-pdf.js --prepared-date 2026-07-29
 npm --prefix scripts run test:update-pdf-baselines
 npm --prefix scripts run test:pdf
 ```
