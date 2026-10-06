@@ -35,7 +35,6 @@ build_site() {
   fi
 
   initialize_ruby
-  node scripts/prebuild-bibliography.js
   JEKYLL_ENV="$build_environment" bundle exec jekyll clean
   JEKYLL_ENV="$build_environment" bundle exec jekyll build --trace
 }
@@ -82,7 +81,6 @@ case "$site_command" in
   test)
     require_no_arguments "$site_command" "$#"
     prepare_pdf_environment
-    node scripts/prebuild-bibliography.js --check
     build_site production
     npm --prefix scripts run test:content
     npm --prefix scripts run test:browser

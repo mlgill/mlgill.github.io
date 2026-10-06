@@ -51,3 +51,50 @@ export function expectedRoleText() {
   const { role } = readYaml("_data/bio.yml");
   return normalizeText(`${role.title}, ${role.organization} ${role.team}`);
 }
+
+// Entries as jekyll-scholar renders them on /publications/, in page order. The
+// year comes from the preceding group heading; the title drops the period that
+// _layouts/bib.liquid appends.
+export function renderedPublications() {
+  const { $ } = loadRoute("/publications/");
+  const publications = [];
+  let year = null;
+
+  $(".publications h2.bibliography, .publications [id]").each((_, element) => {
+    const node = $(element);
+    if (node.is("h2.bibliography")) {
+      year = Number(normalizeText(node.text()));
+      return;
+    }
+    publications.push({
+      key: node.attr("id"),
+      year,
+      title: normalizeText(node.find(".title").first().text()).replace(/\.$/, ""),
+    });
+  });
+
+  return publications;
+}
+
+// Reads only each entry's key, the two flags the site filters on, and the pdf
+// file name (null when the entry has none); all other publication fields come
+// from the rendered pages.
+export function bibliographyFields() {
+  const source = fs.readFileSync(path.join(rootDirectory, "_bibliography", "papers.bib"), "utf8");
+
+  return source
+    .split(/^@/m)
+    .slice(1)
+    .map((block) => {
+      const keyMatch = block.match(/^\w+\s*\{\s*([^,\s]+)\s*,/);
+      if (!keyMatch) {
+        throw new Error(`Cannot read the entry key in papers.bib near "@${block.slice(0, 40)}"`);
+      }
+      return {
+        key: keyMatch[1],
+        selected: /^\s*selected\s*=\s*\{true\}/m.test(block),
+        recent: /^\s*recent\s*=\s*\{true\}/m.test(block),
+        pdf: block.match(/^\s*pdf\s*=\s*\{([^}]*)\}/m)?.[1] ?? null,
+      };
+    });
+}

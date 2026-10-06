@@ -59,7 +59,7 @@ bash scripts/site.sh test
 ```
 
 The suite verifies important routes and content, CV web/print parity,
-bibliography synchronization, representative browser views in light and dark
+publication lists against `_bibliography/papers.bib`, representative browser views in light and dark
 themes at desktop and mobile sizes, PDF metadata and text, and reviewed page
 images for both CV versions. Visual failures place expected, actual, and diff
 images under `tmp/browser/visual-diffs` or `tmp/pdfs/visual-diffs`.

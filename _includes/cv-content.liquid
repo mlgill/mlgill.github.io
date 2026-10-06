@@ -43,7 +43,11 @@ __{{ exp.title }}__, {{ exp.institution }}
 
 ## Publications
 
-{% include cv_bibliography.liquid selected_only=include.selected_only %}
+{% if include.selected_only == true %}
+{% bibliography --template cv_bib --group_by none --query @*[selected=true] %}
+{% else %}
+{% bibliography --template cv_bib --group_by none %}
+{% endif %}
 
 ### Patents
 {% for year_group in site.data.patents %}

@@ -1,0 +1,32 @@
+---
+---
+{%- comment -%}
+CV publication entry. jekyll-scholar renders this template inside each list
+item of the bibliography tag in _includes/cv-content.liquid.
+{%- endcomment -%}
+<div class="publication-entry">
+  <span class="authors">
+    {%- for author in entry.author_array -%}
+      {%- assign author_is_self = false -%}
+      {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+      {%- if site.scholar.last_name contains author_last_name and site.scholar.first_name contains author.first -%}
+        {%- assign author_is_self = true -%}
+      {%- endif -%}
+      {%- capture author_name -%}
+        {{- author.first }} {% if author.prefix != blank %}{{ author.prefix }} {% endif %}{{ author.last -}}
+      {%- endcapture -%}
+      {%- if forloop.first == false -%}, {% endif -%}
+      {%- if forloop.last and forloop.length > 1 -%}and {% endif -%}
+      {%- if author_is_self -%}<u>{{ author_name }}</u>{%- else -%}{{ author_name }}{%- endif -%}
+    {%- endfor -%}
+  </span>
+  {% if entry.doi %}
+    <span class="title"><a href="https://doi.org/{{ entry.doi }}" target="_blank">"{{ entry.title }}"</a></span>
+  {% elsif entry.html %}
+    <span class="title"><a href="{{ entry.html }}" target="_blank">"{{ entry.title }}"</a></span>
+  {% else %}
+    <span class="title">"{{ entry.title }}"</span>
+  {% endif %}
+  <span class="venue"><em>{{ entry.journal }}</em></span>
+  {% if entry.year %}<span class="year">({{ entry.year }})</span>{% endif %}.
+</div>
