@@ -13,8 +13,9 @@
 {{ site.data.bio.bio }}
 
 ## Education
-{% for edu in site.data.education %}
-{% if edu.visible != false and include.selected_only != true or edu.visible != false and edu.selected == true %}
+{% assign education = site.data.education | where_exp: "i", "i.visible != false" %}
+{% if include.selected_only == true %}{% assign education = education | where_exp: "i", "i.selected == true" %}{% endif %}
+{% for edu in education %}
 `{{ edu.year }}`
 __{{ edu.title }}__
 <br>{{ edu.institution }}, {{ edu.location }}
@@ -24,12 +25,12 @@ __{{ edu.title }}__
 {% endfor %}
 {% endif %}
 
-{% endif %}
 {% endfor %}
 
 ## Experience
-{% for exp in site.data.experience %}
-{% if exp.visible != false and include.selected_only != true or exp.visible != false and exp.selected == true %}
+{% assign experience = site.data.experience | where_exp: "i", "i.visible != false" %}
+{% if include.selected_only == true %}{% assign experience = experience | where_exp: "i", "i.selected == true" %}{% endif %}
+{% for exp in experience %}
 `{{ exp.year }}`
 __{{ exp.title }}__, {{ exp.institution }}
 {% if exp.description %}
@@ -38,7 +39,6 @@ __{{ exp.title }}__, {{ exp.institution }}
 {% endfor %}
 {% endif %}
 
-{% endif %}
 {% endfor %}
 
 ## Publications
@@ -47,42 +47,43 @@ __{{ exp.title }}__, {{ exp.institution }}
 
 ### Patents
 {% for year_group in site.data.patents %}
-{% for patent in year_group.entries %}
-{% if patent.visible != false and include.selected_only != true or patent.visible != false and patent.selected == true %}
+{% assign year_entries = year_group.entries | where_exp: "i", "i.visible != false" %}
+{% if include.selected_only == true %}{% assign year_entries = year_entries | where_exp: "i", "i.selected == true" %}{% endif %}
+{% for patent in year_entries %}
 `{{ year_group.year }}`
 __{{ patent.title }}__
 - {{ patent.authors }}
 - {{ patent.details }}
 
-{% endif %}
 {% endfor %}
 {% endfor %}
 
 ## Presentations
 {% for year_group in site.data.presentations %}
-{% for pres in year_group.entries %}
-{% if pres.visible != false and include.selected_only != true or pres.visible != false and pres.selected == true %}
+{% assign year_entries = year_group.entries | where_exp: "i", "i.visible != false" %}
+{% if include.selected_only == true %}{% assign year_entries = year_entries | where_exp: "i", "i.selected == true" %}{% endif %}
+{% for pres in year_entries %}
 `{{ year_group.year }}`
 __{{ pres.title }}__{% if pres.venue %}, *{{ pres.venue }}*{% endif %}
 {% if pres.authors and pres.authors != "" %}- {{ pres.authors }}
 {% endif %}{% if pres.type and pres.type != "" %}- {{ pres.type }}{% if pres.date %}, {{ pres.date }}{% endif %}{% if pres.location %}, {{ pres.location }}{% endif %}
 {% endif %}{% include presentation-links.liquid links=pres.links variant="cv" %}
-{% endif %}
 {% endfor %}
 {% endfor %}
 
 ## Awards
-{% for award in site.data.awards %}
-{% if award.visible != false and include.selected_only != true or award.visible != false and award.selected == true %}
+{% assign awards = site.data.awards | where_exp: "i", "i.visible != false" %}
+{% if include.selected_only == true %}{% assign awards = awards | where_exp: "i", "i.selected == true" %}{% endif %}
+{% for award in awards %}
 `{{ award.year }}`
 {{ award.items | join: "; " }}
 
-{% endif %}
 {% endfor %}
 
 ## Service
-{% for svc in site.data.service %}
-{% if svc.visible != false and include.selected_only != true or svc.visible != false and svc.selected == true %}
+{% assign service = site.data.service | where_exp: "i", "i.visible != false" %}
+{% if include.selected_only == true %}{% assign service = service | where_exp: "i", "i.selected == true" %}{% endif %}
+{% for svc in service %}
 `{{ svc.year }}`
 __{{ svc.title }}__, {{ svc.institution }}{% if svc.location %}, {{ svc.location }}{% endif %}
 {% if svc.description %}
@@ -91,5 +92,4 @@ __{{ svc.title }}__, {{ svc.institution }}{% if svc.location %}, {{ svc.location
 {% endfor %}
 {% endif %}
 
-{% endif %}
 {% endfor %}
