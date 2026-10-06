@@ -45,7 +45,7 @@ prepare_pdf_environment() {
 }
 
 generate_pdfs() {
-  node scripts/generate-cv-pdf.js --file "$@"
+  node scripts/generate-cv-pdf.js "$@"
 }
 
 verify_pdfs() {
