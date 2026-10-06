@@ -24,9 +24,9 @@ test("publications page renders every papers.bib entry", () => {
   );
 });
 
-// jekyll-scholar renders papers.bib in file order (scholar.sort_by is unset),
-// and the CV publication list follows that order.
-test("papers.bib entries are ordered by year descending, then key ascending", () => {
+// scholar.sort_by in _config.yml (with _plugins/scholar-sort-by-key.rb) orders
+// every bibliography by year descending, then citation key ascending.
+test("rendered publications are ordered by year descending, then key ascending", () => {
   for (let index = 1; index < publications.length; index += 1) {
     const previous = publications[index - 1];
     const current = publications[index];
