@@ -23,11 +23,11 @@ const themes = ["light", "dark"];
 const viewports = [
   {
     name: "desktop",
-    settings: { width: 1440, height: 1000, deviceScaleFactor: 1 },
+    settings: { width: 1440, height: 1000, deviceScaleFactor: 2 },
   },
   {
     name: "mobile",
-    settings: { width: 390, height: 844, deviceScaleFactor: 1, isMobile: true, hasTouch: true },
+    settings: { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
   },
 ];
 
