@@ -10,7 +10,7 @@ nav_order: 5
 {% for year_group in site.data.presentations %}
 ## {{ year_group.year }}
 {% for pres in year_group.entries %}{% if pres.visible != false %}
-**{{ pres.title }}**{% if pres.authors and pres.authors != "" %}<br>{{ pres.authors }}{% endif %}<br>*{{ pres.venue }}*<br>{{ pres.type }}{% if pres.date %}, {{ pres.date }}{% endif %}{% if pres.location %}, {{ pres.location }}{% endif %}{% include presentation-links.liquid links=pres.links variant="page" %}
+**{{ pres.title }}**{% if pres.authors and pres.authors != "" %}<br>{{ pres.authors }}{% endif %}<br>*{{ pres.venue }}*<br>{{ pres.type }}{% if pres.date %}, {{ pres.date }}{% endif %}{% if pres.location %}, {{ pres.location }}{% endif %}{% include presentation-links.liquid links=pres.links class_prefix="btn-presentation btn-" label_case="upcase" separator=" " prefix="<br>" %}
 
 {% endif %}{% endfor %}
 {% endfor %}

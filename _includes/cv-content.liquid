@@ -71,7 +71,7 @@ __{{ patent.title }}__
 __{{ pres.title }}__{% if pres.venue %}, *{{ pres.venue }}*{% endif %}
 {% if pres.authors and pres.authors != "" %}- {{ pres.authors }}
 {% endif %}{% if pres.type and pres.type != "" %}- {{ pres.type }}{% if pres.date %}, {{ pres.date }}{% endif %}{% if pres.location %}, {{ pres.location }}{% endif %}
-{% endif %}{% include presentation-links.liquid links=pres.links variant="cv" %}
+{% endif %}{% include presentation-links.liquid links=pres.links class_prefix="pres-" label_case="capitalize" separator=" · " prefix="- " %}
 {% endfor %}
 {% endfor %}
 
