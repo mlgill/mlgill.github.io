@@ -87,7 +87,12 @@ npm --prefix scripts run test:update-pdf-baselines
 npm --prefix scripts run test:pdf
 ```
 
-Review every changed baseline image before committing it. More details are in
+Review every changed baseline image before committing it.
+
+Text snapshots of the CV text, CV bibliography HTML, publication order, and PDF
+body text live in `scripts/tests/fixtures/content`. After an intentional content
+change, build the site, generate the PDFs as above, and run
+`npm --prefix scripts run test:update-content-snapshots`. More details are in
 [`scripts/tests/README.md`](scripts/tests/README.md).
 
 ## Puppeteer browser maintenance
