@@ -45,10 +45,14 @@ and icon fonts. GitHub pins the macOS major version, and missing browser caches
 are rebuilt using the pinned Puppeteer browser.
 
 The browser visual tests capture the landing page, CV, publications,
-presentations, and patents in light and dark themes at desktop and mobile sizes.
-The pinned Puppeteer browser blocks external dynamic scripts, waits for fonts and
-images, disables animation, and requires exact pixel matches with the reviewed
-PNG fixtures in `scripts/tests/fixtures/browser`.
+presentations, and patents in light and dark themes at desktop (1440×1000) and
+mobile (390×844) sizes, rendered at a device scale factor of 2 so each CSS pixel
+is a 2×2 block in the PNG. That keeps glyph-edge rasterization noise, which
+varies between runs on hosted macOS, a small fraction of the allowed difference
+while a shifted or missing element still exceeds it. The pinned Puppeteer
+browser blocks external dynamic scripts, waits for fonts and images, disables
+animation, and compares against the reviewed PNG fixtures in
+`scripts/tests/fixtures/browser` within the tolerance described above.
 
 After an intentional website content or styling change, review the generated site and
 update the fixtures explicitly:
