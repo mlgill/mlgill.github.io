@@ -3,9 +3,9 @@ import path from "node:path";
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { bibliographyFlags, loadRoute, renderedPublications, rootDirectory } from "./helpers/site.mjs";
+import { bibliographyFields, loadRoute, renderedPublications, rootDirectory } from "./helpers/site.mjs";
 
-const bibEntries = bibliographyFlags();
+const bibEntries = bibliographyFields();
 const publications = renderedPublications();
 
 test("bibliography keys are unique", () => {
@@ -50,16 +50,22 @@ test("landing page renders every publication marked recent", () => {
   }
 });
 
-test("local publication PDF buttons point to existing files", () => {
+test("entries with a local PDF render a button to an existing file", () => {
   const { $ } = loadRoute("/publications/");
-  const hrefs = $(".publications a.btn-pdf")
-    .map((_, link) => $(link).attr("href"))
-    .get()
-    .filter((href) => !href.includes("://"));
+  const localPdfEntries = bibEntries.filter((entry) => entry.pdf && !entry.pdf.includes("://"));
 
-  assert.ok(hrefs.length > 0, "Expected at least one local publication PDF button");
-  for (const href of hrefs) {
-    const pdfFile = path.join(rootDirectory, decodeURIComponent(href));
-    assert.ok(fs.existsSync(pdfFile), `${href} points to missing PDF ${pdfFile}`);
+  assert.ok(localPdfEntries.length > 0, "Expected at least one publication with a local PDF");
+  for (const entry of localPdfEntries) {
+    const pdfFile = path.join(rootDirectory, "assets", "pdf", entry.pdf);
+    assert.ok(fs.existsSync(pdfFile), `${entry.key} references missing PDF ${pdfFile}`);
+
+    const hrefs = $(`[id="${entry.key}"]`)
+      .find("a.btn-pdf")
+      .map((_, link) => $(link).attr("href"))
+      .get();
+    assert.ok(
+      hrefs.some((href) => href.endsWith(`/assets/pdf/${entry.pdf}`)),
+      `${entry.key} is missing its PDF button`
+    );
   }
 });

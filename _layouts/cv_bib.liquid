@@ -3,9 +3,7 @@
 {%- comment -%}
 CV publication entry. jekyll-scholar renders this template inside each list
 item of the bibliography tag in _includes/cv-content.liquid.
-The Mathmode BibTeX filter renders \textit as <i>; the CV has always used <em>.
 {%- endcomment -%}
-{%- assign title = entry.title | replace: '<i>', '<em>' | replace: '</i>', '</em>' -%}
 <div class="publication-entry">
   <span class="authors">
     {%- for author in entry.author_array -%}
@@ -23,11 +21,11 @@ The Mathmode BibTeX filter renders \textit as <i>; the CV has always used <em>.
     {%- endfor -%}
   </span>
   {% if entry.doi %}
-    <span class="title"><a href="https://doi.org/{{ entry.doi }}" target="_blank">"{{ title }}"</a></span>
+    <span class="title"><a href="https://doi.org/{{ entry.doi }}" target="_blank">"{{ entry.title }}"</a></span>
   {% elsif entry.html %}
-    <span class="title"><a href="{{ entry.html }}" target="_blank">"{{ title }}"</a></span>
+    <span class="title"><a href="{{ entry.html }}" target="_blank">"{{ entry.title }}"</a></span>
   {% else %}
-    <span class="title">"{{ title }}"</span>
+    <span class="title">"{{ entry.title }}"</span>
   {% endif %}
   <span class="venue"><em>{{ entry.journal }}</em></span>
   {% if entry.year %}<span class="year">({{ entry.year }})</span>{% endif %}.

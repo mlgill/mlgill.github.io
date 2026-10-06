@@ -33,7 +33,7 @@ module BibTeX
       result = result.gsub(/\$_([^$\s{}])\$/, '<sub>\1</sub>')
 
       # Handle \textit{} for italics
-      result = result.gsub(/\\textit\s*\{([^}]*)\}/, '<i>\1</i>')
+      result = result.gsub(/\\textit\s*\{([^}]*)\}/, '<em>\1</em>')
 
       result
     end

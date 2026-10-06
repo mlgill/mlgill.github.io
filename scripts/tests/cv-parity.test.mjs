@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { bibliographyFlags, loadRoute, normalizeText, plainText, readYaml, renderedPublications, selectedText } from "./helpers/site.mjs";
+import { bibliographyFields, loadRoute, normalizeText, plainText, readYaml, renderedPublications, selectedText } from "./helpers/site.mjs";
 
 const fullRoutes = [
   { route: "/cv/", selector: ".cv-content" },
@@ -13,7 +13,7 @@ const conciseRoutes = [
 ];
 
 const selectedKeys = new Set(
-  bibliographyFlags()
+  bibliographyFields()
     .filter((entry) => entry.selected)
     .map((entry) => entry.key)
 );

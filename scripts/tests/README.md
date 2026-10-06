@@ -83,8 +83,8 @@ Visual failures save expected, actual, and diff images under
 jekyll-scholar renders `/publications/`, the landing page's recent papers, and
 both CV publication lists (through `_layouts/cv_bib.liquid`) from
 `_bibliography/papers.bib`. `bibliography.test.mjs` reads entry keys and titles
-from the rendered `/publications/` page and only the `selected` and `recent`
-flags from `papers.bib`. Because `scholar.sort_by` is unset, entries appear in
+from the rendered `/publications/` page and only the key, the `selected` and
+`recent` flags, and the `pdf` file name from `papers.bib`. Because `scholar.sort_by` is unset, entries appear in
 file order, so the test also requires `papers.bib` to list entries by year
 descending, then key ascending.
 

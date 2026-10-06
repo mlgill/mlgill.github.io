@@ -76,9 +76,10 @@ export function renderedPublications() {
   return publications;
 }
 
-// Reads only each entry's key and the two flags the site filters on; all other
-// publication fields come from the rendered pages.
-export function bibliographyFlags() {
+// Reads only each entry's key, the two flags the site filters on, and the pdf
+// file name (null when the entry has none); all other publication fields come
+// from the rendered pages.
+export function bibliographyFields() {
   const source = fs.readFileSync(path.join(rootDirectory, "_bibliography", "papers.bib"), "utf8");
 
   return source
@@ -93,6 +94,7 @@ export function bibliographyFlags() {
         key: keyMatch[1],
         selected: /^\s*selected\s*=\s*\{true\}/m.test(block),
         recent: /^\s*recent\s*=\s*\{true\}/m.test(block),
+        pdf: block.match(/^\s*pdf\s*=\s*\{([^}]*)\}/m)?.[1] ?? null,
       };
     });
 }
